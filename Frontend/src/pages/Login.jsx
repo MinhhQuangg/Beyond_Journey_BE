@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Button, TextField, Typography, Link, ThemeProvider } from '@mui/material';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import logo from '../Logo/toursquare.jpg'; 
 import theme from '../theme';
 import pic1 from './pic/pic1.jpg';
@@ -11,9 +11,9 @@ import pic3 from './pic/pic3.jpg';
 const images = [pic1, pic2, pic3];
 
 export const Login = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors }, watch, trigger } = useForm();
   const [bgImage, setBgImage] = useState(images[0]);
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -28,15 +28,18 @@ export const Login = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    // Optionally, you can navigate the user to a different page after login
-    // navigate('/dashboard'); // Uncomment and update the path if needed
+    // navigate('/dashboard'); 
   };
+
+  const email = watch('email'); 
 
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{
         display: 'flex',
         minHeight: '100vh',
+        height: '100vh',
+        overflow: 'hidden',
       }}>
         {/* Left side with rotating background Image */}
         <Box
@@ -57,7 +60,8 @@ export const Login = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: '#ffffff',  
+            backgroundColor: '#ffffff', 
+            height: '100vh', 
           }}
         >
           <Box sx={{
@@ -69,27 +73,31 @@ export const Login = () => {
             boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
           }}>
             {/* Logo at the top-left */}
-            <Box sx={{ textAlign: 'center', mb: 3 }}>
-              <img src={logo} alt="Logo" style={{ width: '128px', height: 'auto', marginBottom: '20px' }} />
+            <Box sx={{ textAlign: 'center', mb: 1 }}>
+              <img src={logo} alt="Logo" style={{ width: '128px', height: 'auto', marginBottom: '10px' }} />
             </Box>
 
-            <Typography variant="h4" sx={{ mb: 3, textAlign: 'center' }}>
+            <Typography variant="h4" sx={{ mb: 2, textAlign: 'center' }}>
               Log in to continue
             </Typography>
 
             <form onSubmit={handleSubmit(onSubmit)}>
               <TextField
-                label="Email"
+                label="Email *"
                 variant="outlined"
                 fullWidth
                 sx={{ mb: 2 }}
-                {...register('email', { required: 'Email is required' })}
+                {...register('email', { 
+                  required: 'Email is required',
+                  validate: (value) => value.includes('@') || 'Email must contain an @ symbol',
+                })}
                 error={!!errors.email}
                 helperText={errors.email ? errors.email.message : ''}
+                onBlur={() => trigger('email')} 
               />
 
               <TextField
-                label="Password"
+                label="Password *"
                 type="password"
                 variant="outlined"
                 fullWidth
@@ -97,6 +105,7 @@ export const Login = () => {
                 {...register('password', { required: 'Password is required' })}
                 error={!!errors.password}
                 helperText={errors.password ? errors.password.message : ''}
+                onBlur={() => trigger('password')}
               />
 
               <Link href="#" sx={{ display: 'block', textAlign: 'right', mb: 2 }}>
@@ -109,21 +118,24 @@ export const Login = () => {
                 color="primary"
                 fullWidth
                 sx={{ py: 1.5, fontWeight: 'bold' }}
+                disabled={!email || !!errors.email || !!errors.password} // Disable button if there are errors
               >
                 Log in
               </Button>
             </form>
 
-            <Typography variant="body2" sx={{ mt: 2, textAlign: 'center' }}>
-              Don’t have an account?{' '}
-              <Link
-                component="button"
-                onClick={() => navigate('/signup')} // Navigate to signup page
-                underline="hover"
-              >
-                Sign up now
-              </Link>
-            </Typography>
+            <Box sx={{ justifyContent: 'flex-start' }}>
+              <Typography variant="body2" sx={{ mt: 2, textAlign: 'center' }}>
+                Don’t have an account?{' '}
+                <Link
+                  component="button"
+                  onClick={() => navigate('/signup')} // Navigate to signup page
+                  underline="hover"
+                >
+                  Sign up now
+                </Link>
+              </Typography>
+            </Box>
           </Box>
         </Box>
       </Box>
