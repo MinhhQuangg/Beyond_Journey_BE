@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Button, TextField, Typography, Link, ThemeProvider } from '@mui/material';
+import { Box, Button, TextField, Typography, Link, Checkbox, FormControlLabel, ThemeProvider } from '@mui/material';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';  // Import useNavigate
 import logo from '../Logo/toursquare.jpg'; 
 import theme from '../theme';
-import pic1 from './pic/pic1.jpg';
-import pic2 from './pic/pic2.jpg';
-import pic3 from './pic/pic3.jpg';
+import pic1 from './pic/pic4.jpg';
+import pic2 from './pic/pic5.jpg';
+import pic3 from './pic/pic6.jpg';
 
 const images = [pic1, pic2, pic3];
 
-export const Login = () => {
+export const SignUp = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [bgImage, setBgImage] = useState(images[0]);
   const navigate = useNavigate(); // Initialize useNavigate hook
@@ -28,8 +28,8 @@ export const Login = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    // Optionally, you can navigate the user to a different page after login
-    // navigate('/dashboard'); // Uncomment and update the path if needed
+    // Optionally, navigate after a successful signup
+    navigate('/dashboard');  // Adjust the path according to your project
   };
 
   return (
@@ -43,14 +43,14 @@ export const Login = () => {
           sx={{
             width: '50%',
             backgroundImage: `url(${bgImage})`,
-            backgroundSize: 'cover',  
+            backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat', 
-            transition: 'background-image 0.5s ease-in-out', 
+            backgroundRepeat: 'no-repeat',
+            transition: 'background-image 0.5s ease-in-out',
           }}
         />
 
-        {/* Right side with Login Form */}
+        {/* Right side with Sign Up Form */}
         <Box
           sx={{
             flexGrow: 1,  
@@ -68,13 +68,13 @@ export const Login = () => {
             borderRadius: '8px',
             boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
           }}>
-            {/* Logo at the top-left */}
+            {/* Logo at the top */}
             <Box sx={{ textAlign: 'center', mb: 3 }}>
               <img src={logo} alt="Logo" style={{ width: '128px', height: 'auto', marginBottom: '20px' }} />
             </Box>
 
             <Typography variant="h4" sx={{ mb: 3, textAlign: 'center' }}>
-              Log in to continue
+              Create your account
             </Typography>
 
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -99,9 +99,46 @@ export const Login = () => {
                 helperText={errors.password ? errors.password.message : ''}
               />
 
-              <Link href="#" sx={{ display: 'block', textAlign: 'right', mb: 2 }}>
-                Forgot your password?
-              </Link>
+              <TextField
+                label="Confirm Password"
+                type="password"
+                variant="outlined"
+                fullWidth
+                sx={{ mb: 2 }}
+                {...register('confirmPassword', { required: 'Please confirm your password' })}
+                error={!!errors.confirmPassword}
+                helperText={errors.confirmPassword ? errors.confirmPassword.message : ''}
+              />
+
+              <TextField
+                label="First Name"
+                variant="outlined"
+                fullWidth
+                sx={{ mb: 2 }}
+                {...register('firstName', { required: 'First Name is required' })}
+                error={!!errors.firstName}
+                helperText={errors.firstName ? errors.firstName.message : ''}
+              />
+
+              <TextField
+                label="Last Name"
+                variant="outlined"
+                fullWidth
+                sx={{ mb: 2 }}
+                {...register('lastName', { required: 'Last Name is required' })}
+                error={!!errors.lastName}
+                helperText={errors.lastName ? errors.lastName.message : ''}
+              />
+
+              <FormControlLabel
+                control={<Checkbox {...register('terms', { required: 'You must agree to the terms' })} />}
+                label="I agree to the Terms and Conditions"
+              />
+              {errors.terms && (
+                <Typography variant="body2" color="error" sx={{ mb: 2 }}>
+                  {errors.terms.message}
+                </Typography>
+              )}
 
               <Button
                 type="submit"
@@ -110,18 +147,18 @@ export const Login = () => {
                 fullWidth
                 sx={{ py: 1.5, fontWeight: 'bold' }}
               >
-                Log in
+                Sign Up
               </Button>
             </form>
 
             <Typography variant="body2" sx={{ mt: 2, textAlign: 'center' }}>
-              Don’t have an account?{' '}
+              Already have an account?{' '}
               <Link
                 component="button"
-                onClick={() => navigate('/signup')} // Navigate to signup page
+                onClick={() => navigate('/login')}  // Navigate to login page
                 underline="hover"
               >
-                Sign up now
+                Log in here
               </Link>
             </Typography>
           </Box>
@@ -131,4 +168,4 @@ export const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
