@@ -1,20 +1,8 @@
 const express = require("express");
-const fs = require("fs");
-
-const tours = JSON.parse(
-  fs.readFileSync(`${__dirname}/../dev-data/data/tours.json`)
-);
+const tourController = require("./../controllers/tourController");
 
 const router = express.Router();
 
-const getAllTours = (req, res) => {
-  res.status(200).json({
-    status: "success",
-    result: tours.length,
-    tours,
-  });
-};
-
-router.route("/").get(getAllTours);
+router.route("/").get(tourController.getAllTours);
 
 module.exports = router;
