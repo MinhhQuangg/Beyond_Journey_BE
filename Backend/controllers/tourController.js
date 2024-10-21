@@ -1,4 +1,5 @@
 const APIFeatures = require('../utils/apifeatures');
+const AppError = require('../utils/appError');
 const Tour = require('./../models/tourModel');
 
 exports.topTours = (req, res, next) => {
@@ -8,7 +9,7 @@ exports.topTours = (req, res, next) => {
   next();
 };
 
-exports.getAllTours = async (req, res) => {
+exports.getAllTours = async (req, res, next) => {
   try {
     const features = new APIFeatures(Tour.find(), req.query)
       .filter()
@@ -52,19 +53,20 @@ exports.createTour = async (req, res) => {
   }
 };
 
-exports.getTour = async (req, res) => {
+exports.getTour = async (req, res, next) => {
   try {
     const tour = await Tour.findById(req.params.id);
+
+    if (!tour) {
+      return next(new AppError('Tour not found', 404));
+    }
 
     res.status(200).json({
       status: 'success',
       data: { tour },
     });
   } catch (err) {
-    res.status(400).json({
-      status: 'fail',
-      message: err,
-    });
+    next(err);
   }
 };
 
@@ -74,6 +76,11 @@ exports.updateTour = async (req, res) => {
       new: true,
       runValidators: true,
     });
+
+    if (!tour) {
+      return next(new AppError('Tour not found', 404));
+    }
+
     res.status(200).json({
       status: 'success',
       data: { tour },
