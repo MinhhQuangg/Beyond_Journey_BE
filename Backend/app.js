@@ -10,6 +10,7 @@ const app = express();
 
 if (process.env.NODE_ENV == 'development') app.use(morgan('dev'));
 
+console.log(process.env.NODE_ENV);
 app.use(express.json());
 
 app.use((req, res, next) => {
@@ -19,10 +20,8 @@ app.use((req, res, next) => {
 
 app.use('/api/v1/tours', tourRouter);
 
-app.use('api/v1/users', userRouter);
-
 app.all('*', (req, res, next) => {
-  next(new AppError(`Can't find ${req.originalUrl} on this server`, 404));
+  next(new AppError(`Can't find ${req.originalUrl} on this server`, 400));
 });
 
 app.use(globalErrorHandler);
