@@ -46,10 +46,13 @@ const userSchema = new mongoose.Schema({
   passwordResetExpires: Date,
 });
 
-//Only encrypt when user update password or just signup
+//Password first created
 userSchema.pre('save', async function (next) {
+  //Only run this functino if password was actually modified
+  // console.log('this:', this);
   if (!this.isModified('password')) return next();
 
+  //Hash the pass with cost of 12
   this.password = await bcrypt.hash(this.password, 12);
 
   //Delete passwordConfirm field
@@ -57,6 +60,13 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
+// Password updated not first time created
+userSchema.pre('save', function (next) {
+  if (!this.isModified('password') || this.isNew) return next();
+
+  this.passwordChangedAt = Date.now() - 1000;
+  next();
+});
 userSchema.methods.correctPassword = async function (
   candidatePassword,
   userPassword,
@@ -67,7 +77,7 @@ userSchema.methods.correctPassword = async function (
 userSchema.methods.changePasswordAfter = function (JWTTimestamp) {
   if (this.passwordChangedAt) {
     const changedTimestamp = parseInt(this.passwordChangedAt.getTime() / 1000);
-    console.log(this.passwordChangedAt, JWTTimestamp);
+    console.log(changedTimestamp, JWTTimestamp);
     return JWTTimestamp < changedTimestamp;
   }
   return false;
@@ -80,8 +90,6 @@ userSchema.methods.createPasswordResetToken = function () {
     .createHash('sha256')
     .update(resetToken)
     .digest('hex');
-
-  console.log({ resetToken }, this.passwordResetToken);
 
   this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
   return resetToken;

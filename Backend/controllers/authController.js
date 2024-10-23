@@ -1,3 +1,4 @@
+const crypto = require('crypto');
 const { promisify } = require('util');
 const jwt = require('jsonwebtoken');
 const User = require('./../models/userModel');
@@ -46,7 +47,6 @@ exports.login = async (req, res, next) => {
     const user = await User.findOne({ email }).select('+password');
 
     if (!user || !(await user.correctPassword(password, user.password))) {
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeeawwwwwwwwwwwwwwwaaaaa;
       return next(new AppError('Incorrect email or password', 401));
     }
 
@@ -104,6 +104,7 @@ exports.protect = async (req, res, next) => {
     req.user = freshUser;
     next();
   } catch (err) {
+    console.log(err);
     next(err);
   }
 };
@@ -157,4 +158,67 @@ exports.forgotPassword = async (req, res, next) => {
   }
 };
 
-exports.resetPassword = (req, res, next) => {};
+exports.resetPassword = async (req, res, next) => {
+  try {
+    // TODO 1) Get user based on the token
+    const hashedToken = crypto
+      .createHash('sha256')
+      .update(req.params.token)
+      .digest('hex');
+
+    const user = await User.findOne({
+      passwordResetToken: hashedToken,
+      passwordResetExpires: { $gt: Date.now() },
+    });
+    // TODO 2) If token has no expired, and there is user, set the new password
+    if (!user) {
+      return next(
+        new AppError('Token is invalid or expired. Please try again', 400),
+      );
+    }
+
+    user.password = req.body.password;
+    user.passwordConfirm = req.body.passwordConfirm;
+    user.passwordResetToken = undefined;
+    user.passwordResetExpires = undefined;
+    await user.save();
+    // TODO 3) Update changedPasswordAt propery for the user
+    // TODO 4) Log the user in, send JWT
+    const token = signToken(user._id);
+    res.status(200).json({
+      status: 'success',
+      token,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
+//*When users logged in and want to change password
+exports.updatePassword = async (req, res, next) => {
+  //! Find use findByIdandUpdate can't check the validate of mongoose and document middleware not work
+  try {
+    //TODO 1) Get user from collection
+    const user = await User.findById(req.user._id).select('+password');
+    console.log(user);
+    //TODO 2) Check if POSTed current password is correct
+    if (
+      !(await user.correctPassword(req.body.currentPassword, user.password))
+    ) {
+      return next(new AppError('Your current password is wrong', 401));
+    }
+
+    //TODO 3) If so, update password
+    user.password = req.body.password;
+    user.passwordConfirm = req.body.passwordConfirm;
+    await user.save();
+    //TODO 4) Log user in, send JWT
+    const token = signToken(user._id);
+    res.status(200).json({
+      status: 'success',
+      token,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
