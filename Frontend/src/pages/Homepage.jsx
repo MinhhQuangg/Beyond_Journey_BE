@@ -116,51 +116,7 @@ export const Homepage = () => {
           </Box>
 
           {/* Form Section */}
-          <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center', marginBottom: '30px' }}>
-            <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <Controller
-                name="destination"
-                control={control}
-                defaultValue=""
-                render={({ field }) => (
-                  <TextField {...field} label="Destination" variant="outlined" />
-                )}
-              />
-              <Controller
-                name="date"
-                control={control}
-                defaultValue=""
-                render={({ field }) => (
-                  <TextField {...field} label="Date" type="date" InputLabelProps={{ shrink: true }} variant="outlined" />
-                )}
-              />
-              <Controller
-                name="duration"
-                control={control}
-                defaultValue=""
-                render={({ field }) => (
-                  <TextField {...field} label="Duration" variant="outlined" />
-                )}
-              />
-              <Controller
-                name="price"
-                control={control}
-                defaultValue=""
-                render={({ field }) => (
-                  <TextField {...field} label="Price" variant="outlined" />
-                )}
-              />
-              <Controller
-                name="activityLevel"
-                control={control}
-                defaultValue=""
-                render={({ field }) => (
-                  <TextField {...field} label="Activity Level" variant="outlined" />
-                )}
-              />
-              <Button variant="contained" type="submit" color="primary">Search</Button>
-            </form>
-          </Box>
+         
         </Box>
   );
 };
