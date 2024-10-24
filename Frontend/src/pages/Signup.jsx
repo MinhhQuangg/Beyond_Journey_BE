@@ -96,7 +96,7 @@ export const SignUp = () => {
               <img
                 src={logo}
                 alt="Logo"
-                style={{ width: "128px", height: "auto", marginBottom: "10px" }}
+                style={{ width: "300px", height: "auto", marginBottom: "10px" }}
               />
             </Box>
 

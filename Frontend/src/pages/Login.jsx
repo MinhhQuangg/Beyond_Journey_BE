@@ -5,12 +5,10 @@ import {
   TextField,
   Typography,
   Link,
-  ThemeProvider,
 } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/toursquare.jpg";
-import theme from "../context/theme";
 import pic1 from "../assets/pic/pic1.jpg";
 import pic2 from "../assets/pic/pic2.jpg";
 import pic3 from "../assets/pic/pic3.jpg";
@@ -93,7 +91,7 @@ export const Login = () => {
             <img
               src={logo}
               alt="Logo"
-              style={{ width: "128px", height: "auto", marginBottom: "10px" }}
+              style={{ width: "300px", height: "auto", marginBottom: "10px" }}
             />
           </Box>
 

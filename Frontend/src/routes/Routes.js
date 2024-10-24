@@ -7,14 +7,16 @@ import {
 import Login from "../pages/Login";
 import SignUp from "../pages/Signup";
 import ErrorPage from "../pages/ErrorPage";
+import Homepage from "../pages/Homepage";
 
 export const Routes = () => {
   return (
     <BrowserRouter>
       <RouteComponent>
-        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="*" element={<ErrorPage />} />
+        <Route path="/" element={<Homepage/>} />
       </RouteComponent>
     </BrowserRouter>
   );
