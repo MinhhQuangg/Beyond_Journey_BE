@@ -15,10 +15,11 @@ export const theme = createTheme({
   },
   palette: {
     primary: {
-      main: '#0077cc',  // Replace with your primary color
+      main: '#3991cd', 
+       // Replace with your primary color
     },
     secondary: {
-      main: '#ff4081',  // Replace with your secondary color
+      main: '#5d5a7d',  // Replace with your secondary color
     },
   },
 });

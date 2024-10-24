@@ -76,7 +76,7 @@ export const SignUp = () => {
           }}>
             {/* Logo at the top */}
             <Box sx={{ textAlign: 'center', mb: 1 }}>
-              <img src={logo} alt="Logo" style={{ width: '128px', height: 'auto', marginBottom: '10px' }} />
+              <img src={logo} alt="Logo" style={{ width: '300px', height: 'auto' }} />
             </Box>
 
             <Typography variant="h4" sx={{ mb: 2, textAlign: 'center' }}>
