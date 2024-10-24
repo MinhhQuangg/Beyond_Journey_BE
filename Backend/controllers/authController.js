@@ -22,9 +22,7 @@ exports.signup = async (req, res, next) => {
       role: req.body.role,
     });
 
-    const url = `${req.protocol}://${req.get('host')}/me`;
-
-    await new SentEmail(newUser, url).sendWelcome();
+    await new SentEmail(newUser, '/').sendWelcome();
 
     const token = signToken(newUser._id);
 

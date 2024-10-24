@@ -31,7 +31,7 @@ module.exports = class Email {
       (this.firstName = user.name.split(' ')[0]),
       (this.url = url),
       //!CHANGE EMAIL
-      (this.from = `Tours website <${process.env.GMAIL_FROM}>`);
+      (this.from = `Beyond Journey <${process.env.GMAIL_FROM}>`);
   }
 
   newTransport() {
@@ -63,7 +63,8 @@ module.exports = class Email {
   async send(template, subject) {
     const templatePath = path.join(__dirname, '../views', `${template}.ejs`);
     const html = ejs.render(fs.readFileSync(templatePath, 'utf-8'), {
-      name: this.firstName, // assuming this.firstName contains the name
+      name: this.firstName,
+      url: this.url,
       subject,
     });
     // const text = htmlToText.fromString(html);
@@ -78,13 +79,10 @@ module.exports = class Email {
   }
 
   async sendWelcome() {
-    await this.send('welcome', 'Welcome to Tours Website');
+    await this.send('welcome', 'Welcome to Beyond Journey');
   }
 
   async sendPasswordReset() {
-    await this.send(
-      'Password Reset',
-      `Your password reset token (valid for only 10 mins). Please following this url: ${this.url}`,
-    );
+    await this.send('password', `Reset Token`);
   }
 };
