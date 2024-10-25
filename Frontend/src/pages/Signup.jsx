@@ -1,19 +1,17 @@
-import React, { useState, useEffect } from "react";
 import {
   Box,
   Button,
+  Link,
   TextField,
   Typography,
-  Link,
-  ThemeProvider,
 } from "@mui/material";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/toursquare.jpg";
-import theme from "../context/theme";
 import pic1 from "../assets/pic/pic4.jpg";
 import pic2 from "../assets/pic/pic5.jpg";
 import pic3 from "../assets/pic/pic6.jpg";
+import logo from "../assets/toursquare.jpg";
 
 const images = [pic1, pic2, pic3];
 
@@ -49,7 +47,6 @@ export const SignUp = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
       <Box
         sx={{
           display: "flex",
@@ -243,7 +240,6 @@ export const SignUp = () => {
           </Box>
         </Box>
       </Box>
-    </ThemeProvider>
   );
 };
 

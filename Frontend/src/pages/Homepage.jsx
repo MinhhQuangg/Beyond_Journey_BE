@@ -1,11 +1,11 @@
-import React from 'react';
-import { Box, Typography, Button, TextField, Select, MenuItem, IconButton,FormControl, InputLabel } from '@mui/material';
-import { useForm, Controller } from 'react-hook-form';
-import SearchIcon from '@mui/icons-material/Search';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import logo from '../assets/tourname.jpg'
-import { useNavigate } from 'react-router-dom'; 
+import { Box, Button, FormControl, IconButton, InputLabel, MenuItem, Select, Typography } from '@mui/material';
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+import logo from '../assets/tourname.jpg';
 
 export const Homepage = () => {
   const { control, handleSubmit } = useForm();
