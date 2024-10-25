@@ -21,8 +21,8 @@ exports.signup = async (req, res, next) => {
       passwordChangedAt: req.body.passwordChangedAt,
       role: req.body.role,
     });
-
-    await new SentEmail(newUser, '/').sendWelcome();
+    const url = `${req.protocol}://${req.get('host')}/me`;
+    await new SentEmail(newUser, url).sendWelcome();
 
     const token = signToken(newUser._id);
 
@@ -139,11 +139,7 @@ exports.forgotPassword = async (req, res, next) => {
     const resetURL = `${req.protocol}://${req.get('host')}/api/v1/users/resetPassword/${resetToken}`;
     const message = `Forgot your password? Submit a Patch request with your new password and passwordConfirm to: ${resetURL}.\n Please ignore this email if you did not forget your password `;
 
-    await SentEmail({
-      email: user.email,
-      subject: 'Your password reset token only valid for 10 mins',
-      message,
-    });
+    await new SentEmail(user, resetURL).sendPasswordReset();
     res.status(200).json({
       status: 'success',
       message: 'Token sent to email!',
