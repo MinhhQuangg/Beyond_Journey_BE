@@ -35,21 +35,21 @@ module.exports = class Email {
   }
 
   newTransport() {
-    // if (process.env.NODE_ENV === 'production') {
-    //   return nodemailer.createTransport({
-    //     service: 'gmail',
-    //     host: 'smtp.gmail.com',
-    //     port: 587,
-    //     secure: false,
-    //     auth: {
-    //       user: process.env.GMAIL_USERNAME,
-    //       pass: process.env.GMAIL_PASSWORD,
-    //     },
-    //     tls: {
-    //       rejectUnauthorized: false, // Optional: only if you're facing issues with self-signed certs
-    //     },
-    //   });
-    // }
+    if (process.env.NODE_ENV === 'production') {
+      return nodemailer.createTransport({
+        service: 'gmail',
+        host: 'smtp.gmail.com',
+        port: 587,
+        secure: false,
+        auth: {
+          user: process.env.GMAIL_USERNAME,
+          pass: process.env.GMAIL_PASSWORD,
+        },
+        tls: {
+          rejectUnauthorized: false, // Optional: only if you're facing issues with self-signed certs
+        },
+      });
+    }
     return nodemailer.createTransport({
       host: 'sandbox.smtp.mailtrap.io',
       port: 587,

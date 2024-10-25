@@ -1,18 +1,12 @@
 import React, { useState, useEffect } from "react";
-import {
-  Box,
-  Button,
-  TextField,
-  Typography,
-  Link,
-} from "@mui/material";
+import { Box, Button, TextField, Typography, Link } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/toursquare.jpg";
 import pic1 from "../assets/pic/pic1.jpg";
 import pic2 from "../assets/pic/pic2.jpg";
 import pic3 from "../assets/pic/pic3.jpg";
-
+import axios from "axios";
 const images = [pic1, pic2, pic3];
 
 export const Login = () => {
@@ -37,7 +31,17 @@ export const Login = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/api/v1/users/login",
+        data
+      );
+      console.log(response);
+    } catch (err) {
+      console.log(err);
+    }
+
     console.log(data);
     // navigate('/dashboard');
   };

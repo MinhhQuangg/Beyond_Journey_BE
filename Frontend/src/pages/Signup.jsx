@@ -14,6 +14,7 @@ import theme from "../context/theme";
 import pic1 from "../assets/pic/pic4.jpg";
 import pic2 from "../assets/pic/pic5.jpg";
 import pic3 from "../assets/pic/pic6.jpg";
+import axios from "axios";
 
 const images = [pic1, pic2, pic3];
 
@@ -43,9 +44,18 @@ export const SignUp = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:3000/api/v1/users/signup",
+        data
+      );
+      console.log(response.data);
+    } catch (err) {
+      console.log(err);
+    }
     console.log(data);
-    // navigate('/dashboard');  // Adjust the path according to your project
+    navigate("/login");
   };
 
   return (
@@ -111,16 +121,16 @@ export const SignUp = () => {
                 variant="outlined"
                 fullWidth
                 sx={{ mb: 2 }}
-                {...register("firstName", {
+                {...register("name", {
                   required: "First Name is required",
                 })}
-                error={!!errors.firstName}
-                helperText={errors.firstName ? errors.firstName.message : ""}
+                error={!!errors.name}
+                helperText={errors.name ? errors.name.message : ""}
                 onBlur={() => trigger("firstName")} // Trigger validation on blur
               />
 
               {/* Last Name */}
-              <TextField
+              {/* <TextField
                 label="Last Name *"
                 variant="outlined"
                 fullWidth
@@ -129,10 +139,10 @@ export const SignUp = () => {
                 error={!!errors.lastName}
                 helperText={errors.lastName ? errors.lastName.message : ""}
                 onBlur={() => trigger("lastName")} // Trigger validation on blur
-              />
+              /> */}
 
               {/* Phone Number */}
-              <TextField
+              {/* <TextField
                 label="Phone Number *"
                 variant="outlined"
                 fullWidth
@@ -156,10 +166,10 @@ export const SignUp = () => {
                 helperText={errors.phone ? errors.phone.message : ""}
                 inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }} // Limit input to numbers
                 onBlur={() => trigger("phone")} // Trigger validation on blur
-              />
+              /> */}
 
               {/* Address */}
-              <TextField
+              {/* <TextField
                 label="Address *"
                 variant="outlined"
                 fullWidth
@@ -168,7 +178,7 @@ export const SignUp = () => {
                 error={!!errors.address}
                 helperText={errors.address ? errors.address.message : ""}
                 onBlur={() => trigger("address")} // Trigger validation on blur
-              />
+              /> */}
 
               {/* Email */}
               <TextField
@@ -206,14 +216,14 @@ export const SignUp = () => {
                 variant="outlined"
                 fullWidth
                 sx={{ mb: 2 }}
-                {...register("confirmPassword", {
+                {...register("passwordConfirm", {
                   required: "Please confirm your password",
                   validate: (value) =>
                     value === password || "Passwords do not match",
                 })}
-                error={!!errors.confirmPassword}
+                error={!!errors.passwordConfirm}
                 helperText={
-                  errors.confirmPassword ? errors.confirmPassword.message : ""
+                  errors.passwordConfirm ? errors.passwordConfirm.message : ""
                 }
                 onBlur={() => trigger("confirmPassword")} // Trigger validation on blur
               />
