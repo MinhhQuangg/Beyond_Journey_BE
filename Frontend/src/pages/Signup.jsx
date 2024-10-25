@@ -50,12 +50,13 @@ export const SignUp = () => {
         "http://127.0.0.1:3000/api/v1/users/signup",
         data
       );
-      console.log(response.data);
+      console.log(response.data.status);
+      if (response.data.status === "success")
+      {navigate("/login")};
     } catch (err) {
       console.log(err);
     }
     console.log(data);
-    navigate("/login");
   };
 
   return (

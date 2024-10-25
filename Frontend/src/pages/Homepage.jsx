@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Typography, Button, TextField, Select, MenuItem, IconButton,FormControl, InputLabel } from '@mui/material';
 import { useForm, Controller } from 'react-hook-form';
 import SearchIcon from '@mui/icons-material/Search';
@@ -7,10 +7,26 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import logo from '../assets/tourname.jpg'
 import { useNavigate } from 'react-router-dom'; 
 
+
 export const Homepage = () => {
   const { control, handleSubmit } = useForm();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://127.0.0.1:3000/api/v1/tours/top-5-cheap');
+        const data = await response.json();
+        console.log(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  
   const onSubmit = (data) => {
     console.log(data);
   };
