@@ -7,7 +7,7 @@ const handleCastErrorDB = (err) => {
 
 const handleDuplicateFieldsDB = (err) => {
   const value = err.keyValue.name;
-  const message = `Duplicate field value: ${value}. Please use another value!`;
+  const message = `The email is already registered. Please register with another email or use forget password.`;
   return new AppError(message, 400);
 };
 
