@@ -21,6 +21,11 @@ exports.getAllUsers = async (req, res, next) => {
   }
 };
 
+exports.getMe = (req, res, next) => {
+  req.params.id = req.user.id;
+  next();
+};
+
 exports.updateMe = async (req, res, next) => {
   try {
     //TODO 1) Create error if user POSTS password data
@@ -48,6 +53,18 @@ exports.updateMe = async (req, res, next) => {
       status: 'success',
       data: { user: updatedUser },
     });
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.getUser = async (req, res, next) => {
+  try {
+    const user = await User.findById(req.params.id);
+    if (!user) {
+      return next(new AppError('Cant find this user', 404));
+    }
+    res.status(200).json({ status: 'success', data: { user } });
   } catch (err) {
     next(err);
   }
