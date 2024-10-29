@@ -17,6 +17,9 @@ exports.getAllTours = async (req, res, next) => {
       .limitFields()
       .paginate();
 
+    //!Check the number of docs examined to get the result
+    // const tours = await features.query.explain()
+
     const tours = await features.query;
 
     res.status(200).json({

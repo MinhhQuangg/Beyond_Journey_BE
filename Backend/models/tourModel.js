@@ -105,6 +105,10 @@ const tourSchema = new mongoose.Schema(
   },
 );
 
+//!Reduce number of examine doc
+tourSchema.index({ price: 1, ratingsAverage: 1 });
+tourSchema.index({ slug: 1 });
+
 //!Embedding
 // tourSchema.pre('save', async function (next) {
 //   const guidesPromise = this.guides.map(async (el) => await User.findById(el));
