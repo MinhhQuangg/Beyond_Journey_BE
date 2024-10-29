@@ -8,6 +8,7 @@ import Login from "../pages/Login";
 import SignUp from "../pages/Signup";
 import ErrorPage from "../pages/ErrorPage";
 import Homepage from "../pages/Homepage";
+import ForgotPassword from "../pages/Forgotpass";
 
 export const Routes = () => {
   return (
@@ -16,7 +17,8 @@ export const Routes = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="*" element={<ErrorPage />} />
-        <Route path="/" element={<Homepage/>} />
+        <Route path="/" element={<Homepage />} />
+        <Route path="/login/forgot" element={<ForgotPassword />} />
       </RouteComponent>
     </BrowserRouter>
   );

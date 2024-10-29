@@ -51,7 +51,7 @@ export const Homepage = () => {
 
             <Box sx={{ display: 'flex', gap: 8 }}>
               <Button>Destinations</Button>
-              <Button>Travel Styles</Button>
+              <Button>Travel Lists</Button>
               <Button>Travel Deals</Button>
               <Button>About Us</Button>
               </Box>
