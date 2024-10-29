@@ -7,6 +7,8 @@ import {
   Link,
   Checkbox,
   Divider,
+  CircularProgress,
+  InputAdornment,
 } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -25,9 +27,11 @@ export const Login = () => {
   const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false); // Loading state
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
 
   const onSubmit = async (data) => {
+    setLoading(true); // Set loading to true
     try {
       const response = await axios.post(
         "http://localhost:3000/api/v1/users/login",
@@ -36,9 +40,9 @@ export const Login = () => {
       console.log(response);
     } catch (err) {
       console.log(err);
+    } finally {
+      setLoading(false);
     }
-
-    console.log(data);
   };
 
   const email = watch("email");
@@ -53,7 +57,6 @@ export const Login = () => {
         height: "100vh",
         overflow: "hidden",
         backgroundColor: "#f5f5f2",
-        padding: "20px",
       }}
     >
       {/* Logo on the top-left corner */}
@@ -76,7 +79,7 @@ export const Login = () => {
       <Box
         sx={{
           width: "100%",
-          maxWidth: "350px", // Adjusted to closely match the image's width
+          maxWidth: "350px",
           backgroundColor: "#fff",
           padding: "30px",
           borderRadius: "8px",
@@ -86,7 +89,6 @@ export const Login = () => {
         <Box sx={{ mb: "30px" }}>
           <Typography
             sx={{
-              mb: 2,
               textAlign: "left",
               fontSize: "36px",
               fontWeight: "bold",
@@ -119,10 +121,9 @@ export const Login = () => {
         </Typography>
         <form onSubmit={handleSubmit(onSubmit)}>
           <TextField
-            variant="outlined"
             fullWidth
-            sx={{ mb: "24px", paddingRight: "15px" }}
-            InputProps={{ sx: { fontSize: "0.875rem" } }}
+            sx={{ mb: "24px", paddingRight: "15px", minHeight: "46px" }}
+            OutlinedInput={{ sx: { fontSize: "0.875rem" } }}
             {...register("email", {
               required: "Email is required",
               validate: (value) =>
@@ -144,19 +145,20 @@ export const Login = () => {
           </Typography>
           <TextField
             type={showPassword ? "text" : "password"}
-            variant="outlined"
             fullWidth
-            sx={{ mb: "24px", paddingright: "15px" }}
+            sx={{ mb: "24px", paddingRight: "15px" }}
             InputProps={{
               sx: { fontSize: "0.875rem" },
               endAdornment: (
-                <Button
-                  onClick={togglePasswordVisibility}
-                  edge="end"
-                  sx={{ minWidth: 0, color: "#3991cd" }}
-                >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
-                </Button>
+                <InputAdornment position="end">
+                  <Button
+                    onClick={togglePasswordVisibility}
+                    edge="end"
+                    sx={{ minWidth: 0, color: "#3991cd" }}
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </Button>
+                </InputAdornment>
               ),
             }}
             {...register("password", { required: "Password is required" })}
@@ -181,19 +183,21 @@ export const Login = () => {
               backgroundColor: "#3991cd",
               ":hover": { backgroundColor: "#5d5a7d" },
               fontSize: "16px",
-              borderRadius: "50px", // Rounded button
               mb: "30px",
             }}
-            disabled={!email || !!errors.email || !!errors.password}
+            disabled={loading || !email || !!errors.email || !!errors.password}
           >
-            Log in
+            {loading ? (
+              <CircularProgress size={24} color="inherit" />
+            ) : (
+              "Log in"
+            )}
           </Button>
         </form>
         <Link
           sx={{
             fontSize: "14px",
             mb: "28px",
-            alignItems: "right",
             color: "#3991cd",
           }}
           component="button"
@@ -211,8 +215,6 @@ export const Login = () => {
           <Button
             fullWidth
             sx={{
-              mr: "18px",
-              pr: "18px",
               lineHeight: "1.75",
               fontWeight: "bold",
               fontSize: "12px",
@@ -224,7 +226,7 @@ export const Login = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              borderRadius: "50px", // Rounded button
+              borderRadius: "50px",
             }}
           >
             <img

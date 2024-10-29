@@ -47,8 +47,7 @@ export const SignUp = () => {
           minHeight: "100vh",
           height: "100vh",
           overflow: "hidden",
-          backgroundColor: "#f5f5f2", // Light background
-          padding: "20px",
+          backgroundColor: "#f5f5f2",
         }}
       >
         <Box
@@ -100,7 +99,7 @@ export const SignUp = () => {
           </Typography>
 
           <form onSubmit={handleSubmit(onSubmit)}>
-            {/* First Name */}
+            {/*  Name */}
             <Typography
               sx={{
                 pb: "12px",
@@ -109,37 +108,16 @@ export const SignUp = () => {
                 fontWeight: "bold",
               }}
             >
-              First Name
+              Name
             </Typography>
             <TextField
               variant="outlined"
               fullWidth
               sx={{ mb: 2 }}
-              {...register("firstName", { required: "First Name is required" })}
-              error={!!errors.firstName}
-              helperText={errors.firstName?.message}
-              onBlur={() => trigger("firstName")}
-            />
-            <Typography
-              sx={{
-                pb: "12px",
-                textAlign: "left",
-                fontSize: "14px",
-                fontWeight: "bold",
-              }}
-            >
-              Last Name
-            </Typography>
-
-            {/* Last Name */}
-            <TextField
-              variant="outlined"
-              fullWidth
-              sx={{ mb: 2 }}
-              {...register("lastName", { required: "Last Name is required" })}
-              error={!!errors.lastName}
-              helperText={errors.lastName?.message}
-              onBlur={() => trigger("lastName")}
+              {...register("name", { required: "Name is required" })}
+              error={!!errors.name}
+              helperText={errors.name?.message}
+              onBlur={() => trigger("name")}
             />
             <Typography
               sx={{
@@ -259,6 +237,7 @@ export const SignUp = () => {
               sx={{
                 py: 1.5,
                 fontWeight: "bold",
+                borderRadius: "50px",
                 marginTop: 2,
                 backgroundColor: "#3991cd",
                 ":hover": { backgroundColor: "#5d5a7d" },

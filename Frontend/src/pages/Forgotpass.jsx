@@ -9,13 +9,13 @@ export const ForgotPassword = () => {
   return (
     <Box
       sx={{
-        minHeight: "100vh", // Full viewport height
+        minHeight: "100vh",
+        height: "100vh",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center", // Centers the content vertically
-        bgcolor: "#f6f6f4",
-        padding: 3,
+        justifyContent: "center",
+        bgcolor: "#f5f5f2",
       }}
     >
       {/* Logo on the top-left corner */}
