@@ -2,17 +2,25 @@ import React from "react";
 import { Box, Typography, TextField, Button, Link } from "@mui/material";
 import logo from "../assets/logobackground.jpg";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 export const ForgotPassword = () => {
   const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    trigger,
+  } = useForm({ mode: "onChange" });
 
+  const onSubmit = (data) => {
+    console.log(data);
+  };
   return (
     <Box
       sx={{
-        minHeight: "100vh",
         height: "100vh",
         display: "flex",
-        flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         bgcolor: "#f5f5f2",
@@ -29,7 +37,7 @@ export const ForgotPassword = () => {
         <img
           src={logo}
           alt="Logo"
-          style={{ width: "150px", cursor: "pointer" }}
+          style={{ width: "25%", cursor: "pointer" }}
           onClick={() => navigate("/")}
         />
       </Box>
@@ -39,8 +47,7 @@ export const ForgotPassword = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "left",
-          maxWidth: 400,
-          width: "100%",
+          maxWidth: "25%",
         }}
       >
         {/* Header */}
@@ -53,13 +60,8 @@ export const ForgotPassword = () => {
         </Typography>
 
         {/* Instructions */}
-        <Box sx={{ mb: "24px" }}>
-          <Typography
-            variant="body1"
-            color="textSecondary"
-            textAlign="left"
-            sx={{ mb: "12px" }}
-          >
+        <Box sx={{ mb: "36px" }}>
+          <Typography variant="body1" color="textSecondary" textAlign="left">
             Fear not. We'll email you instructions to reset your password.
           </Typography>
         </Box>
@@ -75,26 +77,36 @@ export const ForgotPassword = () => {
             Email
           </Typography>
           {/* Input Field */}
-          <TextField variant="outlined" fullWidth sx={{ mb: "24px" }} />
+          <TextField
+            variant="outlined"
+            size="small"
+            fullWidth
+            sx={{ mb: 2 }}
+            {...register("email", {
+              required: "Email is required",
+              validate: (value) =>
+                value.includes("@") || 'Email must include "@"',
+            })}
+            error={!!errors.email}
+            helperText={errors.email?.message}
+            onBlur={() => trigger("email")}
+          />
         </Box>
 
         {/* Reset Password Button */}
-        <Box sx={{ display: "flex" }}>
+        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Button
+            onClick={handleSubmit(onSubmit)}
             variant="contained"
             color="primary"
-            fullWidth
             sx={{
               bgcolor: "#3991cd",
               ":hover": { bgcolor: "#5d5a7d" },
-              borderRadius: "38px",
-              maxWidth: "250px",
-              lineHeight: "40px",
+              borderRadius: "20px",
               textAlign: "center",
-              justifyContent: "center",
-              alignItems: "center",
-              padding: "0 42px",
-              mr: "18px",
+              fontSize: "16px",
+              padding: "5px 30px",
+              marginLeft: "5%",
             }}
           >
             Reset Password
@@ -104,7 +116,12 @@ export const ForgotPassword = () => {
           <Link
             href="#"
             underline="always"
-            sx={{ mt: 1, color: "#3991cd" }}
+            sx={{
+              mt: 1,
+              color: "#3991cd",
+              fontSize: "16px",
+              marginRight: "5%",
+            }}
             onClick={() => navigate("/login")}
           >
             Return to login

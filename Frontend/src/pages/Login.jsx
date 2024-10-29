@@ -1,29 +1,28 @@
-import React, { useState } from "react";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+import LockIcon from "@mui/icons-material/Lock";
+import PersonIcon from "@mui/icons-material/Person";
 import {
   Box,
   Button,
+  Checkbox,
+  CircularProgress,
+  Divider,
+  IconButton,
+  InputAdornment,
+  Link,
   TextField,
   Typography,
-  Link,
-  Checkbox,
-  Divider,
-  CircularProgress,
-  InputAdornment,
 } from "@mui/material";
+import axios from "axios";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logobackground.jpg";
-import axios from "axios";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 export const Login = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    watch,
-    trigger,
-  } = useForm();
+  const formContext = useForm();
+  const { register, handleSubmit, formState, watch } = formContext;
+  const { errors } = formState;
   const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -46,6 +45,7 @@ export const Login = () => {
   };
 
   const email = watch("email");
+  const password = watch("password");
 
   return (
     <Box
@@ -53,13 +53,11 @@ export const Login = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        minHeight: "100vh",
+        position: "relative",
         height: "100vh",
-        overflow: "hidden",
         backgroundColor: "#f5f5f2",
       }}
     >
-      {/* Logo on the top-left corner */}
       <Box
         sx={{
           position: "absolute",
@@ -70,12 +68,11 @@ export const Login = () => {
         <img
           src={logo}
           alt="Logo"
-          style={{ width: "150px", cursor: "pointer" }}
+          style={{ width: "25%", cursor: "pointer" }}
           onClick={() => navigate("/")}
         />
       </Box>
 
-      {/* Centered Login Form */}
       <Box
         sx={{
           width: "100%",
@@ -109,94 +106,111 @@ export const Login = () => {
             </Link>
           </Typography>
         </Box>
-        <Typography
-          sx={{
-            mb: "12px",
-            textAlign: "left",
-            fontSize: "16px",
-            fontWeight: "bold",
-          }}
-        >
-          Username or Email
-        </Typography>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <TextField
-            fullWidth
-            sx={{ mb: "24px", paddingRight: "15px", minHeight: "46px" }}
-            OutlinedInput={{ sx: { fontSize: "0.875rem" } }}
-            {...register("email", {
-              required: "Email is required",
-              validate: (value) =>
-                value.includes("@") || "Email must contain an @ symbol",
-            })}
-            error={!!errors.email}
-            helperText={errors.email ? errors.email.message : ""}
-            onBlur={() => trigger("email")}
-          />
-          <Typography
-            sx={{
-              mb: "12px",
-              textAlign: "left",
-              fontSize: "16px",
-              fontWeight: "bold",
-            }}
-          >
-            Password
-          </Typography>
-          <TextField
-            type={showPassword ? "text" : "password"}
-            fullWidth
-            sx={{ mb: "24px", paddingRight: "15px" }}
-            InputProps={{
-              sx: { fontSize: "0.875rem" },
-              endAdornment: (
-                <InputAdornment position="end">
-                  <Button
-                    onClick={togglePasswordVisibility}
-                    edge="end"
-                    sx={{ minWidth: 0, color: "#3991cd" }}
-                  >
-                    {showPassword ? <VisibilityOff /> : <Visibility />}
-                  </Button>
-                </InputAdornment>
-              ),
-            }}
-            {...register("password", { required: "Password is required" })}
-            error={!!errors.password}
-            helperText={errors.password ? errors.password.message : ""}
-          />
+        <form>
+          <Box marginBottom="15px">
+            <Typography
+              sx={{
+                mb: "12px",
+                textAlign: "left",
+                fontSize: "16px",
+                fontWeight: "bold",
+              }}
+            >
+              Username or Email
+            </Typography>
+            <TextField
+              variant="standard"
+              size="small"
+              type="email"
+              fullWidth
+              {...register("email", {
+                required: { value: true, message: "Email is required" },
+              })}
+              error={!!errors.email}
+              helperText={errors.email?.message}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <PersonIcon />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Box>
+          <Box>
+            <Typography
+              sx={{
+                mb: "12px",
+                textAlign: "left",
+                fontSize: "16px",
+                fontWeight: "bold",
+              }}
+            >
+              Password
+            </Typography>
+            <TextField
+              variant="standard"
+              size="small"
+              type={showPassword ? "text" : "password"}
+              fullWidth
+              sx={{ mb: 2 }} // Margin bottom for spacing
+              {...register("password", { required: "Password is required" })}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <LockIcon />
+                  </InputAdornment>
+                ),
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton onClick={togglePasswordVisibility}>
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Box>
 
-          <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
             <Checkbox
               {...register("remember")}
               sx={{ p: 0.5, color: "#3991cd" }}
             />
-            <Typography sx={{ fontSize: "16px" }}>Keep me logged in</Typography>
+            <Typography sx={{ fontSize: "14px" }}>Remember me</Typography>
           </Box>
-
-          <Button
-            type="submit"
-            variant="contained"
-            fullWidth
-            sx={{
-              fontWeight: "bold",
-              backgroundColor: "#3991cd",
-              ":hover": { backgroundColor: "#5d5a7d" },
-              fontSize: "16px",
-              mb: "30px",
-            }}
-            disabled={loading || !email || !!errors.email || !!errors.password}
-          >
-            {loading ? (
-              <CircularProgress size={24} color="inherit" />
-            ) : (
-              "Log in"
-            )}
-          </Button>
+          <Box display="grid" justifyItems="center">
+            <Button
+              type="submit"
+              onClick={handleSubmit(onSubmit)}
+              variant="contained"
+              sx={{
+                fontWeight: "bold",
+                borderRadius: "20px",
+                fontSize: "16px",
+                margin: "30px 0 20px 0",
+                width: "70%",
+                padding: "5px 30px",
+              }}
+              disabled={
+                loading ||
+                !email ||
+                !password ||
+                !!errors.email ||
+                !!errors.password
+              }
+            >
+              {loading ? (
+                <CircularProgress size={24} color="inherit" />
+              ) : (
+                "Log in"
+              )}
+            </Button>
+          </Box>
         </form>
         <Link
           sx={{
-            fontSize: "14px",
+            fontSize: "16px",
             mb: "28px",
             color: "#3991cd",
           }}
@@ -211,30 +225,27 @@ export const Login = () => {
           <Typography sx={{ fontSize: "13px", paddingBottom: "10px" }}>
             Or, if you created your account with Google:
           </Typography>
-
-          <Button
-            fullWidth
-            sx={{
-              lineHeight: "1.75",
-              fontWeight: "bold",
-              fontSize: "12px",
-              color: "#3991cd",
-              borderColor: "#ddd",
-              backgroundColor: "#fff",
-              ":hover": { backgroundColor: "#f5f5f5" },
-              border: "1px solid #ddd",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              borderRadius: "50px",
-            }}
-          >
-            <img
-              src="https://img.icons8.com/color/24/000000/google-logo.png"
-              alt="Google"
-            />
-            &nbsp; Continue with Google
-          </Button>
+          <Box display="grid" justifyItems="center">
+            <Button
+              sx={{
+                margin: "10px 0",
+                fontWeight: "bold",
+                fontSize: "16px",
+                color: "#3991cd",
+                borderColor: "#ddd",
+                backgroundColor: "#fff",
+                ":hover": { backgroundColor: "#f5f5f5" },
+                border: "1px solid #ddd",
+                borderRadius: "20px",
+              }}
+            >
+              <img
+                src="https://img.icons8.com/color/24/000000/google-logo.png"
+                alt="Google"
+              />
+              &nbsp; Continue with Google
+            </Button>
+          </Box>
         </Box>
       </Box>
     </Box>
