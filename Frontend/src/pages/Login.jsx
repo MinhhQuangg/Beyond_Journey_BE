@@ -68,15 +68,14 @@ export const Login = () => {
         <img
           src={logo}
           alt="Logo"
-          style={{ width: "25%", cursor: "pointer" }}
+          style={{ width: "25%", cursor: "pointer", backgroundColor: "white" }}
           onClick={() => navigate("/")}
         />
       </Box>
 
       <Box
         sx={{
-          width: "100%",
-          maxWidth: "350px",
+          width: "25%",
           backgroundColor: "#fff",
           padding: "30px",
           borderRadius: "8px",
@@ -215,7 +214,7 @@ export const Login = () => {
             color: "#3991cd",
           }}
           component="button"
-          onClick={() => navigate("/login/forgot")}
+          onClick={() => navigate("/forgotpassword")}
           underline="hover"
         >
           Forgot password?

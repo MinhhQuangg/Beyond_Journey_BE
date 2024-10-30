@@ -50,7 +50,7 @@ export const SignUp = () => {
         <img
           src={logo}
           alt="Logo"
-          style={{ width: "150px", cursor: "pointer" }}
+          style={{ width: "25%", cursor: "pointer", backgroundColor: "white" }}
           onClick={() => navigate("/")}
         />
       </Box>
@@ -67,13 +67,13 @@ export const SignUp = () => {
       >
         <Typography
           sx={{
-            mb: 2,
             textAlign: "left",
-            fontSize: "30px",
+            fontSize: "36px",
             fontWeight: "bold",
+            mb: "18px",
           }}
         >
-          Sign up for BeyondJourney
+          Sign up
         </Typography>
         <Typography sx={{ mb: "20px", textAlign: "left", fontSize: "13px" }}>
           Already have an account?{" "}

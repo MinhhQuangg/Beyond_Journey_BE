@@ -56,13 +56,14 @@ export const ForgotPassword = () => {
           gutterBottom
           sx={{ mb: "18px", fontSize: "36px" }}
         >
-          Reset your password
+          Forgot your password
         </Typography>
 
         {/* Instructions */}
         <Box sx={{ mb: "36px" }}>
           <Typography variant="body1" color="textSecondary" textAlign="left">
-            Fear not. We'll email you instructions to reset your password.
+            Fear not. Please enter the email address. We'll email you
+            instructions to reset your password.
           </Typography>
         </Box>
         <Box sx={{ mb: "24px" }}>
