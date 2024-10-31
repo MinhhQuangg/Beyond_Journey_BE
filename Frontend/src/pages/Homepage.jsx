@@ -5,7 +5,7 @@ import { Footer } from "../components/Footer";
 
 export const Homepage = () => {
   return (
-    <Box height="2000px">
+    <Box>
       <NavBar />
       <Box sx={{ textAlign: "center", margin: "40px 0" }}>
         <Typography

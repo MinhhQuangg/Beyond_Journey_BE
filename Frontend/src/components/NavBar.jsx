@@ -6,6 +6,7 @@ import { navOptions } from "../utils";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import { IconButton } from "@mui/material";
+
 import { homepagePic } from "../assets";
 
 const coverHeight = 650;
@@ -16,7 +17,7 @@ export const NavBar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const y = window.scrollY;
-      if (y - coverHeight > 80) setBackgroundColor("white");
+      if (coverHeight - y < 80) setBackgroundColor("white");
       else setBackgroundColor("transparent");
     };
     window.addEventListener("scroll", handleScroll);

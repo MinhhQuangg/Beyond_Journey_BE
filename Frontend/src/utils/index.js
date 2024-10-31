@@ -12,4 +12,6 @@ const navOptions = [
   "About Us",
 ];
 
-export { level, sort, price, navOptions };
+const usefulLinks = ["Your Account", "Our Team", "FAQ"];
+
+export { level, sort, price, navOptions, usefulLinks };
