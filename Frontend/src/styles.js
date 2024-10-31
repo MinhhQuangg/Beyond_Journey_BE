@@ -9,8 +9,7 @@ const styles = {
 
   sectionHeadText:
     "text-primary font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]",
-  sectionSubText:
-    "sm:text-[20px] text-[14px] text-primary uppercase tracking-wider",
+  sectionSubText: "text-[24px] font-bold text-primary uppercase ",
 };
 
 export { styles };

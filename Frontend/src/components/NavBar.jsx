@@ -8,19 +8,17 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import { IconButton } from "@mui/material";
 import { homepagePic } from "../assets";
 
+const coverHeight = 650;
+
 export const NavBar = () => {
   const navigate = useNavigate();
-  const [backgroundColor, setBackgrounColor] = useState("transparent");
-
-  const handleScroll = () => {
-    const y = window.scrollY;
-    console.log("Current Scroll Height:", y);
-    return y > 520
-      ? setBackgrounColor("white")
-      : setBackgrounColor("transparent");
-  };
+  const [backgroundColor, setBackgroundColor] = useState("transparent");
   useEffect(() => {
-    handleScroll();
+    const handleScroll = () => {
+      const y = window.scrollY;
+      if (y - coverHeight > 80) setBackgroundColor("white");
+      else setBackgroundColor("transparent");
+    };
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -33,11 +31,12 @@ export const NavBar = () => {
       style={{
         backgroundImage: `url(${homepagePic})`,
         backgroundRepeat: "no-repeat",
-        height: "600px",
+        height: `${coverHeight}px`,
       }}
     >
       <div
-        className={`${styles.paddingX} w-full flex justify-between items-center fixed bg-${backgroundColor}`}
+        className={`${styles.paddingX} w-full flex justify-between items-center fixed `}
+        style={{ backgroundColor }}
       >
         <div>
           <Link onClick={() => navigate("/")}>

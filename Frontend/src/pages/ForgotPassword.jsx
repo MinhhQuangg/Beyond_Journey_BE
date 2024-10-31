@@ -1,8 +1,7 @@
+import { Box, Button, Link, TextField, Typography } from "@mui/material";
 import React from "react";
-import { Box, Typography, TextField, Button, Link } from "@mui/material";
-import logo from "../assets/logobackground.jpg";
-import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { toursquare } from "../assets";
 
 export const ForgotPassword = () => {
