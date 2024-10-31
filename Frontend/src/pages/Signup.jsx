@@ -4,7 +4,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logobackground.jpg";
-
+import { toursquare } from "../assets";
 export const SignUp = () => {
   const {
     register,
@@ -48,9 +48,9 @@ export const SignUp = () => {
         }}
       >
         <img
-          src={logo}
+          src={toursquare}
           alt="Logo"
-          style={{ width: "25%", cursor: "pointer", backgroundColor: "white" }}
+          style={{ width: "40%", cursor: "pointer" }}
           onClick={() => navigate("/")}
         />
       </Box>

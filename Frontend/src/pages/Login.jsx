@@ -17,7 +17,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/logobackground.jpg";
+import { toursquare } from "../assets";
 
 export const Login = () => {
   const formContext = useForm();
@@ -66,9 +66,9 @@ export const Login = () => {
         }}
       >
         <img
-          src={logo}
+          src={toursquare}
           alt="Logo"
-          style={{ width: "25%", cursor: "pointer", backgroundColor: "white" }}
+          style={{ width: "40%", cursor: "pointer" }}
           onClick={() => navigate("/")}
         />
       </Box>
@@ -93,16 +93,15 @@ export const Login = () => {
           >
             Log in
           </Typography>
-          <Typography sx={{ mb: 2, textAlign: "left", fontSize: "13px" }}>
-            Need an account?{" "}
-            <Link
+          <Typography sx={{ mb: 2, textAlign: "left", fontSize: "16px" }}>
+            Need an account? &nbsp;
+            <Typography
               component="button"
               onClick={() => navigate("/signup")}
               sx={{ color: "#3991cd" }}
-              underline="hover"
             >
               Create an account
-            </Link>
+            </Typography>
           </Typography>
         </Box>
         <form>
@@ -207,7 +206,7 @@ export const Login = () => {
             </Button>
           </Box>
         </form>
-        <Link
+        <Typography
           sx={{
             fontSize: "16px",
             mb: "28px",
@@ -215,10 +214,9 @@ export const Login = () => {
           }}
           component="button"
           onClick={() => navigate("/forgotpassword")}
-          underline="hover"
         >
           Forgot password?
-        </Link>
+        </Typography>
         <Divider />
         <Box sx={{ pt: "20px" }}>
           <Typography sx={{ fontSize: "13px", paddingBottom: "10px" }}>

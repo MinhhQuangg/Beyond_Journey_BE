@@ -1,10 +1,11 @@
 import React from "react";
 import { NavBar } from "../components/NavBar";
 import { Box, Typography } from "@mui/material";
+import { Footer } from "../components/Footer";
 
 export const Homepage = () => {
   return (
-    <Box>
+    <Box height="2000px">
       <NavBar />
       <Box sx={{ textAlign: "center", margin: "40px 0" }}>
         <Typography
@@ -28,6 +29,7 @@ export const Homepage = () => {
           marginBottom: "30px",
         }}
       ></Box>
+      <Footer />
     </Box>
   );
 };

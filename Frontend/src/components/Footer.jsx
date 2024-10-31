@@ -1,7 +1,10 @@
 import React from "react";
+import { styles } from "../styles";
 
-const Footer = () => {
-  return <div>Footer</div>;
+export const Footer = () => {
+  return (
+    <div className={`${styles.paddingX}`}>
+      <div> footer</div>
+    </div>
+  );
 };
-
-export default Footer;

@@ -3,6 +3,7 @@ import { Box, Typography, TextField, Button, Link } from "@mui/material";
 import logo from "../assets/logobackground.jpg";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { toursquare } from "../assets";
 
 const ResetPassword = () => {
   const navigate = useNavigate();
@@ -35,9 +36,9 @@ const ResetPassword = () => {
         }}
       >
         <img
-          src={logo}
+          src={toursquare}
           alt="Logo"
-          style={{ width: "25%", cursor: "pointer" }}
+          style={{ width: "40%", cursor: "pointer" }}
           onClick={() => navigate("/")}
         />
       </Box>
