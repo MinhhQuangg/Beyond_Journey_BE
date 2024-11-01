@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import { NavBar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
 import { styles } from "../styles";
@@ -8,11 +8,25 @@ import GroupIcon from "@mui/icons-material/Group";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import DirectionsRunIcon from "@mui/icons-material/DirectionsRun";
 import SearchIcon from "@mui/icons-material/Search";
+import { level } from "../utils";
+
 export const Homepage = () => {
+  const [isOpenDifficulty, setIsOpenDifficulty] = useState(false);
+  const [selectedDifficulty, setSelectedDifficulty] = useState("Difficulty");
+
+  const handleOpenDifficulty = () => {
+    setIsOpenDifficulty(!isOpenDifficulty);
+  };
+
+  const handleSelectDifficulty = (difficulty) => {
+    setSelectedDifficulty(difficulty);
+    setIsOpenDifficulty(false);
+  };
+
   return (
     <div>
       <NavBar />
-      <div className={`${styles.paddingX} flex flex-col flex-center`}>
+      <div className={`${styles.paddingX} flex flex-col items-center`}>
         <div className="text-center my-[40px]">
           <div className={`${styles.headerText}`}>Find your tour</div>
           <div className="text-[18px]">
@@ -32,17 +46,37 @@ export const Homepage = () => {
           <button className={`${styles.searchHomePage}`}>
             <span className="flex items-center">
               <CalendarMonthIcon />
-              <span className="ml-2">Date From </span>
+              <span className="ml-2">Date From</span>
             </span>
             <ArrowDropDownIcon />
           </button>
-          <button className={`${styles.searchHomePage}`}>
-            <span className="flex items-center">
-              <DirectionsRunIcon />
-              <span className="ml-2">Difficulty</span>
-            </span>
-            <ArrowDropDownIcon />
-          </button>
+          <div className="relative">
+            <button
+              className={`${styles.searchHomePage}`}
+              onClick={handleOpenDifficulty}
+            >
+              <span className="flex items-center">
+                <DirectionsRunIcon />
+                <span className="ml-2">{selectedDifficulty}</span>
+              </span>
+              <ArrowDropDownIcon />
+            </button>
+            {isOpenDifficulty && (
+              <div className="absolute z-10 mt-1 w-full rounded-md bg-white">
+                <div className="py-1">
+                  {level.map((difficulty) => (
+                    <button
+                      key={difficulty}
+                      onClick={() => handleSelectDifficulty(difficulty)}
+                      className="block px-6 py-2 text-sm text-gray-500 hover:text-black w-full text-left !text-[18px]"
+                    >
+                      {difficulty}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
           <button className={`${styles.searchHomePage}`}>
             <span className="flex items-center">
               <GroupIcon />
@@ -55,11 +89,9 @@ export const Homepage = () => {
             Search
           </button>
         </div>
-        <div></div>
       </div>
       <Footer />
     </div>
   );
 };
-
 export default Homepage;

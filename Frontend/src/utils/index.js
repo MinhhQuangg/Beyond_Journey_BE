@@ -1,4 +1,4 @@
-const level = ["easy", "medium", "difficult"];
+const level = ["Easy", "Medium", "Difficult"];
 
 const sort = ["Price low to high", "Price high to low"];
 

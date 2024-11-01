@@ -16,7 +16,7 @@ const styles = {
   sectionSubText: "text-[24px] font-bold text-primary uppercase ",
 
   searchHomePage:
-    " flex justify-between items-center w-full rounded-full border border-black w-[15vw] p-3 px-5 text-[18px]",
+    " flex justify-between items-center w-full rounded-full border border-black w-[13vw] p-3 px-5 text-[18px]",
 };
 
 export { styles };
