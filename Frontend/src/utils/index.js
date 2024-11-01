@@ -8,6 +8,7 @@ const navOptions = [
   "Destination",
   "Travel List",
   "Travel Deal",
+  "Booking",
   "Blogs",
   "About Us",
 ];
