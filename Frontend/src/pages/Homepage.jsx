@@ -2,28 +2,45 @@ import { React, useEffect, useRef, useState } from "react";
 import { NavBar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
 import { styles } from "../styles";
+import { level } from "../utils";
 import MapIcon from "@mui/icons-material/Map";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import GroupIcon from "@mui/icons-material/Group";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import DirectionsRunIcon from "@mui/icons-material/DirectionsRun";
-import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import dayjs from "dayjs";
 import SearchIcon from "@mui/icons-material/Search";
-import { level } from "../utils";
-import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import axios from "axios";
+import { format } from "date-fns";
 
 const Homepage = () => {
   const [isOpenDifficulty, setIsOpenDifficulty] = useState(false);
   const [selectedDifficulty, setSelectedDifficulty] = useState("Difficulty");
   const [isOpenGuest, setIsOpenGuest] = useState(false);
+  const [isOpenDate, setIsOpenDate] = useState(false);
+  const [isOpenDestination, setIsOpenDestination] = useState(true);
   const [countAdult, setCountAdult] = useState(0);
   const [countChildren, setCountChildren] = useState(0);
+  const [date, setDate] = useState(new Date());
+  const [destination, setDestination] = useState([]);
   const refDifficulty = useRef(null);
   const refGuest = useRef(null);
+  const refDate = useRef(null);
+  const refDestination = useRef(null);
+
+  useEffect(() => {
+    const fetchTours = async () => {
+      try {
+        const data = await axios.get("http://127.0.0.1:3000/api/v1/tours");
+        console.log(data.data.data.tours[0].startLocation.description);
+        setDestination(data.data.data.tours);
+      } catch (err) {
+        console.error();
+      }
+    };
+    fetchTours();
+  }, []);
 
   useEffect(() => {
     const handleClose = (e) => {
@@ -32,6 +49,15 @@ const Homepage = () => {
       }
       if (refGuest.current && !refGuest.current.contains(e.target)) {
         setIsOpenGuest(false);
+      }
+      if (refDate.current && !refDate.current.contains(e.target)) {
+        setIsOpenDate(false);
+      }
+      if (
+        refDestination.current &&
+        !refDestination.current.contains(e.target)
+      ) {
+        setIsOpenDestination(false);
       }
     };
 
@@ -52,6 +78,14 @@ const Homepage = () => {
     setIsOpenDifficulty(!isOpenDifficulty);
   };
 
+  const handleOpenDate = () => {
+    setIsOpenDate(!isOpenDate);
+  };
+
+  const handleOpenDestination = () => {
+    setIsOpenDestination(!isOpenDestination);
+  };
+
   const handleSelectDifficulty = (difficulty) => {
     setSelectedDifficulty(difficulty);
     setIsOpenDifficulty(false);
@@ -70,44 +104,63 @@ const Homepage = () => {
     <div>
       <NavBar />
       <div className={`${styles.paddingX} flex flex-col items-center`}>
-        <div className="text-center my-10">
+        <div className="text-center my-[40px]">
           <div className={`${styles.headerText}`}>Find your tour</div>
-          <div className="text-lg">
+          <div className="text-[18px]">
             Have a dream destination in mind? Whether you want to follow your
             appetite to Tuscany or go wild in America's greatest national parks,
             our guided tour packages will get you there.
           </div>
         </div>
-        <div className="flex flex-wrap justify-between rounded-sm 2xl:rounded-full gap-4 w-full border-2 border-black p-3 mb-[30px]">
-          <button className={`${styles.searchHomePage}`}>
-            <span className="flex items-center">
-              <MapIcon />
-              <span className="ml-2">Destination</span>
-            </span>
-            <ArrowDropDownIcon />
-          </button>
-
-          <span className="flex items-center">
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DesktopDatePicker
-                sx={{
-                  "& .MuiInputBase-root": {
-                    borderRadius: "30px",
-                    border: "1px solid",
-                  },
-                  "&:hover .MuiOutlinedInput-notchedOutline": {
-                    borderColor: "white", // Change border color on hover
-                  },
-                  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                    borderColor: "white", // Change border color when focused
-                  },
-                }}
-                views={["year", "month", "day"]}
-                minDate={dayjs()}
-              />
-            </LocalizationProvider>
-          </span>
-
+        <div className="flex justify-between gap-4 w-full rounded-full border-2 border-black p-[14px] mb-[30px]">
+          <div className="relative" ref={refDestination}>
+            <button
+              className={`${styles.searchHomePage}`}
+              onClick={() => handleOpenDestination()}
+            >
+              <span className="flex items-center">
+                <MapIcon />
+                <span className="ml-2">Destination</span>
+              </span>
+              <ArrowDropDownIcon />
+            </button>
+            {isOpenDestination && (
+              <div className="absolute z-10 w-full mt-4 rounded-md my-1 bg-white py-1  max-h-60 overflow-y-auto">
+                {destination.map((destination, index) => (
+                  <button
+                    key={index}
+                    className="block px-6 py-2 text-gray-500 hover:text-black w-full text-left !text-[18px]"
+                  >
+                    {destination.startLocation.description}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+          <div className="relative" ref={refDate}>
+            <button
+              className={`${styles.searchHomePage}`}
+              onClick={() => handleOpenDate()}
+            >
+              <span className="flex items-center">
+                <CalendarMonthIcon />
+                <span className="ml-2">{format(date, "MMMM d, yyyy")}</span>
+              </span>
+              <ArrowDropDownIcon />
+            </button>
+            {isOpenDate && (
+              <div className="absolute z-10 w-full mt-4 rounded-md bg-white py-1">
+                <div className="flex justify-center">
+                  <DatePicker
+                    selected={date}
+                    onChange={(date) => setDate(date)}
+                    inline
+                    minDate={new Date()}
+                  />
+                </div>
+              </div>
+            )}
+          </div>
           <div className="relative" ref={refDifficulty}>
             <button
               className={`${styles.searchHomePage}`}
@@ -120,7 +173,7 @@ const Homepage = () => {
               <ArrowDropDownIcon />
             </button>
             {isOpenDifficulty && (
-              <div className="absolute z-10 mt-1 w-full rounded-md bg-white py-1">
+              <div className="absolute z-10 mt-4 w-full rounded-md bg-white py-1">
                 {level.map((difficulty) => (
                   <button
                     key={difficulty}
@@ -149,7 +202,7 @@ const Homepage = () => {
               <ArrowDropDownIcon />
             </button>
             {isOpenGuest && (
-              <div className="absolute py-3 z-10 mt-1 bg-white px-3 w-full">
+              <div className="absolute py-3 z-10 mt-4 bg-white px-3 w-full">
                 <div className="px-4 text-[18px] w-full">
                   <div className="flex justify-between items-center w-full pb-3">
                     <div className="flex items-center ">
