@@ -7,7 +7,7 @@ import {
 import Login from "../pages/Login";
 import SignUp from "../pages/Signup";
 import ErrorPage from "../pages/ErrorPage";
-import Homepage from "../pages/Homepage";
+import HomePage from "../pages/HomePage";
 import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";
 
@@ -17,7 +17,7 @@ export const Routes = () => {
       <RouteComponent>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/resetpassword/:token" element={<ResetPassword />} />
         <Route path="*" element={<ErrorPage />} />
