@@ -99,7 +99,7 @@ const SearchBar = () => {
       setCountChildren(countChildren - 1);
   };
   return (
-    <div className={`${styles.paddingX} flex flex-col items-center`}>
+    <div className={`${styles.paddingX} flex flex-col`}>
       <div className="text-center my-[40px]">
         <div className={`${styles.headerText}`}>Search Tours</div>
         <div className="text-[18px]">
@@ -108,7 +108,7 @@ const SearchBar = () => {
           our guided tour packages will get you there.
         </div>
       </div>
-      <div className="flex justify-between gap-4 w-full rounded-full border-2 border-black p-[14px] mb-[30px]">
+      <div className="flex flex-wrap justify-between gap-1 w-full rounded-full border-2 border-black p-[14px] mb-[30px]">
         <div className="relative" ref={refDestination}>
           <button
             className={`${styles.searchHomePage}`}
@@ -244,7 +244,7 @@ const SearchBar = () => {
             </div>
           )}
         </div>
-        <button className="text-center rounded-full border border-black w-[8vw] p-3 text-[20px]">
+        <button className="text-center rounded-full border border-black xl:w-[6vw] 2xl:w-[8vw] p-3 text-[20px]">
           <SearchIcon />
           Search
         </button>

@@ -1,6 +1,6 @@
 const styles = {
-  paddingXNav: "sm:px-16",
-  paddingX: "sm:px-[20rem]",
+  paddingXNav: "sm:px-16 px-6",
+  paddingX: "2xl:px-[200px] sm:px-10",
   paddingXFooter: "sm:px-20",
   paddingY: "sm:py-16 py-6",
   padding: "sm:px-16 px-6 sm:py-16 py-10",
@@ -16,7 +16,7 @@ const styles = {
   sectionSubText: "text-[24px] font-bold text-primary uppercase ",
 
   searchHomePage:
-    "flex justify-between items-center rounded-full border border-black w-full xl:w-[10vw] 2xl:w-[13vw] p-3 px-5 text-[18px]",
+    "flex justify-between items-center rounded-full border border-black w-full xl:w-[12vw] 2xl:w-[14vw] p-3 px-5 text-[18px]",
 };
 
 export { styles };
