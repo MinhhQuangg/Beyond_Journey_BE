@@ -19,7 +19,10 @@ export const Routes = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
-        <Route path="/resetpassword/:token" element={<ResetPassword />} />
+        <Route
+          path="/api/v1/users/resetPassword/:token"
+          element={<ResetPassword />}
+        />
         <Route path="*" element={<ErrorPage />} />
       </RouteComponent>
     </BrowserRouter>

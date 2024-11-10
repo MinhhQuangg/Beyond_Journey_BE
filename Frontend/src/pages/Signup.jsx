@@ -1,9 +1,10 @@
 import { Box, Button, Link, TextField, Typography } from "@mui/material";
 import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toursquare } from "../assets";
+
 export const SignUp = () => {
   const {
     register,
@@ -15,6 +16,7 @@ export const SignUp = () => {
 
   const navigate = useNavigate();
   const password = watch("password");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const onSubmit = async (data) => {
     try {
@@ -22,9 +24,11 @@ export const SignUp = () => {
         "http://127.0.0.1:3000/api/v1/users/signup",
         data
       );
-      if (response.data.status === "success") navigate("/login");
+      if (response.data.status === "success") {
+        navigate("/login");
+      }
     } catch (err) {
-      console.log(err);
+      setErrorMessage(err.response?.data?.message || "An error occurred.");
     }
   };
 
@@ -86,8 +90,22 @@ export const SignUp = () => {
           </Link>
         </Typography>
 
+        {/* Display error message if present */}
+        {errorMessage && (
+          <Typography
+            sx={{
+              color: "red",
+              fontSize: "14px",
+              textAlign: "left",
+              mb: 2,
+            }}
+          >
+            {errorMessage}
+          </Typography>
+        )}
+
         <form onSubmit={handleSubmit(onSubmit)}>
-          {/*  Name */}
+          {/* Name */}
           <Typography
             sx={{
               pb: "12px",

@@ -1,5 +1,6 @@
 import { Box, Button, Link, TextField, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toursquare } from "../assets";
@@ -9,13 +10,31 @@ export const ForgotPassword = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
     trigger,
   } = useForm({ mode: "onChange" });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:3000/api/v1/users/forgotPassword",
+        data
+      );
+      if (response.data.status === "success") {
+        setSuccessMessage(
+          "Success! Please check your email for reset instructions."
+        );
+        setErrorMessage("");
+      }
+    } catch (err) {
+      setErrorMessage(err.response?.data?.message || "An error occurred.");
+      setSuccessMessage("");
+    }
   };
+
   return (
     <Box
       sx={{
@@ -62,10 +81,39 @@ export const ForgotPassword = () => {
         {/* Instructions */}
         <Box sx={{ mb: "36px" }}>
           <Typography variant="body1" color="textSecondary" textAlign="left">
-            Fear not. Please enter the email address. We'll email you
+            Fear not. Please enter your email address. We'll email you
             instructions to reset your password.
           </Typography>
         </Box>
+
+        {/* Display success message if present */}
+        {successMessage && (
+          <Typography
+            sx={{
+              color: "green",
+              fontSize: "14px",
+              textAlign: "left",
+              mb: 2,
+            }}
+          >
+            {successMessage}
+          </Typography>
+        )}
+
+        {/* Display error message if present */}
+        {errorMessage && (
+          <Typography
+            sx={{
+              color: "red",
+              fontSize: "14px",
+              textAlign: "left",
+              mb: 2,
+            }}
+          >
+            {errorMessage}
+          </Typography>
+        )}
+
         <Box sx={{ mb: "24px" }}>
           <Typography
             sx={{
@@ -95,7 +143,7 @@ export const ForgotPassword = () => {
         </Box>
 
         {/* Reset Password Button */}
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
           <Button
             onClick={handleSubmit(onSubmit)}
             variant="contained"
@@ -107,8 +155,8 @@ export const ForgotPassword = () => {
               textAlign: "center",
               fontSize: "16px",
               padding: "5px 30px",
-              marginLeft: "5%",
             }}
+            disabled={!isValid}
           >
             Reset Password
           </Button>
@@ -121,7 +169,7 @@ export const ForgotPassword = () => {
               mt: 1,
               color: "#3991cd",
               fontSize: "16px",
-              marginRight: "5%",
+              marginLeft: "20px",
             }}
             onClick={() => navigate("/login")}
           >
