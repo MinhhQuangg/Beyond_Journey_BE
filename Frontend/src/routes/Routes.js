@@ -7,9 +7,9 @@ import {
 import Login from "../pages/Login";
 import SignUp from "../pages/Signup";
 import ErrorPage from "../pages/ErrorPage";
-import HomePage from "../pages/HomePage";
 import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";
+import HomePage from "../pages/HomePage";
 
 export const Routes = () => {
   return (
@@ -19,10 +19,7 @@ export const Routes = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
-        <Route
-          path="/api/v1/users/resetPassword/:token"
-          element={<ResetPassword />}
-        />
+        <Route path="/resetpassword/:token" element={<ResetPassword />} />
         <Route path="*" element={<ErrorPage />} />
       </RouteComponent>
     </BrowserRouter>
