@@ -4,6 +4,10 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toursquare } from "../assets";
+import {
+  showToastError,
+  showToastSuccess,
+} from "../components/common/ShowToast";
 
 export const ForgotPassword = () => {
   const navigate = useNavigate();
@@ -28,12 +32,14 @@ export const ForgotPassword = () => {
         setSuccessMessage(
           "Success! Please check your email for reset instructions."
         );
+        showToastSuccess(response.data.success);
         setErrorMessage("");
         reset({ email: "" });
       }
     } catch (err) {
       setErrorMessage(err.response?.data?.message || "An error occurred.");
       setSuccessMessage("");
+      showToastError(err.response?.data?.message);
     }
   };
 

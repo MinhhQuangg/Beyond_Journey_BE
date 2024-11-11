@@ -4,6 +4,10 @@ import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 import { toursquare } from "../assets";
 import axios from "axios";
+import {
+  showToastError,
+  showToastSuccess,
+} from "../components/common/ShowToast";
 
 const ResetPassword = () => {
   const navigate = useNavigate();
@@ -27,10 +31,12 @@ const ResetPassword = () => {
         data
       );
       if (response.data.status === "success") {
+        showToastSuccess(response.data.success);
         navigate("/login");
       }
     } catch (err) {
       setErrorMessage(err.response?.data?.message || "An error occurred.");
+      showToastError(err.response?.data?.message);
     }
   };
   return (

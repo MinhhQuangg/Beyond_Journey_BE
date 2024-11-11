@@ -4,6 +4,10 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toursquare } from "../assets";
+import {
+  showToastError,
+  showToastSuccess,
+} from "../components/common/ShowToast";
 
 export const SignUp = () => {
   const {
@@ -25,9 +29,11 @@ export const SignUp = () => {
         data
       );
       if (response.data.status === "success") {
+        showToastSuccess(response.data.status);
         navigate("/login");
       }
     } catch (err) {
+      showToastError(err.response?.data?.message);
       setErrorMessage(err.response?.data?.message || "An error occurred.");
     }
   };

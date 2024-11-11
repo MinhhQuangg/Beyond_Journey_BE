@@ -17,6 +17,10 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toursquare } from "../assets";
+import {
+  showToastError,
+  showToastSuccess,
+} from "../components/common/ShowToast";
 
 export const Login = () => {
   const formContext = useForm();
@@ -36,7 +40,9 @@ export const Login = () => {
         data
       );
       console.log(response);
+      showToastSuccess(response.data.status);
     } catch (err) {
+      showToastError(err.response?.data?.message);
       console.log(err);
     } finally {
       setLoading(false);
