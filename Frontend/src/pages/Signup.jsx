@@ -59,8 +59,7 @@ export const SignUp = () => {
       </Box>
       <Box
         sx={{
-          width: "100%",
-          maxWidth: "500px",
+          width: "20%",
           padding: "40px",
           borderRadius: "8px",
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
@@ -78,7 +77,7 @@ export const SignUp = () => {
         >
           Sign up
         </Typography>
-        <Typography sx={{ mb: "20px", textAlign: "left", fontSize: "13px" }}>
+        <Typography sx={{ mb: "20px", textAlign: "left", fontSize: "16px" }}>
           Already have an account?{" "}
           <Link
             component="button"

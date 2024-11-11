@@ -106,7 +106,6 @@ exports.protect = async (req, res, next) => {
     req.user = freshUser;
     next();
   } catch (err) {
-    console.log(err);
     next(err);
   }
 };
@@ -136,7 +135,7 @@ exports.forgotPassword = async (req, res, next) => {
 
     //TODO 3) send it to user's email
     console.log(res.get('host'));
-    const resetURL = `${req.protocol}://${req.get('host')}/api/v1/users/resetPassword/${resetToken}`;
+    const resetURL = `${process.env.FRONTEND_PORT}/resetPassword/${resetToken}`;
     const message = `Forgot your password? Submit a Patch request with your new password and passwordConfirm to: ${resetURL}.\n Please ignore this email if you did not forget your password `;
 
     await new SentEmail(user, resetURL).sendPasswordReset();
@@ -198,7 +197,6 @@ exports.updatePassword = async (req, res, next) => {
   try {
     //TODO 1) Get user from collection
     const user = await User.findById(req.user._id).select('+password');
-    console.log(user);
     //TODO 2) Check if POSTed current password is correct
     if (
       !(await user.correctPassword(req.body.currentPassword, user.password))

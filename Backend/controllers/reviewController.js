@@ -46,7 +46,6 @@ exports.deleteReview = async (req, res, next) => {
 
 exports.updateReview = async (req, res, next) => {
   try {
-    console.log(req.params.id);
     const review = await Review.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
       runValidators: true,

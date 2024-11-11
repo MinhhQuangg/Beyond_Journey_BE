@@ -13,7 +13,15 @@ const handleDuplicateFieldsDB = (err) => {
 
 const handleValidationErrorDB = (err) => {
   const errors = Object.values(err.errors).filter((el) => el.message);
-  const message = `Invalid input data. ${errors.join('. ')}`;
+
+  const messages = errors.map((el) => {
+    if (el.message.includes('Path `password`')) {
+      return 'Password is shorter than the minimum allowed length (8 characters).';
+    }
+    return el.message;
+  });
+
+  const message = `Invalid input data. ${messages.join('. ')}`;
   return new AppError(message, 400);
 };
 

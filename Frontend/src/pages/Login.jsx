@@ -74,7 +74,7 @@ export const Login = () => {
 
       <Box
         sx={{
-          width: "25%",
+          width: "20%",
           backgroundColor: "#fff",
           padding: "30px",
           borderRadius: "8px",

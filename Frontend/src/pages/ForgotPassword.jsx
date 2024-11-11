@@ -12,6 +12,7 @@ export const ForgotPassword = () => {
     handleSubmit,
     formState: { errors, isValid },
     trigger,
+    reset,
   } = useForm({ mode: "onChange" });
 
   const [errorMessage, setErrorMessage] = useState("");
@@ -28,6 +29,7 @@ export const ForgotPassword = () => {
           "Success! Please check your email for reset instructions."
         );
         setErrorMessage("");
+        reset({ email: "" });
       }
     } catch (err) {
       setErrorMessage(err.response?.data?.message || "An error occurred.");
@@ -63,10 +65,12 @@ export const ForgotPassword = () => {
       {/* Main Content Box */}
       <Box
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "left",
-          maxWidth: "25%",
+          width: "20%",
+          padding: "40px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+          backgroundColor: "#fff",
+          textAlign: "left",
         }}
       >
         {/* Header */}
@@ -114,7 +118,7 @@ export const ForgotPassword = () => {
           </Typography>
         )}
 
-        <Box sx={{ mb: "24px" }}>
+        <Box margin="40px 0">
           <Typography
             sx={{
               pb: "12px",
@@ -127,7 +131,7 @@ export const ForgotPassword = () => {
           </Typography>
           {/* Input Field */}
           <TextField
-            variant="outlined"
+            variant="standard"
             size="small"
             fullWidth
             sx={{ mb: 2 }}

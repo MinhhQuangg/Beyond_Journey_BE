@@ -15,7 +15,6 @@ router.patch('/updateMyPassword', authController.updatePassword);
 router.get('/me', userController.getMe, userController.getUser);
 router.patch('/updateMe', userController.updateMe);
 //TODO DELETING
-
 router.use(authController.restrictTo('admin'));
 router.route('/').get(userController.getAllUsers);
 
