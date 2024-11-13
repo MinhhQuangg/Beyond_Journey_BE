@@ -18,7 +18,7 @@ const SearchBar = () => {
     useState("Activity level");
   const [isOpenGuest, setIsOpenGuest] = useState(false);
   const [isOpenDate, setIsOpenDate] = useState(false);
-  const [isOpenDestination, setIsOpenDestination] = useState(true);
+  const [isOpenDestination, setIsOpenDestination] = useState(false);
   const [countAdult, setCountAdult] = useState(0);
   const [countChildren, setCountChildren] = useState(0);
   const [date, setDate] = useState(null);
@@ -192,7 +192,9 @@ const SearchBar = () => {
             <span className="flex items-center">
               <GroupIcon />
               <span className="ml-2">
-                {(countAdult === 0) & (countChildren === 0) ? "Guests" : total}
+                {(countAdult === 0) & (countChildren === 0)
+                  ? "Guests"
+                  : `${total} Guests`}
               </span>
             </span>
             <ArrowDropDownIcon />
@@ -244,7 +246,7 @@ const SearchBar = () => {
             </div>
           )}
         </div>
-        <button className="text-center rounded-full border border-black xl:w-[6vw] 2xl:w-[8vw] p-3 text-[20px]">
+        <button className="text-center rounded-full border border-black xl:w-[6vw] 2xl:w-[8vw] p-3 text-[20px] bg-blue-300 hover:bg-blue-500">
           <SearchIcon />
           Search
         </button>
