@@ -84,15 +84,14 @@ export const SignUp = () => {
           Sign up
         </Typography>
         <Typography sx={{ mb: "20px", textAlign: "left", fontSize: "16px" }}>
-          Already have an account?{" "}
-          <Link
+          Already have an account? &nbsp;
+          <Typography
             component="button"
             onClick={() => navigate("/login")}
             sx={{ color: "#3991cd" }}
-            underline="hover"
           >
             Log in
-          </Link>
+          </Typography>
         </Typography>
 
         {/* Display error message if present */}

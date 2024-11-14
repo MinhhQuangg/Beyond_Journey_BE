@@ -27,6 +27,8 @@ exports.getMe = (req, res, next) => {
 };
 
 exports.updateMe = async (req, res, next) => {
+  console.log(req.file);
+  console.log(req.body);
   try {
     //TODO 1) Create error if user POSTS password data
     if (req.body.password || req.body.passwordConfirm) {
@@ -40,7 +42,7 @@ exports.updateMe = async (req, res, next) => {
     //TODO 2) Filter unwanted fields
     const filteredBody = filterObj(req.body, 'name', 'email');
     //TODO 3) Update user document
-    const updatedUser = await User.findByIdandUpdate(
+    const updatedUser = await User.findByIdAndUpdate(
       req.user.id,
       filteredBody,
       {
