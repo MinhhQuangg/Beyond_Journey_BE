@@ -20,7 +20,7 @@ exports.signup = async (req, res, next) => {
       passwordConfirm: req.body.passwordConfirm,
       passwordChangedAt: req.body.passwordChangedAt,
       role: req.body.role,
-      photo: req.body.photo,
+      // photo: req.file.filename,
     });
     const url = `${req.protocol}://${req.get('host')}/me`;
     await new SentEmail(newUser, url).sendWelcome();
