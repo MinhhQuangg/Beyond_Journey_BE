@@ -1,16 +1,16 @@
 [
   {
     "_id": "5c8a1d5b0190b214360dc057",
-    "name": "Jonas Schmedtmann",
-    "email": "admin@natours.io",
+    "name": "user01",
+    "email": "user01@example.com",
     "role": "admin",
     "active": true,
     "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
   },
   {
     "_id": "5c8a1dfa2f8fb814b56fa181",
-    "name": "Lourdes Browning",
-    "email": "loulou@example.com",
+    "name": "user02",
+    "email": "user02@example.com",
     "role": "user",
     "active": true,
 
@@ -18,8 +18,8 @@
   },
   {
     "_id": "5c8a1e1a2f8fb814b56fa182",
-    "name": "Sophie Louise Hart",
-    "email": "sophie@example.com",
+    "name": "user03",
+    "email": "user03@example.com",
     "role": "user",
     "active": true,
 
@@ -27,8 +27,8 @@
   },
   {
     "_id": "5c8a1ec62f8fb814b56fa183",
-    "name": "Ayla Cornell",
-    "email": "ayls@example.com",
+    "name": "user04",
+    "email": "user04@example.com",
     "role": "user",
     "active": true,
 
@@ -36,8 +36,8 @@
   },
   {
     "_id": "5c8a1f292f8fb814b56fa184",
-    "name": "Leo Gillespie",
-    "email": "leo@example.com",
+    "name": "user05",
+    "email": "user50@example.com",
     "role": "guide",
     "active": true,
 
@@ -45,8 +45,8 @@
   },
   {
     "_id": "5c8a1f4e2f8fb814b56fa185",
-    "name": "Jennifer Hardy",
-    "email": "jennifer@example.com",
+    "name": "user06",
+    "email": "user06@example.com",
     "role": "guide",
     "active": true,
 
@@ -54,8 +54,8 @@
   },
   {
     "_id": "5c8a22c62f8fb814b56fa18b",
-    "name": "Miyah Myles",
-    "email": "miyah@example.com",
+    "name": "user07",
+    "email": "user07@example.com",
     "role": "lead-guide",
     "active": true,
     "photo": "user-12.jpg",
