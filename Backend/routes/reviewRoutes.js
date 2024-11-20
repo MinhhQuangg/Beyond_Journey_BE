@@ -4,6 +4,12 @@ const authController = require('./../controllers/authController');
 
 const router = express.Router({ mergeParams: true });
 
+router.get(
+  '/getFiveStarReviews',
+  reviewController.getFiveStarRviews,
+  reviewController.getAllReview,
+);
+
 router.use(authController.protect);
 
 router

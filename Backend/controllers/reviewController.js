@@ -1,6 +1,13 @@
 const Review = require('../models/reviewModel');
 const AppError = require('../utils/appError');
 
+exports.getFiveStarRviews = async (req, res, next) => {
+  req.query.limit = '5';
+  req.query.sort = '-rating';
+  req.query.fields = 'review, rating, tour, user';
+  next();
+};
+
 exports.getAllReview = async (req, res, next) => {
   try {
     let filter = {};
