@@ -3,7 +3,7 @@ import { styles } from "../../styles";
 import axios from "axios";
 import { Rating } from "@mui/material";
 
-const BestReview = () => {
+const Testimonials = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const BestReview = () => {
           {reviews.map((review, index) => (
             <div
               key={index}
-              className="flex flex-col w-[30%] p-4 border rounded-md"
+              className="flex flex-col w-[30%] p-4 border rounded-xl"
             >
               <div className="pb-4">
                 <Rating readOnly defaultValue={review.rating} />
@@ -58,4 +58,4 @@ const BestReview = () => {
   );
 };
 
-export default BestReview;
+export default Testimonials;
