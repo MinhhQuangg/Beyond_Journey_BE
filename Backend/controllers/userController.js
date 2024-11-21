@@ -34,8 +34,6 @@ exports.resizeUserPhoto = async (req, res, next) => {
   try {
     if (!req.file) return next();
 
-    console.log(req.user);
-
     req.file.fileName = `${req.user.role}-${req.user.id}-${Date.now()}.jpeg`;
 
     await sharp(req.file.buffer)
@@ -43,6 +41,7 @@ exports.resizeUserPhoto = async (req, res, next) => {
       .toFormat('jpeg')
       .jpeg({ quality: 90 })
       .toFile(`public/img/users/${req.file.fileName}`);
+    req.body.photo = `/img/users/${req.file.fileName}`;
     next();
   } catch (err) {
     next(err);
@@ -89,8 +88,7 @@ exports.updateMe = async (req, res, next) => {
     //TODO 2) Filter unwanted fields
     const filteredBody = filterObj(req.body, 'name', 'email');
 
-    if (req.file) filteredBody.photo = req.file.filename;
-
+    if (req.file) filteredBody.photo = req.body.photo;
     //TODO 3) Update user document
     const updatedUser = await User.findByIdAndUpdate(
       req.user.id,

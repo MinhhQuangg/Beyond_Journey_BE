@@ -32,7 +32,6 @@ const SearchBar = () => {
     const fetchTours = async () => {
       try {
         const data = await axios.get("http://127.0.0.1:3000/api/v1/tours");
-        console.log(data.data.data.tours[0].startLocation.description);
         setDestination(data.data.data.tours);
       } catch (err) {
         console.error();
@@ -101,11 +100,9 @@ const SearchBar = () => {
   return (
     <div className={`${styles.paddingX} flex flex-col items-center`}>
       <div className="text-center my-[40px]">
-        <div className={`${styles.headerText}`}>Search Tours</div>
-        <div className="text-[18px]">
-          Have a dream destination in mind? Whether you want to follow your
-          appetite to Tuscany or go wild in America's greatest national parks,
-          our guided tour packages will get you there.
+        <div className={`${styles.headerSubText}`}>Search Tours</div>
+        <div className={`${styles.headerText}`}>
+          Find Your Perfect Tour and Start Exploring Amazing Destinations
         </div>
       </div>
       <div className="flex justify-between gap-5 items-center rounded-full border border-black w-[85%] p-3 px-5 text-[18px]">

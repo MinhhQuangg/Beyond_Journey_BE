@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
   photo: {
     // required: [true, 'Please upload your image'],
     type: String,
-    default: 'default.jpg',
+    default: '/img/users/default.jpg',
   },
   role: {
     type: String,

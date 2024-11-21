@@ -23,7 +23,7 @@ const CreateStar = ({ maxRating = 5, color = "#fcc419", size = 48 }) => {
           />
         ))}
       </div>
-      <p>{temp || rating || ""}</p>
+      {/* <p>{temp || rating || ""}</p> */}
     </div>
   );
 };

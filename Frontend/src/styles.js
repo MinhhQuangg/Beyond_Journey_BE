@@ -1,13 +1,13 @@
 const styles = {
   paddingXNav: "sm:px-16 px-6",
-  paddingX: "2xl:px-[200px] sm:px-10",
+  paddingX: "2xl:px-[200px] sm:px-10 py-10",
   paddingXFooter: "sm:px-20",
   paddingY: "sm:py-16 py-6",
   padding: "sm:px-16 px-6 sm:py-16 py-10",
 
   headerNav: "text-[28px]",
 
-  headerText: "text-[45px] font-bold",
+  headerText: "text-[40px] font-bold",
   headerSubText:
     "text-primary font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px]",
 
