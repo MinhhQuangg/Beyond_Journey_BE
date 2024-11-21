@@ -108,8 +108,8 @@ const SearchBar = () => {
           our guided tour packages will get you there.
         </div>
       </div>
-      <div className="flex flex-wrap justify-between items-center gap-1 w-[80%] rounded-full border-2 border-black p-[14px] mb-[30px]">
-        <div className="relative" ref={refDestination}>
+      <div className="flex justify-between gap-5 items-center rounded-full border border-black w-[85%] p-3 px-5 text-[18px]">
+        <div className="relative grow-1 w-full" ref={refDestination}>
           <button
             className={`${styles.searchHomePage}`}
             onClick={() => handleOpenDestination()}
@@ -133,7 +133,7 @@ const SearchBar = () => {
             </div>
           )}
         </div>
-        <div className="relative" ref={refDate}>
+        <div className="relative grow-1 w-full" ref={refDate}>
           <button
             className={`${styles.searchHomePage}`}
             onClick={() => handleOpenDate()}
@@ -159,7 +159,7 @@ const SearchBar = () => {
             </div>
           )}
         </div>
-        <div className="relative" ref={refDifficulty}>
+        <div className="relative grow-1  w-full" ref={refDifficulty}>
           <button
             className={`${styles.searchHomePage}`}
             onClick={handleOpenDifficulty}
@@ -184,7 +184,7 @@ const SearchBar = () => {
             </div>
           )}
         </div>
-        <div className="relative" ref={refGuest}>
+        <div className="relative grow-1  w-full" ref={refGuest}>
           <button
             className={`${styles.searchHomePage}`}
             onClick={() => handleOpenGuest()}
@@ -246,8 +246,8 @@ const SearchBar = () => {
             </div>
           )}
         </div>
-        <div className="flex items-center">
-          <button className="text-center rounded-full border border-black xl:w-[6vw] 2xl:w-[8vw] p-3 text-[20px] bg-blue-300 hover:bg-blue-500">
+        <div className="grow-1 w-[50%]">
+          <button className="text-center rounded-full border border-black p-3 w-full text-[20px] bg-blue-300 hover:bg-blue-500">
             <span className="flex items-center">
               <SearchIcon />
               <span className="ml-2">Search</span>

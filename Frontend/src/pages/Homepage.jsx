@@ -7,6 +7,7 @@ import BestTour from "../components/homePage/BestTour";
 import BestReview from "../components/homePage/BestReview";
 import AboutUs from "../components/homePage/AboutUs";
 import Question from "../components/homePage/Question";
+import CreateStar from "../components/common/CreateStar";
 
 const HomePage = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage = () => {
       <BestReview />
       <AboutUs />
       <Question />
+      <CreateStar />
       <Footer />
     </div>
   );

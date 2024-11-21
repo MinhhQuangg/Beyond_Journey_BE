@@ -7,7 +7,7 @@ const styles = {
 
   headerNav: "text-[28px]",
 
-  headerText: "text-[48px]",
+  headerText: "text-[45px] font-bold",
   headerSubText:
     "text-primary font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px]",
 
@@ -16,7 +16,7 @@ const styles = {
   sectionSubText: "text-[24px] font-bold text-primary uppercase ",
 
   searchHomePage:
-    "flex justify-between items-center rounded-full border border-black w-full xl:w-[12vw] 2xl:w-[14vw] p-3 px-5 text-[18px]",
+    "flex justify-between items-center rounded-full border border-black w-full p-3 px-5 text-[18px]",
 };
 
 export { styles };
