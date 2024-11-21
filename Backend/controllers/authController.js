@@ -135,11 +135,10 @@ exports.forgotPassword = async (req, res, next) => {
     await user.save({ validateBeforeSave: false });
 
     //TODO 3) send it to user's email
-    console.log(res.get('host'));
     const resetURL = `${process.env.FRONTEND_PORT}/resetPassword/${resetToken}`;
     const message = `Forgot your password? Submit a Patch request with your new password and passwordConfirm to: ${resetURL}.\n Please ignore this email if you did not forget your password `;
-
     await new SentEmail(user, resetURL).sendPasswordReset();
+
     res.status(200).json({
       status: 'success',
       message: 'Token sent to email!',

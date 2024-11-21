@@ -6,7 +6,7 @@ const router = express.Router({ mergeParams: true });
 
 router.get(
   '/getFiveStarReviews',
-  reviewController.getFiveStarRviews,
+  reviewController.getFiveStarReviews,
   reviewController.getAllReview,
 );
 

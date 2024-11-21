@@ -1,7 +1,8 @@
 const Review = require('../models/reviewModel');
+const APIFeatures = require('../utils/apifeatures');
 const AppError = require('../utils/appError');
 
-exports.getFiveStarRviews = async (req, res, next) => {
+exports.getFiveStarReviews = async (req, res, next) => {
   req.query.limit = '5';
   req.query.sort = '-rating';
   req.query.fields = 'review, rating, tour, user';
@@ -12,7 +13,12 @@ exports.getAllReview = async (req, res, next) => {
   try {
     let filter = {};
     if (req.params.tourID) filter = { tour: req.params.tourID };
-    const reviews = await Review.find(filter);
+    const features = new APIFeatures(Review.find(filter), req.query)
+      .filter()
+      .sort()
+      .limitFields()
+      .paginate();
+    const reviews = await features.query;
     res.status(200).json({
       status: 'success',
       length: reviews.length,

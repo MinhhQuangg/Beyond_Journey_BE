@@ -9,7 +9,7 @@ import SignUp from "../pages/Signup";
 import ErrorPage from "../pages/ErrorPage";
 import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";
-import HomePage from "../pages/HomePage";
+import HomePage from "../pages/Homepage";
 
 export const Routes = () => {
   return (

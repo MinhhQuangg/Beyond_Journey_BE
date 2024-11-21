@@ -16,7 +16,6 @@ const AppError = require('./../utils/appError');
 const multerStorage = multer.memoryStorage();
 
 const multerFilter = (req, file, cb) => {
-  console.log(file);
   if (file.mimetype.startsWith('image')) {
     cb(null, true);
   } else {
@@ -35,7 +34,9 @@ exports.resizeUserPhoto = async (req, res, next) => {
   try {
     if (!req.file) return next();
 
-    req.file.fileName = `user-${req.user.id}-${Date.now()}.jpeg`;
+    console.log(req.user);
+
+    req.file.fileName = `${req.user.role}-${req.user.id}-${Date.now()}.jpeg`;
 
     await sharp(req.file.buffer)
       .resize(500, 500)
@@ -86,10 +87,8 @@ exports.updateMe = async (req, res, next) => {
       );
     }
     //TODO 2) Filter unwanted fields
-    console.log(req.body);
     const filteredBody = filterObj(req.body, 'name', 'email');
-    console.log(filteredBody);
-    console.log(req.file);
+
     if (req.file) filteredBody.photo = req.file.filename;
 
     //TODO 3) Update user document

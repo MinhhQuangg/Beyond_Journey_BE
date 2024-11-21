@@ -6,6 +6,7 @@ import { NavBar } from "../components/NavBar";
 import BestTour from "../components/homePage/BestTour";
 import BestReview from "../components/homePage/BestReview";
 import AboutUs from "../components/homePage/AboutUs";
+import Question from "../components/homePage/Question";
 
 const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
       <BestTour />
       <BestReview />
       <AboutUs />
+      <Question />
       <Footer />
     </div>
   );
