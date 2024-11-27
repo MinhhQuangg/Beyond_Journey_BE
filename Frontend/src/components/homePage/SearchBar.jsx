@@ -105,8 +105,8 @@ const SearchBar = () => {
           Find Your Perfect Tour and Start Exploring Amazing Destinations
         </div>
       </div>
-      <div className="flex justify-between gap-5 items-center rounded-full border border-black w-[85%] p-3 px-5 text-[18px]">
-        <div className="relative grow-1 w-full" ref={refDestination}>
+      <div className="flex flex-row flex-wrap justify-between gap-5 items-center rounded-full border border-black w-[85%] p-3 px-5 text-[18px]">
+        <div className="relative grow" ref={refDestination}>
           <button
             className={`${styles.searchHomePage}`}
             onClick={() => handleOpenDestination()}
@@ -130,7 +130,7 @@ const SearchBar = () => {
             </div>
           )}
         </div>
-        <div className="relative grow-1 w-full" ref={refDate}>
+        <div className="relative grow" ref={refDate}>
           <button
             className={`${styles.searchHomePage}`}
             onClick={() => handleOpenDate()}
@@ -156,7 +156,7 @@ const SearchBar = () => {
             </div>
           )}
         </div>
-        <div className="relative grow-1  w-full" ref={refDifficulty}>
+        <div className="relative grow" ref={refDifficulty}>
           <button
             className={`${styles.searchHomePage}`}
             onClick={handleOpenDifficulty}
@@ -181,7 +181,7 @@ const SearchBar = () => {
             </div>
           )}
         </div>
-        <div className="relative grow-1  w-full" ref={refGuest}>
+        <div className="relative grow" ref={refGuest}>
           <button
             className={`${styles.searchHomePage}`}
             onClick={() => handleOpenGuest()}
@@ -243,7 +243,7 @@ const SearchBar = () => {
             </div>
           )}
         </div>
-        <div className="grow-1 w-[50%]">
+        <div className="md:basis-[200px]">
           <button className="text-center rounded-full border border-black p-3 w-full text-[20px] bg-blue-300 hover:bg-blue-500">
             <span className="flex items-center">
               <SearchIcon />
