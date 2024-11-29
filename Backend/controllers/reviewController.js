@@ -3,10 +3,31 @@ const APIFeatures = require('../utils/apifeatures');
 const AppError = require('../utils/appError');
 
 exports.getFiveStarReviews = async (req, res, next) => {
+  // try {
+  // Set the query parameters
   req.query.limit = '5';
   req.query.sort = '-rating';
   req.query.fields = 'review, rating, tour, user';
   next();
+
+  // Perform the aggregation to get 5-star reviews from distinct users
+  //   const reviews = await Review.aggregate([
+  //     // Match only 5-star reviews
+  //     { $match: { rating: 5 } },
+
+  //     // Group by user to ensure one review per user
+  //     { $group: { _id: '$user', review: { $first: '$$ROOT' } } },
+
+  //     // Limit to only 5 distinct users
+  //     { $limit: 5 },
+  //   ]);
+  //   res.status(200).json({
+  //     status: 'success',
+  //     data: { reviews },
+  //   });
+  // } catch (err) {
+  //   next(err); // Handle any errors
+  // }
 };
 
 exports.getAllReview = async (req, res, next) => {
