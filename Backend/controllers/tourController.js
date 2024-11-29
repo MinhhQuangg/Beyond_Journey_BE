@@ -7,7 +7,6 @@ const multer = require('multer');
 const multerStorage = multer.memoryStorage();
 
 const multerFilter = (req, file, cb) => {
-  console.log(file);
   if (file.mimetype.startsWith('image')) {
     cb(null, true);
   } else {
@@ -202,7 +201,6 @@ exports.getTourStats = async (req, res) => {
       data: { stats },
     });
   } catch (err) {
-    console.log(err);
     res.status(400).json({
       status: 'fail',
       message: err.message,

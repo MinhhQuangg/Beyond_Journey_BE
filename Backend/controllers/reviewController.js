@@ -2,7 +2,7 @@ const Review = require('../models/reviewModel');
 const APIFeatures = require('../utils/apifeatures');
 const AppError = require('../utils/appError');
 
-exports.getFiveStarReviews = async (req, res, next) => {
+exports.getFiveStarReviews = (req, res, next) => {
   // try {
   // Set the query parameters
   req.query.limit = '5';
@@ -28,6 +28,46 @@ exports.getFiveStarReviews = async (req, res, next) => {
   // } catch (err) {
   //   next(err); // Handle any errors
   // }
+};
+
+exports.getFiveStarReview = async (req, res, next) => {
+  try {
+    // Find 5-star reviews, populate user details, and limit to 100 reviews
+    let reviews = await Review.find({ rating: 5 }).populate('user');
+
+    // Manually ensure distinct users
+    let distinctReviews = [];
+    let usersSeen = new Set();
+
+    // Loop through reviews and add to distinctReviews only if the user hasn't been seen before
+    for (let review of reviews) {
+      // Check if the review has a valid user before proceeding
+      if (
+        review.user &&
+        review.user._id &&
+        !usersSeen.has(review.user._id.toString())
+      ) {
+        distinctReviews.push(review);
+        usersSeen.add(review.user._id.toString());
+      }
+
+      // Break the loop once 5 distinct reviews have been added
+      if (distinctReviews.length === 5) break;
+    }
+
+    // Return the filtered distinct reviews
+    res.status(200).json({
+      status: 'success',
+      data: { reviews: distinctReviews },
+    });
+  } catch (error) {
+    // Handle errors gracefully and return them in the response
+    res.status(500).json({
+      status: 'error',
+      message: error.message,
+    });
+    next(error); // Pass the error to your error handling middleware
+  }
 };
 
 exports.getAllReview = async (req, res, next) => {

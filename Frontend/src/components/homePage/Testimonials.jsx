@@ -10,7 +10,7 @@ const Testimonials = () => {
     const fetchReviews = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:3000/api/v1/reviews/getFiveStarReviews"
+          "http://127.0.0.1:3000/api/v1/reviews/getFiveStarReview"
         );
         console.log(response.data.data.reviews);
         setReviews(response.data.data.reviews);
@@ -39,7 +39,7 @@ const Testimonials = () => {
               <div className="pb-4">
                 <Rating readOnly defaultValue={review.rating} />
               </div>
-              <span className="text-[18px] line-clamp-6">
+              <span className="text-[18px] line-clamp-5">
                 "{review.review}..."
               </span>
               <div className="flex gap-4 items-center pt-4">
