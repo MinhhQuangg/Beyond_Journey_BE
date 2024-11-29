@@ -27,7 +27,6 @@ const Testimonials = () => {
         const response = await axios.get(
           "http://127.0.0.1:3000/api/v1/reviews/getReviewStat"
         );
-        console.log(response.data?.data[0]?.avgRating);
         setTotalReview(response.data?.data[0]?.totalReview);
         setAverageReview(response.data?.data[0]?.avgRating);
       } catch (err) {

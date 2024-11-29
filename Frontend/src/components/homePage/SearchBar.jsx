@@ -16,6 +16,7 @@ const SearchBar = () => {
   const [isOpenDifficulty, setIsOpenDifficulty] = useState(false);
   const [selectedDifficulty, setSelectedDifficulty] =
     useState("Activity level");
+  const [selectedDestination, setSelectedDestination] = useState("Destination");
   const [isOpenGuest, setIsOpenGuest] = useState(false);
   const [isOpenDate, setIsOpenDate] = useState(false);
   const [isOpenDestination, setIsOpenDestination] = useState(false);
@@ -106,14 +107,14 @@ const SearchBar = () => {
         </div>
       </div>
       <div className="flex flex-row flex-wrap justify-between gap-5 items-center rounded-full border border-black w-[85%] p-3 px-5 text-[18px]">
-        <div className="relative grow" ref={refDestination}>
+        <div className="relative grow w-[250px]" ref={refDestination}>
           <button
             className={`${styles.searchHomePage}`}
             onClick={() => handleOpenDestination()}
           >
             <span className="flex items-center">
               <MapIcon />
-              <span className="ml-2">Destination</span>
+              <span className="ml-2">{selectedDestination}</span>
             </span>
             <ArrowDropDownIcon />
           </button>
@@ -123,6 +124,11 @@ const SearchBar = () => {
                 <button
                   key={index}
                   className="block px-6 py-2 text-gray-500 hover:text-black w-full text-left !text-[18px]"
+                  onClick={() =>
+                    setSelectedDestination(
+                      destination.startLocation.description
+                    )
+                  }
                 >
                   {destination.startLocation.description}
                 </button>
@@ -130,7 +136,7 @@ const SearchBar = () => {
             </div>
           )}
         </div>
-        <div className="relative grow" ref={refDate}>
+        <div className="relative grow w-[250px]" ref={refDate}>
           <button
             className={`${styles.searchHomePage}`}
             onClick={() => handleOpenDate()}
@@ -156,7 +162,7 @@ const SearchBar = () => {
             </div>
           )}
         </div>
-        <div className="relative grow" ref={refDifficulty}>
+        <div className="relative grow w-[250px]" ref={refDifficulty}>
           <button
             className={`${styles.searchHomePage}`}
             onClick={handleOpenDifficulty}
@@ -181,7 +187,7 @@ const SearchBar = () => {
             </div>
           )}
         </div>
-        <div className="relative grow" ref={refGuest}>
+        <div className="relative grow w-[250px]" ref={refGuest}>
           <button
             className={`${styles.searchHomePage}`}
             onClick={() => handleOpenGuest()}

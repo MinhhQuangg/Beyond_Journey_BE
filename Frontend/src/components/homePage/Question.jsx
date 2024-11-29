@@ -15,7 +15,7 @@ const Question = () => {
   return (
     <div className={`${styles.paddingX} flex flex-col items-center`}>
       <div className="text-center my-[40px]">
-        <div className={`${styles.headerSubText}`}>FAQ</div>
+        <div className={`${styles.headerSubText}`}>FAQs</div>
         <div className={`${styles.headerText}`}>
           Most Common Questions and Answers
         </div>
