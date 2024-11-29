@@ -1,3 +1,8 @@
+import InventoryIcon from "@mui/icons-material/Inventory";
+import Diversity2Icon from "@mui/icons-material/Diversity2";
+import ReviewsIcon from "@mui/icons-material/Reviews";
+import LocalOfferIcon from "@mui/icons-material/LocalOffer";
+import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 const level = ["Easy", "Medium", "Difficult"];
 
 const sort = ["Price low to high", "Price high to low"];
@@ -38,4 +43,42 @@ const mostAskedQuestions = [
 
 const usefulLinks = ["Your Account", "Our Team", "FAQ"];
 
-export { level, sort, price, navOptions, usefulLinks, mostAskedQuestions };
+const whyUs = [
+  {
+    reason: "Curated Tour Packages",
+    illustrate: "Tailored to meet your interests, budget, and schedule.",
+    icon: InventoryIcon,
+  },
+  {
+    reason: "User-Friendly Design",
+    illustrate: "Easily find, compare, and book tours with just a few clicks.",
+    icon: Diversity2Icon,
+  },
+  {
+    reason: "Verified Reviews and Testimonials",
+    illustrate: "Trustworthy feedback to help you make informed decisions.",
+    icon: ReviewsIcon,
+  },
+  {
+    reason: "Exclusive Deals",
+    illustrate:
+      "Competitive pricing and special offers you won’t find anywhere else.",
+    icon: LocalOfferIcon,
+  },
+  {
+    reason: "24/7 Support",
+    illustrate:
+      "Dedicated customer service to assist you every step of the way.",
+    icon: SupportAgentIcon,
+  },
+];
+
+export {
+  level,
+  sort,
+  price,
+  navOptions,
+  usefulLinks,
+  mostAskedQuestions,
+  whyUs,
+};

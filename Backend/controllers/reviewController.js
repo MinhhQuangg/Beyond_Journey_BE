@@ -2,53 +2,40 @@ const Review = require('../models/reviewModel');
 const APIFeatures = require('../utils/apifeatures');
 const AppError = require('../utils/appError');
 
-exports.getFiveStarReviews = (req, res, next) => {
-  // try {
-  // Set the query parameters
-  req.query.limit = '5';
-  req.query.sort = '-rating';
-  req.query.fields = 'review, rating, tour, user';
-  next();
-
-  // Perform the aggregation to get 5-star reviews from distinct users
-  //   const reviews = await Review.aggregate([
-  //     // Match only 5-star reviews
-  //     { $match: { rating: 5 } },
-
-  //     // Group by user to ensure one review per user
-  //     { $group: { _id: '$user', review: { $first: '$$ROOT' } } },
-
-  //     // Limit to only 5 distinct users
-  //     { $limit: 5 },
-  //   ]);
-  //   res.status(200).json({
-  //     status: 'success',
-  //     data: { reviews },
-  //   });
-  // } catch (err) {
-  //   next(err); // Handle any errors
-  // }
+exports.getReviewStat = async (req, res, next) => {
+  try {
+    const reviews = await Review.aggregate([
+      {
+        $group: {
+          _id: null,
+          totalReview: { $sum: 1 },
+          avgRating: { $avg: '$rating' },
+        },
+      },
+    ]);
+    res.status(200).json({
+      status: 'success',
+      data: reviews,
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      message: err.message,
+    });
+  }
 };
 
 exports.getFiveStarReview = async (req, res, next) => {
   try {
-    // Find 5-star reviews, populate user details, and limit to 100 reviews
-    let reviews = await Review.find({ rating: 5 }).populate('user');
+    let reviews = await Review.find({ rating: 5 });
 
-    // Manually ensure distinct users
     let distinctReviews = [];
     let usersSeen = new Set();
 
-    // Loop through reviews and add to distinctReviews only if the user hasn't been seen before
     for (let review of reviews) {
-      // Check if the review has a valid user before proceeding
-      if (
-        review.user &&
-        review.user._id &&
-        !usersSeen.has(review.user._id.toString())
-      ) {
+      if (review.user && !usersSeen.has(review.user._id)) {
         distinctReviews.push(review);
-        usersSeen.add(review.user._id.toString());
+        usersSeen.add(review.user._id);
       }
 
       // Break the loop once 5 distinct reviews have been added
