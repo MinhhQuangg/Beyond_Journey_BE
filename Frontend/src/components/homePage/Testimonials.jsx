@@ -47,7 +47,7 @@ const Testimonials = () => {
           <div className="flex justify-center items-center gap-1">
             {totalReview} Reviews | {averageReview.toFixed(2)}
             <div className="pt-1">
-              <Rating readOnly value={averageReview} />
+              <Rating readOnly value={averageReview} precision={0.1} />
             </div>
           </div>
         </div>

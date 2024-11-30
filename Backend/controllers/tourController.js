@@ -41,7 +41,7 @@ exports.resizeTourImages = async (req, res, next) => {
       .toFormat('jpeg')
       .jpeg({ quality: 90 })
       .toFile(`public/img/tours/${req.body.imageCover}`);
-
+    req.body.imageCover = `/img/tours/${req.body.imageCover}`;
     // TODO: 2) Images
     req.body.images = [];
 
@@ -53,7 +53,7 @@ exports.resizeTourImages = async (req, res, next) => {
           .resize(2000, 1333)
           .toFormat('jpeg')
           .jpeg({ quality: 90 })
-          .toFile(`public/img/users/${filename}`);
+          .toFile(`public/img/tours/${filename}`);
 
         req.body.images.push(filename);
       }),
@@ -68,7 +68,8 @@ exports.resizeTourImages = async (req, res, next) => {
 exports.topTours = (req, res, next) => {
   req.query.limit = '5';
   req.query.sort = '-ratingsAverage,price';
-  req.query.fields = 'name,price,ratingsAverage,summary,difficulty';
+  req.query.fields =
+    'name,price,ratingsAverage,summary,difficulty,startLocation,imageCover,duration';
   next();
 };
 
