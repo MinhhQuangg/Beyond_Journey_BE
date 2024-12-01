@@ -14,8 +14,7 @@ import { level } from "../../utils";
 
 const SearchBar = () => {
   const [isOpenDifficulty, setIsOpenDifficulty] = useState(false);
-  const [selectedDifficulty, setSelectedDifficulty] =
-    useState("Activity level");
+  const [selectedDifficulty, setSelectedDifficulty] = useState("Difficulty");
   const [selectedDestination, setSelectedDestination] = useState("Destination");
   const [isOpenGuest, setIsOpenGuest] = useState(false);
   const [isOpenDate, setIsOpenDate] = useState(false);
@@ -106,8 +105,12 @@ const SearchBar = () => {
           Find Your Perfect Tour and Start Exploring Amazing Destinations
         </div>
       </div>
-      <div className="flex flex-row flex-wrap justify-between gap-5 items-center rounded-full border border-black w-[85%] p-3 px-5 text-[18px]">
-        <div className="relative grow w-[250px]" ref={refDestination}>
+
+      <div className=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 border-2 border-gray-400 sm:rounded-3xl md:rounded-3xl lg:rounded-full gap-5 w-[85%] p-3 px-5 text-[18px]">
+        <div
+          className="relative md:col-start-1 md:col-span-1 lg:col-span-1"
+          ref={refDestination}
+        >
           <button
             className={`${styles.searchHomePage}`}
             onClick={() => handleOpenDestination()}
@@ -136,7 +139,10 @@ const SearchBar = () => {
             </div>
           )}
         </div>
-        <div className="relative grow w-[250px]" ref={refDate}>
+        <div
+          className="relative md:col-start-2 md:col-span-1 lg:col-span-1"
+          ref={refDate}
+        >
           <button
             className={`${styles.searchHomePage}`}
             onClick={() => handleOpenDate()}
@@ -144,7 +150,7 @@ const SearchBar = () => {
             <span className="flex items-center">
               <CalendarMonthIcon />
               <span className="ml-2">
-                {date ? format(date, "MMMM d, yyyy") : "Date From"}
+                {date ? format(date, "MMMM d, yyyy") : "Date"}
               </span>
             </span>
             <ArrowDropDownIcon />
@@ -162,7 +168,10 @@ const SearchBar = () => {
             </div>
           )}
         </div>
-        <div className="relative grow w-[250px]" ref={refDifficulty}>
+        <div
+          className="relative md:col-start-1 md:col-span-1 lg:col-span-1"
+          ref={refDifficulty}
+        >
           <button
             className={`${styles.searchHomePage}`}
             onClick={handleOpenDifficulty}
@@ -187,7 +196,10 @@ const SearchBar = () => {
             </div>
           )}
         </div>
-        <div className="relative grow w-[250px]" ref={refGuest}>
+        <div
+          className="relative md:col-start-2 md:col-span-1 lg:col-span-1"
+          ref={refGuest}
+        >
           <button
             className={`${styles.searchHomePage}`}
             onClick={() => handleOpenGuest()}
@@ -249,7 +261,7 @@ const SearchBar = () => {
             </div>
           )}
         </div>
-        <div className="md:basis-[200px]">
+        <div className="col-span-1">
           <button className="text-center rounded-full border border-black p-3 w-full text-[20px] bg-blue-300 hover:bg-blue-500">
             <span className="flex items-center">
               <SearchIcon />

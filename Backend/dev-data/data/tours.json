@@ -10,9 +10,9 @@
     "ratingsQuantity": 6,
     "images": ["tour-2-1.jpg", "tour-2-2.jpg", "tour-2-3.jpg"],
     "startDates": [
-      "2021-06-19T09:00:00.000Z",
-      "2021-07-20T09:00:00.000Z",
-      "2021-08-18T09:00:00.000Z"
+      "2025-06-19T09:00:00.000Z",
+      "2025-07-20T09:00:00.000Z",
+      "2025-08-18T09:00:00.000Z"
     ],
     "_id": "5c88fa8cf4afda39709c2955",
     "name": "The Sea Explorer",
@@ -23,7 +23,7 @@
     "price": 497,
     "summary": "Exploring the jaw-dropping US east coast by foot and by boat",
     "description": "Discover the best of Miami on this unique walking and boat tour. Start by exploring the vibrant streets of Little Havana and the iconic Art Deco District in South Beach, soaking in the city’s culture and architecture. Then, relax on a scenic boat ride through Biscayne Bay, cruising past luxurious mansions and enjoying panoramic views of Miami’s skyline and waterfront islands. This tour offers a perfect mix of urban charm and natural beauty, all in one unforgettable experience. ",
-    "imageCover": "tour-2-cover.jpg",
+    "imageCover": "/img/tours/Miami.jpg",
     "locations": [
       {
         "_id": "5c88fa8cf4afda39709c2959",
@@ -58,9 +58,9 @@
     "ratingsQuantity": 9,
     "images": ["tour-1-1.jpg", "tour-1-2.jpg", "tour-1-3.jpg"],
     "startDates": [
-      "2021-04-25T09:00:00.000Z",
-      "2021-07-20T09:00:00.000Z",
-      "2021-10-05T09:00:00.000Z"
+      "2025-04-25T09:00:00.000Z",
+      "2025-07-20T09:00:00.000Z",
+      "2025-10-05T09:00:00.000Z"
     ],
     "_id": "5c88fa8cf4afda39709c2951",
     "name": "The Forest Hiker",
@@ -75,7 +75,7 @@
     "price": 397,
     "summary": "Breathtaking hike through the Rocky Mountain National Park",
     "description": "Explore the breathtaking beauty of the Rocky Mountains on a guided hiking tour, where you'll trek through lush forests, alpine meadows, and rugged peaks. Enjoy stunning vistas, spot wildlife, and connect with nature as you hike along scenic trails leading to high mountain overlooks and pristine lakes. This experience offers the perfect mix of adventure and awe-inspiring landscapes, ideal for nature lovers and outdoor enthusiasts alike.",
-    "imageCover": "tour-1-cover.jpg",
+    "imageCover": "/img/tours/Colorado.jpg",
     "locations": [
       {
         "_id": "5c88fa8cf4afda39709c2954",
@@ -110,9 +110,9 @@
     "ratingsQuantity": 6,
     "images": ["tour-3-1.jpg", "tour-3-2.jpg", "tour-3-3.jpg"],
     "startDates": [
-      "2022-01-05T10:00:00.000Z",
-      "2022-02-12T10:00:00.000Z",
-      "2023-01-06T10:00:00.000Z"
+      "2025-01-05T10:00:00.000Z",
+      "2025-02-12T10:00:00.000Z",
+      "2025-01-06T10:00:00.000Z"
     ],
     "_id": "5c88fa8cf4afda39709c295a",
     "name": "The Snow Adventurer",
@@ -127,7 +127,7 @@
     "price": 997,
     "summary": "Exciting adventure in the snow with snowboarding and skiing",
     "description": "Embark on a thrilling snowboarding journey that takes you to two of Colorado’s premier ski destinations: Telluride and Vail. Known for their vast terrain, breathtaking views, and world-class facilities, these resorts offer a perfect combination of powder-filled slopes, challenging runs, and stunning alpine scenery. Whether you're an expert looking for steep descents or a beginner hoping to enjoy gentle slopes, this tour provides the ultimate snowboarding experience.",
-    "imageCover": "tour-3-cover.jpg",
+    "imageCover": "/img/tours/Colorado.jpg",
     "locations": [
       {
         "_id": "5c88fa8cf4afda39709c295c",
@@ -139,7 +139,7 @@
         "description": "Vail Ski Resort",
         "type": "Point",
         "coordinates": [-106.516623, 39.60499],
-        "day": 2
+        "day": 3
       }
     ]
   },
@@ -152,9 +152,9 @@
     "ratingsQuantity": 7,
     "images": ["tour-5-1.jpg", "tour-5-2.jpg", "tour-5-3.jpg"],
     "startDates": [
-      "2021-08-05T09:00:00.000Z",
-      "2022-03-20T10:00:00.000Z",
-      "2022-08-12T09:00:00.000Z"
+      "2025-08-05T09:00:00.000Z",
+      "2025-03-20T10:00:00.000Z",
+      "2025-08-12T09:00:00.000Z"
     ],
     "_id": "5c88fa8cf4afda39709c2961",
     "name": "The Park Camper",
@@ -167,9 +167,9 @@
       "5c8a201e2f8fb814b56fa186"
     ],
     "price": 1497,
-    "summary": "Experience the ultimate desert adventure by combining the vibrant excitement of Las Vegas with the stunning beauty of Antelope Canyon, exploring iconic casinos, Michelin-star dining, and breathtaking slot canyons in one unforgettable journey.",
+    "summary": "Combine Las Vegas excitement with Antelope Canyon's beauty for a thrilling adventure.",
     "description": "Combine the excitement of Las Vegas with the natural beauty of Antelope Canyon on this unforgettable tour. Experience world-class casinos, Michelin-star dining, and top-tier entertainment in Las Vegas, then venture to Page, Arizona, to explore the stunning Upper and Lower Antelope Canyons. Discover the iconic light beams of Upper Antelope Canyon and the adventurous, winding passages of Lower Antelope Canyon, all while soaking in the breathtaking desert landscapes. This journey offers the perfect mix of vibrant city life and awe-inspiring natural wonders.",
-    "imageCover": "tour-5-cover.jpg",
+    "imageCover": "/img/tours/LasVegas.jpg",
     "locations": [
       {
         "_id": "5c88fa8cf4afda39709c2965",
@@ -197,9 +197,9 @@
     "ratingsQuantity": 5,
     "images": ["tour-4-1.jpg", "tour-4-2.jpg", "tour-4-3.jpg"],
     "startDates": [
-      "2021-03-11T10:00:00.000Z",
-      "2021-05-02T09:00:00.000Z",
-      "2021-06-09T09:00:00.000Z"
+      "2025-03-11T10:00:00.000Z",
+      "2025-05-02T09:00:00.000Z",
+      "2025-06-09T09:00:00.000Z"
     ],
     "_id": "5c88fa8cf4afda39709c295d",
     "name": "The City Wanderer",
@@ -208,9 +208,9 @@
     "difficulty": "easy",
     "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a201e2f8fb814b56fa186"],
     "price": 1197,
-    "summary": "Experience the best of New York City with a tour that takes you from iconic landmarks like the Statue of Liberty and Times Square to world-renowned museums, Broadway shows, vibrant neighborhoods, and unforgettable views",
+    "summary": "Explore NYC's landmarks, museums, Broadway shows, neighborhoods, and stunning views on a tour.",
     "description": "Embark on an unforgettable journey through the heart of New York City, where the vibrancy of its culture, history, and energy blend seamlessly with iconic landmarks, world-class museums, breathtaking views, and a lifestyle that never sleeps. From the soaring heights of the One World Trade Center to the tranquil beauty of Central Park, this comprehensive tour takes you through the very best of the city, ensuring you experience everything from its famous skyscrapers and theaters to its diverse neighborhoods and incredible food scene. Whether you're a first-time visitor or a seasoned traveler, New York City's allure is undeniable and endless.",
-    "imageCover": "tour-4-cover.jpg",
+    "imageCover": "/img/tours/NewYork.jpg",
     "locations": [
       {
         "_id": "5c88fa8cf4afda39709c2932",
@@ -243,9 +243,9 @@
     "ratingsQuantity": 7,
     "images": ["tour-6-1.jpg", "tour-6-2.jpg", "tour-6-3.jpg"],
     "startDates": [
-      "2021-07-19T09:00:00.000Z",
-      "2021-09-06T09:00:00.000Z",
-      "2022-03-18T10:00:00.000Z"
+      "2025-07-19T09:00:00.000Z",
+      "2025-09-06T09:00:00.000Z",
+      "2025-03-18T10:00:00.000Z"
     ],
     "_id": "5c88fa8cf4afda39709c2966",
     "name": "The Sports Lover",
@@ -258,9 +258,9 @@
       "5c8a1f4e2f8fb814b56fa185"
     ],
     "price": 2997,
-    "summary": "Embark on a scenic road trip from San Diego to Los Angeles, exploring stunning beaches, charming coastal towns, and iconic landmarks like Laguna Beach, Santa Monica Pier, and Hollywood along the way.",
+    "summary": "Take a scenic road trip from San Diego to Los Angeles, exploring beaches and landmarks.",
     "description": "Embark on a scenic and unforgettable California road trip from the sunny beaches of San Diego to the vibrant, star-studded streets of Los Angeles, where you’ll explore diverse landscapes, coastal towns, and iconic landmarks along the way. This journey offers the perfect mix of stunning ocean views, cultural highlights, and relaxation in some of California's most famous spots.",
-    "imageCover": "tour-6-cover.jpg",
+    "imageCover": "/img/tours/SanDiego.jpg",
     "locations": [
       {
         "_id": "5c88fa8cf4afda39709c296b",
@@ -293,9 +293,9 @@
     "ratingsQuantity": 6,
     "images": ["tour-8-1.jpg", "tour-8-2.jpg", "tour-8-3.jpg"],
     "startDates": [
-      "2021-03-23T10:00:00.000Z",
-      "2021-10-25T09:00:00.000Z",
-      "2022-01-30T10:00:00.000Z"
+      "2025-03-23T10:00:00.000Z",
+      "2025-10-25T09:00:00.000Z",
+      "2025-01-30T10:00:00.000Z"
     ],
     "_id": "5c88fa8cf4afda39709c2970",
     "name": "California Coastal & Canyon Escape",
@@ -306,7 +306,7 @@
     "price": 2997,
     "summary": "The most remote and stunningly beautiful places for seeing the night sky",
     "description": "Take an epic road trip along the iconic California coast from Los Angeles to San Francisco, a journey that will immerse you in stunning views, charming towns, historic landmarks, and some of the most breathtaking coastlines in the world. This unforgettable adventure showcases the diverse beauty of California, from the glamorous streets of Los Angeles to the dramatic cliffs of Big Sur and the cultural vibrancy of San Francisco. California is home to a wide range of national parks that showcase the state's diverse landscapes, from towering mountains to desert expanses, pristine beaches, and ancient forests",
-    "imageCover": "tour-8-cover.jpg",
+    "imageCover": "/img/tours/LosAngeles.jpg",
     "locations": [
       {
         "_id": "5c88fa8cf4afda39709c2973",
@@ -339,9 +339,9 @@
     "ratingsQuantity": 7,
     "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"],
     "startDates": [
-      "2021-12-16T10:00:00.000Z",
-      "2022-01-16T10:00:00.000Z",
-      "2022-12-12T10:00:00.000Z"
+      "2025-12-16T10:00:00.000Z",
+      "2025-01-16T10:00:00.000Z",
+      "2025-12-12T10:00:00.000Z"
     ],
     "_id": "5c88fa8cf4afda39709c2974",
     "name": "Texas Wild West Expedition",
@@ -356,7 +356,7 @@
     "price": 1497,
     "summary": "Enjoy the Southern road trip in one of the best places in the world",
     "description": "Embark on a scenic road trip across Texas and into neighboring states, visiting some of the most unique and awe-inspiring natural landscapes in the southwestern United States. From the rugged Big Bend National Park in Texas to the stunning White Sands National Park in New Mexico, this trip offers vast deserts, towering mountains, and breathtaking desert landscapes.",
-    "imageCover": "tour-9-cover.jpg",
+    "imageCover": "/img/tours/Texas.jpg",
     "locations": [
       {
         "_id": "5c88fa8cf4afda39709c2975",
@@ -389,9 +389,9 @@
     "ratingsQuantity": 7,
     "images": ["tour-7-1.jpg", "tour-7-2.jpg", "tour-7-3.jpg"],
     "startDates": [
-      "2021-02-12T10:00:00.000Z",
-      "2021-04-14T09:00:00.000Z",
-      "2021-09-01T09:00:00.000Z"
+      "2025-02-12T10:00:00.000Z",
+      "2025-04-14T09:00:00.000Z",
+      "2025-09-01T09:00:00.000Z"
     ],
     "_id": "5c88fa8cf4afda39709c296c",
     "name": "Chicago Highlights Adventure",
@@ -400,9 +400,9 @@
     "difficulty": "easy",
     "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a23412f8fb814b56fa18c"],
     "price": 1997,
-    "summary": "Explore Chicago’s iconic landmarks, vibrant neighborhoods, world-class museums, and stunning lakefront, from Millennium Park and Willis Tower to Navy Pier and deep-dish pizza.",
+    "summary": "Discover Chicago's landmarks, neighborhoods, museums, lakefront, and iconic deep-dish pizza.",
     "description": "Chicago is a bustling city filled with iconic landmarks, vibrant neighborhoods, and diverse cultural experiences. From the architectural marvels of Willis Tower and The Bean in Millennium Park to the world-class museums like the Art Institute of Chicago and Field Museum, there’s something for everyone. Explore the scenic Chicago Riverwalk, take in panoramic views from the Skydeck at Willis Tower, and visit the Shedd Aquarium or Adler Planetarium for fascinating exhibits. Don't miss the opportunity to enjoy deep-dish pizza and discover the city's rich history through its diverse neighborhoods and stunning lakefront.",
-    "imageCover": "tour-7-cover.jpg",
+    "imageCover": "/img/tours/Chicago.jpg",
     "locations": [
       {
         "_id": "5c88fa8cf4afda39709c296f",

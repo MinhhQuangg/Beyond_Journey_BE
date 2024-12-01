@@ -44,7 +44,7 @@ const BestTour = () => {
         </div>
       </div>
       <div
-        className={`${styles.paddingXSub} flex justify-center items-center w-full gap-5`}
+        className={`${styles.paddingXSub} flex justify-center items-center w-full gap-10`}
       >
         <div
           className={`cursor-pointer ${
@@ -56,7 +56,10 @@ const BestTour = () => {
         </div>
         <div className="flex justify-between w-full gap-5">
           {showTours.map((el, i) => (
-            <div key={i} className="flex flex-col w-[386px]">
+            <div
+              key={i}
+              className="flex flex-col w-[386px]  shadow-md rounded-xl"
+            >
               <img
                 src={`http://127.0.0.1:3000${el.imageCover}`}
                 alt={i}
@@ -64,7 +67,7 @@ const BestTour = () => {
               />
               <div className="px-5">
                 <div className="mt-4 mb-2 text-[20px] font-bold">{el.name}</div>
-                <div className="mb-2">{el.summary}</div>
+                <div className="min-h-[60px] flex-grow">{el.summary}</div>
                 <div className="grid grid-cols-2">
                   <div className="border-r-2 border-gray-950">
                     <div className="flex items-center">
@@ -89,7 +92,7 @@ const BestTour = () => {
                     {el.price}
                   </div>
                 </div>
-                <div className="flex justify-center items-center w-full mt-4">
+                <div className="flex justify-center items-center w-full mt-4 mb-2">
                   <button>EXPLORE MORE</button>
                 </div>
               </div>

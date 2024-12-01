@@ -51,7 +51,7 @@ const Testimonials = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-wrap gap-4 justify-center my-10">
+        <div className="flex flex-wrap gap-4 justify-center mt-10">
           {reviews.map((review, index) => (
             <div
               key={index}
