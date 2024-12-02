@@ -88,6 +88,7 @@ const SearchBar = () => {
     setSelectedDifficulty(difficulty);
     setIsOpenDifficulty(false);
   };
+
   const handleCountIncrement = (type) => {
     if (type === "adult") setCountAdult(countAdult + 1);
     else if (type === "children") setCountChildren(countChildren + 1);
@@ -97,6 +98,22 @@ const SearchBar = () => {
     else if (type === "children" && countChildren > 0)
       setCountChildren(countChildren - 1);
   };
+
+  const handleSearch = async () => {
+    try {
+      const response = await axios.post("http://localhost:3000/api/v1/tours");
+      console.log(response);
+    } catch (err) {
+      console.log(err);
+    }
+    console.log(
+      selectedDestination,
+      selectedDifficulty,
+      countAdult + countChildren,
+      date
+    );
+  };
+
   return (
     <div className={`${styles.paddingX} flex flex-col items-center`}>
       <div className="text-center my-[40px]">
@@ -262,7 +279,10 @@ const SearchBar = () => {
           )}
         </div>
         <div className="col-span-1">
-          <button className="text-center rounded-full border border-black p-3 w-full text-[20px] bg-blue-300 hover:bg-blue-500">
+          <button
+            className="text-center rounded-full border border-black p-3 w-full text-[20px] bg-blue-300 hover:bg-blue-500"
+            onClick={() => handleSearch()}
+          >
             <span className="flex items-center">
               <SearchIcon />
               <span className="ml-2">Search</span>
