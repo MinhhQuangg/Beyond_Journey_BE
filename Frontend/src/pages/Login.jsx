@@ -5,7 +5,6 @@ import {
   Box,
   Button,
   Checkbox,
-  CircularProgress,
   Divider,
   IconButton,
   InputAdornment,
@@ -80,7 +79,7 @@ export const Login = () => {
 
       <Box
         sx={{
-          width: "20%",
+          width: "25%",
           backgroundColor: "#fff",
           padding: "30px",
           borderRadius: "8px",
@@ -188,6 +187,8 @@ export const Login = () => {
               onClick={handleSubmit(onSubmit)}
               variant="contained"
               sx={{
+                bgcolor: "#15919B",
+                ":hover": { bgcolor: "#0C6478" },
                 fontWeight: "bold",
                 borderRadius: "20px",
                 fontSize: "16px",
@@ -203,11 +204,7 @@ export const Login = () => {
                 !!errors.password
               }
             >
-              {loading ? (
-                <CircularProgress size={24} color="inherit" />
-              ) : (
-                "Log in"
-              )}
+              LOG IN
             </Button>
           </Box>
         </form>
@@ -227,24 +224,23 @@ export const Login = () => {
           <Typography sx={{ fontSize: "13px", paddingBottom: "10px" }}>
             Or, if you created your account with Google:
           </Typography>
-          <Box display="grid" justifyItems="center">
+          <Box display="grid" justifyItems="center" color="black">
             <Button
               sx={{
-                margin: "10px 0",
-                fontWeight: "bold",
-                fontSize: "16px",
-                color: "#3991cd",
+                padding: " 0 18px",
+                fontSize: "12px",
                 borderColor: "#ddd",
-                backgroundColor: "#fff",
-                ":hover": { backgroundColor: "#f5f5f5" },
                 border: "1px solid #ddd",
                 borderRadius: "20px",
+                color: "black",
               }}
             >
-              <img
-                src="https://img.icons8.com/color/24/000000/google-logo.png"
-                alt="Google"
-              />
+              <Box display="absolute">
+                <img
+                  src="https://img.icons8.com/color/24/000000/google-logo.png"
+                  alt="Google"
+                />
+              </Box>
               &nbsp; Continue with Google
             </Button>
           </Box>

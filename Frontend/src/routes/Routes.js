@@ -10,6 +10,7 @@ import ErrorPage from "../pages/ErrorPage";
 import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";
 import HomePage from "../pages/Homepage";
+import AboutUs from "../pages/AboutUs";
 
 export const Routes = () => {
   return (
@@ -21,6 +22,7 @@ export const Routes = () => {
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/resetpassword/:token" element={<ResetPassword />} />
         <Route path="*" element={<ErrorPage />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
       </RouteComponent>
     </BrowserRouter>
   );

@@ -10,12 +10,12 @@ const sort = ["Price low to high", "Price high to low"];
 const price = ["0 - $500", "$500 - $1000", "$1000 - $1500"];
 
 const navOptions = [
-  "Destination",
-  "Travel List",
-  "Travel Deal",
-  "Booking",
-  "Blogs",
-  "About Us",
+  { label: "Destination", path: "/destination" },
+  { label: "Travel List", path: "/travel-list" },
+  { label: "Travel Deal", path: "/travel-deal" },
+  { label: "Booking", path: "/booking" },
+  { label: "Blogs", path: "/blogs" },
+  { label: "About Us", path: "/AboutUs" },
 ];
 
 const mostAskedQuestions = [

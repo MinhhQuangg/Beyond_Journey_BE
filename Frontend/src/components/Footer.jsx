@@ -15,9 +15,9 @@ export const Footer = () => {
         </div>
         <div className="flex flex-col gap-3">
           <div className={`${styles.sectionSubText} pb-2`}>Navigation</div>
-          {navOptions.map((el, index) => (
-            <Link key={index} src="#" className="text-[16px]">
-              {el}
+          {navOptions.map((option, index) => (
+            <Link key={index} to={option.path}>
+              {option.label}
             </Link>
           ))}
         </div>

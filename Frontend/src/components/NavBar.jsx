@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import logo from "../assets/tourname.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import { styles } from "../styles";
-import { navOptions } from "../utils";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import { IconButton } from "@mui/material";
 
 import { blackimage, homepagePic } from "../assets";
+import { navOptions } from "../utils";
 
 const coverHeight = 100;
 
@@ -47,9 +47,9 @@ export const NavBar = () => {
             </Link>
           </div>
           <div className={`${styles.headerNav} flex gap-14`}>
-            {navOptions.map((el, index) => (
-              <Link key={index} src="#">
-                {el}
+            {navOptions.map((option, index) => (
+              <Link key={index} to={option.path}>
+                {option.label}
               </Link>
             ))}
           </div>
