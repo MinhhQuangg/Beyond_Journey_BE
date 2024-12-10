@@ -6,8 +6,12 @@ const AboutUs = () => {
   return (
     <div className={`${styles.paddingX} flex flex-col items-center`}>
       <div className="text-center my-[40px]">
-        <div className={`${styles.headerSubText}`}>Our Services</div>
-        <div className={`${styles.headerText}`}>Why choosing us?</div>
+        <div
+          className={`${styles.headerSubText} font-sans font-extrabold text-primary_3`}
+        >
+          Our Services
+        </div>
+        <div className={`${styles.headerText}`}>Why Choosing Us?</div>
       </div>
       <div className="flex justify-between my-10 w-full text-center gap-1">
         {whyUs.map((el, i) => (

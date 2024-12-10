@@ -5,13 +5,13 @@ import AboutUs from "../components/homePage/AboutUs";
 import BestTour from "../components/homePage/BestTour";
 import Question from "../components/homePage/Question";
 import SearchBar from "../components/homePage/SearchBar";
-import { NavBar } from "../components/NavBar";
 import Testimonials from "../components/homePage/Testimonials";
+import { Intro } from "../components/homePage/Intro";
 
 const HomePage = () => {
   return (
     <div>
-      <NavBar />
+      <Intro />
       <SearchBar />
       <BestTour />
       <Testimonials />

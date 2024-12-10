@@ -141,7 +141,6 @@ export const SignUp = () => {
             Phone Number
           </Typography>
 
-          {/* Phone Number */}
           <TextField
             variant="outlined"
             size="small"
@@ -168,7 +167,6 @@ export const SignUp = () => {
             onBlur={() => trigger("phoneNumber")}
           />
 
-          {/* Email */}
           <Typography
             sx={{
               pb: "12px",
@@ -255,8 +253,8 @@ export const SignUp = () => {
                 borderRadius: "50px",
                 fontSize: "16px",
                 marginTop: 2,
-                backgroundColor: "#3991cd",
-                ":hover": { backgroundColor: "#5d5a7d" },
+                bgcolor: "#15919B",
+                ":hover": { bgcolor: "#0C6478" },
               }}
               disabled={!isValid}
             >

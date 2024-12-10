@@ -71,7 +71,7 @@ export const ForgotPassword = () => {
       {/* Main Content Box */}
       <Box
         sx={{
-          width: "20%",
+          width: "25%",
           padding: "40px",
           borderRadius: "8px",
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
@@ -153,14 +153,20 @@ export const ForgotPassword = () => {
         </Box>
 
         {/* Reset Password Button */}
-        <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            // padding: "0 20px",
+          }}
+        >
           <Button
             onClick={handleSubmit(onSubmit)}
             variant="contained"
             color="primary"
             sx={{
-              bgcolor: "#3991cd",
-              ":hover": { bgcolor: "#5d5a7d" },
+              bgcolor: "#15919B",
+              ":hover": { bgcolor: "#0C6478" },
               borderRadius: "20px",
               textAlign: "center",
               fontSize: "16px",

@@ -40,7 +40,11 @@ const Testimonials = () => {
     <div className={`${styles.paddingX} flex flex-col items-center`}>
       <div className="my-[40px]">
         <div className="text-center font-bold text-[18px]">
-          <div className={`${styles.headerSubText}`}>Testimonials</div>
+          <div
+            className={`${styles.headerSubText} font-sans font-extrabold text-primary_3`}
+          >
+            Testimonials
+          </div>
           <div className={`${styles.headerText}`}>
             Top-Rated Experiences from Our Guests
           </div>

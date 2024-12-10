@@ -1,7 +1,7 @@
 const styles = {
   paddingXNav: "sm:px-16 px-6",
   paddingX: "2xl:px-[200px] sm:px-10 py-10",
-  paddingXSub: "px-[15%]",
+  paddingXSub: "px-[10%]",
   paddingXFooter: "sm:px-20 pt-10",
   paddingY: "sm:py-16 py-6",
   padding: "sm:px-16 px-6 sm:py-16 py-10",

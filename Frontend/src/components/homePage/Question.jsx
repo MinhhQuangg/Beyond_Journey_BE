@@ -13,9 +13,13 @@ const Question = () => {
   };
 
   return (
-    <div className={`${styles.paddingX} flex flex-col items-center`}>
+    <div className={`${styles.paddingX} flex flex-col items-center mb-[40px]`}>
       <div className="text-center my-[40px]">
-        <div className={`${styles.headerSubText}`}>FAQs</div>
+        <div
+          className={`${styles.headerSubText} font-sans font-extrabold text-primary_3`}
+        >
+          FAQs
+        </div>
         <div className={`${styles.headerText}`}>
           Most Common Questions and Answers
         </div>

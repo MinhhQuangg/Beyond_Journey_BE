@@ -8,7 +8,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 export const Footer = () => {
   return (
-    <div className={`${styles.paddingXFooter}`}>
+    <div className={`${styles.paddingXFooter} bg-primary_2 text-white`}>
       <div className="flex gap-5 justify-between items-start">
         <div className="flex justify-center">
           <img src={toursquare} alt="toursquare" style={{ width: "70%" }} />
@@ -49,7 +49,7 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="text-center py-5">
+      <div className="text-center pt-10 pb-5">
         © 2024 Beyond Journey. All Rights Reserved.
       </div>
     </div>

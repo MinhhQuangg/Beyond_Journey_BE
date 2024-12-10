@@ -37,7 +37,11 @@ const BestTour = () => {
   return (
     <div className={`${styles.paddingX} flex flex-col items-center`}>
       <div className="text-center my-[40px]">
-        <div className={`${styles.headerSubText}`}>Destinations</div>
+        <div
+          className={`${styles.headerSubText} font-sans font-extrabold text-primary_3`}
+        >
+          Our Destinations
+        </div>
         <div className={`${styles.headerText}`}>
           Most popular tours of this season
         </div>
@@ -51,13 +55,15 @@ const BestTour = () => {
           }`}
           onClick={() => handleLeftArrow()}
         >
-          <ArrowCircleLeftIcon style={{ width: "40px", height: "40px" }} />
+          <ArrowCircleLeftIcon
+            sx={{ width: "40px", height: "40px", color: "action" }}
+          />
         </div>
         <div className="flex justify-between w-full gap-5">
           {showTours.map((el, i) => (
             <div
               key={i}
-              className="flex flex-col w-[386px]  shadow-md rounded-xl"
+              className="flex flex-col w-[386px] shadow-md rounded-xl"
             >
               <img
                 src={`http://127.0.0.1:3000${el.imageCover}`}
@@ -91,8 +97,10 @@ const BestTour = () => {
                     {el.price}
                   </div>
                 </div>
-                <div className="flex justify-center items-center w-full mt-4 mb-2">
-                  <button>EXPLORE MORE</button>
+                <div className="flex justify-center items-center w-full mt-4 mb-5">
+                  <button className="bg-primary_3 hover:bg-primary_1 hover:text-white py-2 px-4 rounded-2xl">
+                    EXPLORE MORE
+                  </button>
                 </div>
               </div>
             </div>

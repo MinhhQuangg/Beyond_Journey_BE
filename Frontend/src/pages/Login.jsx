@@ -177,7 +177,7 @@ export const Login = () => {
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <Checkbox
               {...register("remember")}
-              sx={{ p: 0.5, color: "#3991cd" }}
+              sx={{ p: 0.5, color: "#15919B" }}
             />
             <Typography sx={{ fontSize: "14px" }}>Remember me</Typography>
           </Box>

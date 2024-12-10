@@ -67,7 +67,7 @@ const ResetPassword = () => {
       {/* Main Content Box */}
       <Box
         sx={{
-          width: "20%",
+          width: "25%",
           backgroundColor: "#fff",
           padding: "30px",
           borderRadius: "8px",
@@ -161,8 +161,8 @@ const ResetPassword = () => {
             variant="contained"
             color="primary"
             sx={{
-              bgcolor: "#3991cd",
-              ":hover": { bgcolor: "#5d5a7d" },
+              bgcolor: "#15919B",
+              ":hover": { bgcolor: "#0C6478" },
               borderRadius: "20px",
               textAlign: "center",
               fontSize: "16px",

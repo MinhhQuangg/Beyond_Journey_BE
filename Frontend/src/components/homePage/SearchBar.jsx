@@ -117,7 +117,11 @@ const SearchBar = () => {
   return (
     <div className={`${styles.paddingX} flex flex-col items-center`}>
       <div className="text-center my-[40px]">
-        <div className={`${styles.headerSubText}`}>Search Tours</div>
+        <div
+          className={`${styles.headerSubText} font-sans font-extrabold text-primary_3`}
+        >
+          Search Tours
+        </div>
         <div className={`${styles.headerText}`}>
           Find Your Perfect Tour and Start Exploring Amazing Destinations
         </div>
@@ -280,7 +284,7 @@ const SearchBar = () => {
         </div>
         <div className="col-span-1">
           <button
-            className="text-center rounded-full border border-black p-3 w-full text-[20px] bg-blue-300 hover:bg-blue-500"
+            className="text-center rounded-full border border-black p-3 w-full text-[20px] bg-primary_3 hover:bg-primary_1 hover:text-white"
             onClick={() => handleSearch()}
           >
             <span className="flex items-center">
