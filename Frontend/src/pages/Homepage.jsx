@@ -13,12 +13,12 @@ const HomePage = () => {
   return (
     <div>
       <NavBar />
-      <div className="pt-[80px] ">
+      <div className="pt-[90px] ">
         <Intro />
         <div
           className="absolute top-20 left-0 right-0 z-10 flex justify-center"
           style={{
-            transform: "translateY(150%)",
+            transform: "translateY(170%)",
           }}
         >
           <SearchBar />
