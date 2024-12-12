@@ -18,7 +18,7 @@ export const Intro = () => {
           <div
             className="flex justify-center items-center flex-col"
             style={{
-              height: "25vh",
+              height: "35vh",
             }}
           >
             <span

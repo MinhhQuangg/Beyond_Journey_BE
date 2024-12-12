@@ -11,6 +11,7 @@ import axios from "axios";
 import { format } from "date-fns";
 import { styles } from "../../styles";
 import { level } from "../../utils";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const [isOpenDifficulty, setIsOpenDifficulty] = useState(false);
@@ -27,6 +28,7 @@ const SearchBar = () => {
   const refGuest = useRef(null);
   const refDate = useRef(null);
   const refDestination = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchTours = async () => {
@@ -100,22 +102,18 @@ const SearchBar = () => {
   };
 
   const handleSearch = async () => {
-    try {
-      const response = await axios.post("http://localhost:3000/api/v1/tours");
-      console.log(response);
-    } catch (err) {
-      console.log(err);
-    }
-    console.log(
-      selectedDestination,
-      selectedDifficulty,
-      countAdult + countChildren,
-      date
-    );
+    const params = new URLSearchParams({
+      destination:
+        selectedDestination !== "Destination" ? selectedDestination : "",
+      difficulty: selectedDifficulty !== "Difficulty" ? selectedDifficulty : "",
+      guests: total > 0 ? total : "",
+      date: date ? format(date, "yyyy-mm-dd") : "",
+    });
+    navigate(`/tours?params`);
   };
 
   return (
-    <div className={`${styles.paddingX}`}>
+    <div className={`${styles.paddingX} w-[80%]`}>
       <div className="flex flex-col items-center rounded-3xl shadow-lg bg-white pb-[40px] ">
         <div className="text-center my-[30px]">
           <div
