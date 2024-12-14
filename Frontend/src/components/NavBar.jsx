@@ -12,7 +12,7 @@ const NavBar = () => {
   const navigate = useNavigate();
   return (
     <div
-      className={`${styles.paddingXNav} w-full flex justify-between items-center fixed text-white bg-primary_1 py-[15px]`}
+      className={`${styles.paddingXNav} w-full flex justify-between items-center sticky top-0 text-white bg-primary_1 py-[15px]`}
       style={{ zIndex: 20 }}
     >
       <div>

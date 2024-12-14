@@ -28,8 +28,8 @@ export const Footer = () => {
         <div className="flex flex-col gap-3">
           <div className={`${styles.sectionSubText} pb-2`}>Useful Links</div>
           {usefulLinks.map((el, index) => (
-            <Link key={index} src="#" className="text-[16px]">
-              {el}
+            <Link key={index} to={el.path} className="text-[16px]">
+              {el.label}
             </Link>
           ))}
         </div>
@@ -48,7 +48,7 @@ export const Footer = () => {
                 (window.location.href = "mailto:tourwebsite2310@gmail.com")
               }
             >
-              Email
+              tourwebsite2310@gmail.com
             </button>
           </div>
         </div>

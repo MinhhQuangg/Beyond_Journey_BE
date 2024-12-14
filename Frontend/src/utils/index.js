@@ -39,9 +39,56 @@ const mostAskedQuestions = [
       "Yes! After your tour, we encourage you to share your experience by leaving a review. Your feedback helps us improve our services and assists future travelers in making informed decisions.",
   },
 ];
+const paymentQuestions = [
+  {
+    question: "Can I pay for my US tour using PayPal?",
+    answer:
+      "Yes, PayPal is accepted for all tours booked through BeyondJourney. It’s a secure and hassle-free way to complete your payment.",
+  },
+  {
+    question: "Are there any additional PayPal transaction fees?",
+    answer:
+      "No, we cover all PayPal transaction fees. You only pay the listed tour price.",
+  },
+  {
+    question: "Is it possible to get a refund through PayPal?",
+    answer:
+      "Yes, refunds for cancellations will be processed back to your PayPal account based on our cancellation policy.",
+  },
+  {
+    question: " How will I know if my PayPal payment is successful?",
+    answer:
+      "You will receive an email receipt from PayPal along with a booking confirmation from our team.",
+  },
+];
+const tourQuestions = [
+  {
+    question: "What kind of tours do you offer in the United States?",
+    answer:
+      "We offer city tours, outdoor adventures, cultural excursions, and national park experiences tailored for every traveler.",
+  },
+  {
+    question: "Are the tour guides experienced and certified?",
+    answer:
+      "Yes, all of our tour guides are certified professionals with extensive knowledge of US destinations.",
+  },
+  {
+    question: "What is the average group size for tours?",
+    answer:
+      "Our tours typically have a small group size of 6–12 people to ensure a personalized experience.",
+  },
+  {
+    question: " How do I tip the guide after the tour?",
+    answer:
+      "Tipping is not mandatory but appreciated. You can tip in cash or directly via PayPal.",
+  },
+];
 
-const usefulLinks = ["Your Account", "Our Team", "FAQ"];
-
+const usefulLinks = [
+  { label: "Your Account", path: "/youraccount" },
+  { label: "Our Team", path: "/youraccount" },
+  { label: "FAQ", path: "/FAQ" },
+];
 const whyUs = [
   {
     reason: "Curated Tour Packages",
@@ -80,4 +127,6 @@ export {
   usefulLinks,
   mostAskedQuestions,
   whyUs,
+  paymentQuestions,
+  tourQuestions,
 };
