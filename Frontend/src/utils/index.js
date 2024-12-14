@@ -11,7 +11,6 @@ const price = ["0 - $500", "$500 - $1000", "$1000 - $1500"];
 
 const navOptions = [
   { label: "Destination", path: "/destination" },
-  { label: "Travel List", path: "/travel-list" },
   { label: "Travel Deal", path: "/travel-deal" },
   { label: "Booking", path: "/booking" },
   { label: "Blogs", path: "/blogs" },

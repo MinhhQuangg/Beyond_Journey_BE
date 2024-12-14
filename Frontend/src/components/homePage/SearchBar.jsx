@@ -1,17 +1,17 @@
-import { React, useEffect, useRef, useState } from "react";
-import MapIcon from "@mui/icons-material/Map";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import GroupIcon from "@mui/icons-material/Group";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import DirectionsRunIcon from "@mui/icons-material/DirectionsRun";
+import GroupIcon from "@mui/icons-material/Group";
+import MapIcon from "@mui/icons-material/Map";
 import SearchIcon from "@mui/icons-material/Search";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import { format } from "date-fns";
+import { React, useEffect, useRef, useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate } from "react-router-dom";
 import { styles } from "../../styles";
 import { level } from "../../utils";
-import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const [isOpenDifficulty, setIsOpenDifficulty] = useState(false);
@@ -281,12 +281,12 @@ const SearchBar = () => {
           </div>
           <div className="col-span-1">
             <button
-              className="text-center rounded-full border border-black p-3 w-full text-[20px] bg-primary_3 hover:bg-primary_1 hover:text-white"
+              className="text-center rounded-full border border-black p-3 w-full text-[20px] bg-primary_4  hover:bg-primary_1 hover:text-white"
               onClick={() => handleSearch()}
             >
               <span className="flex items-center">
                 <SearchIcon />
-                <span className="ml-2 text-white">Search</span>
+                <span className="ml-2">Search</span>
               </span>
             </button>
           </div>

@@ -1,22 +1,23 @@
 import React from "react";
 import { styles } from "../styles";
-import logo from "../assets/tourname.jpg";
+import { tourname } from "../assets";
 import { Link, useNavigate } from "react-router-dom";
 import { IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { navOptions } from "../utils";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import { grey } from "@mui/material/colors";
 
 const NavBar = () => {
   const navigate = useNavigate();
   return (
     <div
-      className={`${styles.paddingXNav} w-full flex justify-between items-center fixed text-white bg-primary_3`}
+      className={`${styles.paddingXNav} w-full flex justify-between items-center fixed text-white bg-primary_1 py-[15px]`}
       style={{ zIndex: 20 }}
     >
       <div>
         <Link onClick={() => navigate("/")}>
-          <img src={logo} alt="Logo" className="w-[180px] h-[80px]" />
+          <img src={tourname} alt="Logo" className="w-[200px] h-[50px]" />
         </Link>
       </div>
       <div className={`${styles.headerNav} flex gap-14`}>
@@ -28,10 +29,10 @@ const NavBar = () => {
       </div>
       <div className="flex gap-2">
         <IconButton>
-          <SearchIcon />
+          <SearchIcon sx={{ color: grey[50] }} />
         </IconButton>
         <IconButton onClick={() => navigate("/login")}>
-          <PersonOutlineIcon />
+          <PersonOutlineIcon sx={{ color: grey[50] }} />
         </IconButton>
       </div>
     </div>

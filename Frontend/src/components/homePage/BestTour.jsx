@@ -98,7 +98,7 @@ const BestTour = () => {
                   </div>
                 </div>
                 <div className="flex justify-center items-center w-full mt-4 mb-5">
-                  <button className="bg-primary_3 hover:bg-primary_1 hover:text-white py-2 px-4 rounded-2xl">
+                  <button className="bg-primary_4 hover:bg-primary_1 hover:text-white py-2 px-4 rounded-2xl">
                     EXPLORE MORE
                   </button>
                 </div>

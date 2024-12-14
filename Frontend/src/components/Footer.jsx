@@ -1,6 +1,6 @@
 import React from "react";
 import { styles } from "../styles";
-import { toursquare } from "../assets";
+import { toursquare1 } from "../assets";
 import { navOptions, usefulLinks } from "../utils";
 import { Link } from "react-router-dom";
 import EmailIcon from "@mui/icons-material/Email";
@@ -8,10 +8,14 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 export const Footer = () => {
   return (
-    <div className={`${styles.paddingXFooter} bg-primary_2 text-white`}>
+    <div className={`${styles.paddingXFooter} bg-primary_1 text-white`}>
       <div className="flex gap-5 justify-between items-start">
-        <div className="flex justify-center">
-          <img src={toursquare} alt="toursquare" style={{ width: "70%" }} />
+        <div className="flex justify-center items-center">
+          <img
+            src={toursquare1}
+            alt="toursquare1"
+            className="w-[250px] h-[220px]"
+          />
         </div>
         <div className="flex flex-col gap-3">
           <div className={`${styles.sectionSubText} pb-2`}>Navigation</div>

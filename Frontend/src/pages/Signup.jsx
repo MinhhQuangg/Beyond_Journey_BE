@@ -52,14 +52,15 @@ export const SignUp = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "20px",
-          left: "20px",
+          top: "40px",
+          left: "40px",
         }}
       >
         <img
           src={toursquare}
           alt="Logo"
-          style={{ width: "40%", cursor: "pointer" }}
+          style={{ cursor: "pointer" }}
+          className="w-[170px] h-[150px]"
           onClick={() => navigate("/")}
         />
       </Box>
