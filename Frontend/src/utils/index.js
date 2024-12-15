@@ -61,7 +61,13 @@ const paymentQuestions = [
       "You will receive an email receipt from PayPal along with a booking confirmation from our team.",
   },
 ];
+
 const tourQuestions = [
+  {
+    question: " Will there be a guide throughout the entire trip?",
+    answer:
+      "Yes, our knowledgeable guides will accompany you for the duration of your tour to ensure a smooth and enjoyable experience.",
+  },
   {
     question: "What kind of tours do you offer in the United States?",
     answer:
@@ -77,13 +83,19 @@ const tourQuestions = [
     answer:
       "Our tours typically have a small group size of 6–12 people to ensure a personalized experience.",
   },
+];
+const preparationQuestions = [
   {
-    question: " How do I tip the guide after the tour?",
+    question: "What should I wear during my trip?",
     answer:
-      "Tipping is not mandatory but appreciated. You can tip in cash or directly via PayPal.",
+      "Comfortable clothing and walking shoes are recommended. For national parks or hiking trips, bring weather-appropriate gear.",
+  },
+  {
+    question: "What do I need to pack for my trip?",
+    answer:
+      "Essentials include ID, comfortable footwear, weather-appropriate clothing, and a water bottle. Specific requirements will be mentioned in your travel guide.",
   },
 ];
-
 const usefulLinks = [
   { label: "Your Account", path: "/youraccount" },
   { label: "Our Team", path: "/youraccount" },
@@ -129,4 +141,5 @@ export {
   whyUs,
   paymentQuestions,
   tourQuestions,
+  preparationQuestions,
 };

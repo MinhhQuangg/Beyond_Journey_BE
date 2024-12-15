@@ -16,14 +16,14 @@ const NavBar = () => {
       style={{ zIndex: 20 }}
     >
       <div>
-        <Link
-          onClick={(e) => {
-            e.preventDefault();
+        <img
+          src={tourname}
+          alt="Logo"
+          className="w-[200px] h-[50px] cursor-pointer"
+          onClick={() => {
             navigate("/");
           }}
-        >
-          <img src={tourname} alt="Logo" className="w-[200px] h-[50px]" />
-        </Link>
+        />
       </div>
       <div className={`${styles.headerNav} flex gap-14`}>
         {navOptions.map((option, index) => (
