@@ -28,7 +28,9 @@ export const Intro = () => {
             </span>
             <span className="font-sans text-[80px] font-extrabold text-white tracking-wide">
               With All&nbsp;
-              <div className=" inline-block text-red-600">Special</div>
+              <div className=" inline-block text-red-600 motion-preset-bounce">
+                Special
+              </div>
               &nbsp;Deals
             </span>
           </div>
