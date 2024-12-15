@@ -12,6 +12,7 @@ import ResetPassword from "../pages/ResetPassword";
 import HomePage from "../pages/Homepage";
 import AboutUs from "../pages/AboutUs";
 import FaqPage from "../pages/FaqPage";
+import Tours from "../pages/Tours";
 
 export const Routes = () => {
   return (
@@ -25,6 +26,7 @@ export const Routes = () => {
         <Route path="*" element={<ErrorPage />} />
         <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/FAQ" element={<FaqPage />} />
+        <Route path="/tours" element={<Tours />} />
       </RouteComponent>
     </BrowserRouter>
   );
