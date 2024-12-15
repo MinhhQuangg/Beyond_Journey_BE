@@ -4,7 +4,7 @@ const styles = {
   paddingIntro: "2xl:px-[200px] sm:px-10 pb-[100px]",
   paddingXSub: "px-[10%]",
   paddingXFooter: "sm:px-20 pt-10",
-  paddingY: "sm:py-16 py-6",
+  paddingY: "sm:py-16 my-6",
   padding: "sm:px-16 px-6 sm:py-16 py-10",
 
   headerNav: "text-[28px]",
