@@ -16,7 +16,12 @@ const NavBar = () => {
       style={{ zIndex: 20 }}
     >
       <div>
-        <Link onClick={() => navigate("/")}>
+        <Link
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/");
+          }}
+        >
           <img src={tourname} alt="Logo" className="w-[200px] h-[50px]" />
         </Link>
       </div>

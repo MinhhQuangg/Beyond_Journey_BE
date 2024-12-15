@@ -13,7 +13,7 @@ const HomePage = () => {
   return (
     <div>
       <NavBar />
-      <div className="pt-[90px] ">
+      <div className="pt-[15px] ">
         <Intro />
         <div
           className="absolute top-20 left-0 right-0 z-10 flex justify-center"

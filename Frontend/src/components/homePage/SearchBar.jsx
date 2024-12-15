@@ -124,7 +124,7 @@ const SearchBar = () => {
           <div className={`${styles.headerText}`}>Find Your Perfect Tour</div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 border-2 border-gray-600 sm:rounded-3xl md:rounded-3xl lg:rounded-full gap-5 w-[95%] p-3 px-5 text-[18px]">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 xl:grid-cols-5 border-2 border-gray-600 sm:rounded-3xl md:rounded-3xl xl:rounded-full gap-5 w-[95%] p-3 px-5 text-[18px]">
           <div
             className="relative md:col-start-1 md:col-span-1 lg:col-span-1"
             ref={refDestination}
