@@ -53,7 +53,7 @@ const Tours = () => {
         </div>
       </div>
       <div className="mt-4 bg-white-100">
-        <div className={`${styles.paddingX} grid grid-cols-8 gap-10`}>
+        <div className={`${styles.paddingTour} grid grid-cols-8 gap-10`}>
           <div className="col-span-2 flex flex-col gap-10">
             <div className="rounded-2xl flex flex-col gap-3 shadow-lg p-7">
               <div className="font-bold text-[20px]">Filter by Price</div>
@@ -85,13 +85,13 @@ const Tours = () => {
               {tours.map((el, i) => (
                 <div
                   key={i}
-                  className="col-span-2 h-[400px] shadow-xl rounded-2xl"
+                  className="col-span-2 h-[450px] shadow-xl rounded-2xl group"
                 >
                   <div className="relative">
                     <img
                       src={`http://127.0.0.1:3000${el.imageCover}`}
                       alt={i}
-                      className=" h-[240px] w-[340px] hover:brightness-110"
+                      className=" h-[280px] w-full hover:brightness-90 cursor-pointer"
                     />
                     <div
                       className="absolute bg-white rounded-2xl z-10 w-full p-[20px]"
@@ -112,13 +112,22 @@ const Tours = () => {
                         <div>{el.duration} days</div>
                       </div>
                       <div className="border-t border-dashed border-gray-500 my-2"></div>
-                      <div>{el.startLocation.description}</div>
-                      <div className="text-[20px] font-bold">{el.name}</div>
+                      <div className="text-[18px]">
+                        {el.startLocation.description}
+                      </div>
+                      <div className="text-[30px] font-bold hover:text-primary_2 cursor-pointer">
+                        {el.name}
+                      </div>
                       <div className="my-2">
-                        From:{" "}
+                        From:
                         <span className="text-[18px] text-primary_2 font-bold ">
                           ${el.price}
                         </span>
+                      </div>
+                      <div className="flex justify-center items-center mt-5 invisible group-hover:visible transition-opacity duration-300">
+                        <button className="w-[80%] bg-primary_4 hover:bg-primary_2 hover:text-white p-2 text-[18px] rounded-2xl">
+                          More Information
+                        </button>
                       </div>
                     </div>
                   </div>

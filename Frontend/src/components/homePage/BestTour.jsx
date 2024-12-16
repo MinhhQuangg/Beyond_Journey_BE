@@ -71,7 +71,7 @@ const BestTour = () => {
                 className=" h-[300px] hover:brightness-110"
               />
               <div className="px-5">
-                <div className="mt-4 mb-2 text-[20px] font-bold">{el.name}</div>
+                <div className="mt-4 mb-2 text-[28px] font-bold">{el.name}</div>
                 <div className="min-h-[60px] flex-grow">{el.summary}</div>
                 <div className="grid grid-cols-2">
                   <div className="border-r-2 border-gray-950">
