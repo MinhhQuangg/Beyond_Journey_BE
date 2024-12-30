@@ -8,7 +8,7 @@ import axios from "axios";
 import { Checkbox, Rating, Slider } from "@mui/material";
 
 const ratings = [5, 4, 3, 2, 1];
-const durations = ["0-3 days", "3-5 days", "over 5 days"];
+const durations = ["0-3 days", "3-5 days", "> 5 days"];
 
 const Tours = () => {
   const [tours, setTours] = useState([]);
@@ -67,17 +67,19 @@ const Tours = () => {
           <div className="col-span-2 flex flex-col gap-10">
             <div className="rounded-2xl flex flex-col gap-3 shadow-lg p-7">
               <div className="font-bold text-[20px]">Filter by Price</div>
-              <Slider
-                value={range}
-                onChange={handleChange}
-                valueLabelFormat={(value) => `${value}`}
-                min={100}
-                max={900}
-              />
-              <div>
-                <span>Price: &nbsp;</span>
-                <span className="font-bold">{`$${range[0]}`} - </span>
-                <span className="font-bold">{`$${range[1]}`}</span>
+              <div className="px-3">
+                <Slider
+                  value={range}
+                  onChange={handleChange}
+                  valueLabelFormat={(value) => `${value}`}
+                  min={100}
+                  max={900}
+                />
+                <div>
+                  <span>Price: &nbsp;</span>
+                  <span className="font-bold">{`$${range[0]}`} - </span>
+                  <span className="font-bold">{`$${range[1]}`}</span>
+                </div>
               </div>
             </div>
             <div className="rounded-2xl flex flex-col shadow-lg p-7">
@@ -89,8 +91,14 @@ const Tours = () => {
                 </div>
               ))}
             </div>
-            <div className="rounded-2xl flex flex-col gap-3 shadow-lg p-7">
+            <div className="rounded-2xl flex flex-col shadow-lg p-7">
               <div className="font-bold text-[20px]">Filter by Duration</div>
+              {durations.map((duration) => (
+                <div key={duration} className="flex items-center">
+                  <Checkbox />
+                  <div className="font-bold text-[17px]">{duration}</div>
+                </div>
+              ))}
             </div>
             <div className="rounded-2xl flex flex-col gap-3 shadow-lg p-7">
               <div className="font-bold text-[20px]">Top Rated Tour</div>
