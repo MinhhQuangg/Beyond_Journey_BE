@@ -29,12 +29,19 @@ const Search = () => {
   const refDate = useRef(null);
   const refDestination = useRef(null);
   const navigate = useNavigate();
+  const [destOption, setDestOption] = useState([]);
 
   useEffect(() => {
     const fetchTours = async () => {
       try {
         const data = await axios.get("http://127.0.0.1:3000/api/v1/tours");
-        setDestination(data.data.data.tours);
+        const tours = data.data.data.tours;
+        setDestination(tours);
+        const options = Array.from(
+          new Set(tours.map((tour) => tour.destination))
+        );
+
+        setDestOption(options);
       } catch (err) {
         console.error();
       }
@@ -102,14 +109,30 @@ const Search = () => {
   };
 
   const handleSearch = async () => {
-    const params = new URLSearchParams({
+    const queries = {
       destination:
         selectedDestination !== "Destination" ? selectedDestination : "",
-      difficulty: selectedDifficulty !== "Difficulty" ? selectedDifficulty : "",
-      guests: total > 0 ? total : "",
+      difficulty:
+        selectedDifficulty !== "Difficulty"
+          ? selectedDifficulty.toLowerCase()
+          : "",
       date: date ? format(date, "yyyy-mm-dd") : "",
-    });
-    navigate(`/tours?params`);
+    };
+    //!Remove empty object
+    if (total > 0) {
+      queries["maxGroupSize[gte]"] = total;
+    }
+    const filteredQuery = Object.fromEntries(
+      Object.entries(queries).filter(([_, value]) => value)
+    );
+    const params = new URLSearchParams(filteredQuery);
+    console.log(params.toString());
+    setSelectedDestination("Destination");
+    setSelectedDifficulty("Difficulty");
+    setCountAdult(0);
+    setCountChildren(0);
+    setDate(null);
+    navigate(`/tours?${params.toString()}`);
   };
   return (
     <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 xl:grid-cols-5 border-2 border-gray-600 sm:rounded-3xl md:rounded-3xl xl:rounded-full gap-5 w-[95%] p-3 px-5 text-[18px] bg-white">
@@ -123,21 +146,22 @@ const Search = () => {
         >
           <span className="flex items-center">
             <MapIcon />
-            <span className="ml-2">{selectedDestination}</span>
+            <span className="ml-2 text-[18px]">{selectedDestination}</span>
           </span>
           <ArrowDropDownIcon />
         </button>
         {isOpenDestination && (
           <div className="absolute z-10 w-full mt-4 rounded-md my-1 bg-white py-1  max-h-60 overflow-y-auto">
-            {destination.map((destination, index) => (
+            {destOption.map((destination, index) => (
               <button
                 key={index}
                 className="block px-6 py-2 text-gray-500 hover:text-black w-full text-left !text-[18px]"
-                onClick={() =>
-                  setSelectedDestination(destination.startLocation.description)
-                }
+                onClick={() => {
+                  setSelectedDestination(destination);
+                  setIsOpenDestination(false);
+                }}
               >
-                {destination.startLocation.description}
+                {destination}
               </button>
             ))}
           </div>
@@ -212,14 +236,14 @@ const Search = () => {
             <GroupIcon />
             <span className="ml-2">
               {(countAdult === 0) & (countChildren === 0)
-                ? "Guests"
-                : `${total} Guests`}
+                ? "Guest"
+                : `${total} Guest`}
             </span>
           </span>
           <ArrowDropDownIcon />
         </button>
         {isOpenGuest && (
-          <div className="absolute py-3 z-10 mt-4 bg-white px-3 w-full">
+          <div className="absolute py-3 z-10 mt-4 bg-white w-full">
             <div className="px-4 text-[18px] w-full">
               <div className="flex justify-between items-center w-full pb-3">
                 <div className="flex items-center ">
@@ -228,13 +252,13 @@ const Search = () => {
                 </div>
                 <div className="flex justify-between">
                   <button
-                    className="text-black font-bold px-2 text-[20px] w-[40px]  border-y-2 border-l-2 rounded-l-3xl border-black"
+                    className="text-black font-bold text-[20px] w-[30px]  border-y-2 border-l-2 rounded-l-3xl border-black"
                     onClick={() => handleCountDecrement("adult")}
                   >
                     -
                   </button>
                   <button
-                    className="text-black px-2 py-1 text-[20px] w-[40px] border-y-2 border-r-2 rounded-r-3xl border-black"
+                    className="text-black text-[20px] w-[30px] border-y-2 border-r-2 rounded-r-3xl border-black"
                     onClick={() => handleCountIncrement("adult")}
                   >
                     +
@@ -242,19 +266,19 @@ const Search = () => {
                 </div>
               </div>
               <div className="flex justify-between items-center w-full pb-3">
-                <div className="flex items-center ">
+                <div className="flex items-center">
                   <div className="mr-2">{countChildren}</div>
-                  <div>Children</div>
+                  <div>Child</div>
                 </div>
                 <div className="flex justify-between">
                   <button
-                    className="text-black font-bold px-2 text-[20px] w-[40px]  border-y-2 border-l-2 rounded-l-3xl border-black"
+                    className="text-black font-bold text-[20px] w-[30px]  border-y-2 border-l-2 rounded-l-3xl border-black"
                     onClick={() => handleCountDecrement("children")}
                   >
                     -
                   </button>
                   <button
-                    className="text-black px-2 py-1 text-[20px] w-[40px] border-y-2 border-r-2 rounded-r-3xl border-black"
+                    className="text-black text-[20px] w-[30px] border-y-2 border-r-2 rounded-r-3xl border-black"
                     onClick={() => handleCountIncrement("children")}
                   >
                     +

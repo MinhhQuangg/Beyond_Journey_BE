@@ -6,11 +6,14 @@ import { styles } from "../styles";
 import Search from "../components/common/Search";
 import axios from "axios";
 import { Checkbox, Rating, Slider } from "@mui/material";
+import { useSearchParams } from "react-router-dom";
 
 const ratings = [5, 4, 3, 2, 1];
 const durations = ["0-3 days", "3-5 days", "> 5 days"];
 
 const Tours = () => {
+  const [searchParams] = useSearchParams();
+
   const [tours, setTours] = useState([]);
   const [topTours, setTopTours] = useState([]);
   const [range, setRange] = useState([100, 900]);
@@ -23,20 +26,20 @@ const Tours = () => {
         "http://127.0.0.1:3000/api/v1/tours/top-5-cheap?limit=3"
       );
       const tours = response.data?.data?.tours;
-      const topTour = tours.slice(0, 3);
-      console.log(topTour);
+      const topTour = tours.slice(0, 4);
       setTopTours(topTour);
     };
     fetchTopTour();
   }, []);
   useEffect(() => {
     const fetchTour = async () => {
-      const response = await axios.get("http://127.0.0.1:3000/api/v1/tours");
-      console.log(response.data?.data?.tours);
+      const response = await axios.get(
+        `http://127.0.0.1:3000/api/v1/tours?${searchParams.toString()}`
+      );
       setTours(response.data?.data?.tours);
     };
     fetchTour();
-  }, []);
+  }, [searchParams]);
   return (
     <div className="flex flex-col">
       <NavBar />
@@ -56,13 +59,13 @@ const Tours = () => {
           </div>
 
           <div className="flex justify-center items-center w-full h-[0vh] mt-auto">
-            <div className="w-[65%]">
+            <div className="w-[80%]">
               <Search />
             </div>
           </div>
         </div>
       </div>
-      <div className="mt-10 bg-white-100">
+      <div className="mt-[50px] bg-white-100">
         <div className={`${styles.paddingTour} grid grid-cols-8 gap-10`}>
           <div className="col-span-2 flex flex-col gap-10">
             <div className="rounded-2xl flex flex-col gap-3 shadow-lg p-7">
@@ -96,12 +99,29 @@ const Tours = () => {
               {durations.map((duration) => (
                 <div key={duration} className="flex items-center">
                   <Checkbox />
-                  <div className="font-bold text-[17px]">{duration}</div>
+                  <div className="text-[17px]">{duration}</div>
                 </div>
               ))}
             </div>
-            <div className="rounded-2xl flex flex-col gap-3 shadow-lg p-7">
+            <div className="rounded-2xl flex flex-col gap-2 shadow-lg p-7">
               <div className="font-bold text-[20px]">Top Rated Tour</div>
+              {topTours.map((tour) => (
+                <div key={tour.name} className="flex gap-3 px-3">
+                  <img
+                    src={`http://127.0.0.1:3000${tour.imageCover}`}
+                    alt={tour.name}
+                    className="w-[70px] h-[70px] rounded-2xl cursor-pointer"
+                  />
+                  <div className="flex flex-col gap-2 py-1">
+                    <div className="font-bold text-[16px] hover:text-primary_2 cursor-pointer">
+                      {tour.name}
+                    </div>
+                    <div className="text-[17px] text-primary_2">
+                      ${tour.price}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
           <div className="col-span-6">

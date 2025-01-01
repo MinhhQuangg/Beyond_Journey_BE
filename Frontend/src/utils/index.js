@@ -113,7 +113,7 @@ const whyUs = [
     icon: Diversity2Icon,
   },
   {
-    reason: "Verified Reviews and Testimonials",
+    reason: "Verified Testimonials",
     illustrate: "Trustworthy feedback to help you make informed decisions.",
     icon: ReviewsIcon,
   },

@@ -28,7 +28,7 @@ const Question = () => {
         <img
           src={questionimage}
           alt="question_photo"
-          className="w-[400px] h-[380px] rounded-xl"
+          className="w-[420px] h-[420px] rounded-xl"
         />
         <div className="flex flex-col gap-5 w-[45%]">
           {mostAskedQuestions.map((question, i) => (

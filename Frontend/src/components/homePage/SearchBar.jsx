@@ -4,7 +4,7 @@ import Search from "../common/Search";
 
 const SearchBar = () => {
   return (
-    <div className={`${styles.paddingX} w-[80%]`}>
+    <div className={`${styles.paddingX} w-[90%]`}>
       <div className="flex flex-col items-center rounded-3xl shadow-lg bg-white pb-[40px] ">
         <div className="text-center my-[30px]">
           <div

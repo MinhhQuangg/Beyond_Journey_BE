@@ -11,6 +11,10 @@ const tourSchema = new mongoose.Schema(
       minLength: [10, 'A tour name is too long'],
       maxLength: [40, 'A tour name is too short'],
     },
+    destination: {
+      type: String,
+      require: [true, 'A tour must have destination'],
+    },
     duration: {
       type: Number,
       required: [true, 'A tour must have a duration'],
@@ -22,6 +26,11 @@ const tourSchema = new mongoose.Schema(
         values: ['easy', 'medium', 'difficult'],
         message: 'Please choose the following options: easy, medium, difficult',
       },
+    },
+    maxGroupSize: {
+      type: Number,
+      required: [true, 'A tour must have a group size'],
+      min: [3, 'Group size must greater than 3'],
     },
     ratingsAverage: {
       type: Number,
