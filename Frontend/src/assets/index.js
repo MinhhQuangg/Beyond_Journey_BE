@@ -5,7 +5,8 @@ import toursquare1 from "./toursquare1.jpeg";
 import tourname from "./tourname.jpeg";
 import errorimage from "./404_page_cover.jpg";
 import blackBackground from "./black_background.jpg";
-
+import qprofile from "./qprofile.JPG";
+import kprofile from "./kprofile.JPG";
 export {
   blackBackground,
   homepagePic,
@@ -14,4 +15,6 @@ export {
   toursquare1,
   questionimage,
   errorimage,
+  qprofile,
+  kprofile,
 };

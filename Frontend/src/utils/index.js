@@ -97,8 +97,8 @@ const preparationQuestions = [
   },
 ];
 const usefulLinks = [
-  { label: "Your Account", path: "/youraccount" },
-  { label: "Our Team", path: "/youraccount" },
+  { label: "Your Account", path: "/account" },
+  { label: "Our Team", path: "/ourteam" },
   { label: "FAQ", path: "/FAQ" },
 ];
 const whyUs = [
