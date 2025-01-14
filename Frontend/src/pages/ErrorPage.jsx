@@ -1,8 +1,7 @@
 import React from "react";
-import NavBar from "../components/NavBar";
-import { Footer } from "../components/Footer";
-import { errorimage } from "../assets";
 import { Link } from "react-router-dom";
+import { Footer } from "../components/Footer";
+import NavBar from "../components/NavBar";
 
 const ErrorPage = () => {
   return (

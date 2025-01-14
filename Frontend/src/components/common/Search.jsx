@@ -23,7 +23,7 @@ const Search = () => {
   const [countAdult, setCountAdult] = useState(0);
   const [countChildren, setCountChildren] = useState(0);
   const [date, setDate] = useState(null);
-  const [destination, setDestination] = useState([]);
+
   const refDifficulty = useRef(null);
   const refGuest = useRef(null);
   const refDate = useRef(null);
@@ -36,7 +36,7 @@ const Search = () => {
       try {
         const data = await axios.get("http://127.0.0.1:3000/api/v1/tours");
         const tours = data.data.data.tours;
-        setDestination(tours);
+
         const options = Array.from(
           new Set(tours.map((tour) => tour.destination))
         );

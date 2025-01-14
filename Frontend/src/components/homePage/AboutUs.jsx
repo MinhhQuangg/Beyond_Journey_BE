@@ -13,7 +13,7 @@ const AboutUs = () => {
         </div>
         <div className={`${styles.headerText}`}>Why Choosing Us?</div>
       </div>
-      <div className="flex justify-between my-10 w-full text-center gap-1">
+      <div className="flex justify-between w-full text-center gap-1">
         {whyUs.map((el, i) => (
           <div
             key={i}

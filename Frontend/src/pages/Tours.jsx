@@ -16,10 +16,29 @@ const Tours = () => {
 
   const [tours, setTours] = useState([]);
   const [topTours, setTopTours] = useState([]);
-  const [range, setRange] = useState([100, 900]);
+  const [range, setRange] = useState([100, 3000]);
+  const [selectRating, setSelectRating] = useState([]);
+  const [selectDuration, setSelectDuration] = useState("");
   const handleChange = (event, newValue) => {
     setRange(newValue);
   };
+  const handleRatingChange = (event, rating) => {
+    if (event.target.checked) {
+      setSelectRating((prevRatings) => [...prevRatings, rating]);
+    } else {
+      setSelectRating((prevRatings) => prevRatings.filter((r) => r !== rating));
+    }
+  };
+  const handleDurationChange = (event) => {
+    console.log(event);
+    const { value } = event.target;
+    if (selectDuration === value) {
+      setSelectDuration("");
+    } else {
+      setSelectDuration(value);
+    }
+  };
+
   useEffect(() => {
     const fetchTopTour = async () => {
       const response = await axios.get(
@@ -33,13 +52,31 @@ const Tours = () => {
   }, []);
   useEffect(() => {
     const fetchTour = async () => {
+      const minPrice = range[0];
+      const maxPrice = range[1];
+      const ratingFilter =
+        selectRating.length > 0
+          ? `&ratingsAverage[gte]=${Math.min(...selectRating)}`
+          : "";
+      let durationFilter = "";
+      if (selectDuration) {
+        if (selectDuration === "0-3 days") {
+          durationFilter = `duration[gte]=0&duration[lte]=3`;
+        } else if (selectDuration === "3-5 days") {
+          durationFilter = `duration[gte]=3&duration[lte]=5`;
+        } else if (selectDuration === "> 5 days") {
+          durationFilter = `duration[gte]=5`;
+        }
+      }
       const response = await axios.get(
-        `http://127.0.0.1:3000/api/v1/tours?${searchParams.toString()}`
+        `http://127.0.0.1:3000/api/v1/tours?${searchParams.toString()}&price[gte]=${minPrice}&price[lte]=${maxPrice}${ratingFilter}${
+          durationFilter ? `&${durationFilter}` : ""
+        }`
       );
       setTours(response.data?.data?.tours);
     };
     fetchTour();
-  }, [searchParams]);
+  }, [searchParams, range, selectRating, selectDuration]);
   return (
     <div className="flex flex-col">
       <NavBar />
@@ -76,7 +113,7 @@ const Tours = () => {
                   onChange={handleChange}
                   valueLabelFormat={(value) => `${value}`}
                   min={100}
-                  max={900}
+                  max={3000}
                 />
                 <div>
                   <span>Price: &nbsp;</span>
@@ -89,7 +126,10 @@ const Tours = () => {
               <div className="font-bold text-[20px]">Filter by Review</div>
               {ratings.map((rating) => (
                 <div key={rating} className="flex items-center">
-                  <Checkbox />
+                  <Checkbox
+                    checked={selectRating.includes(rating)}
+                    onChange={(event) => handleRatingChange(event, rating)}
+                  />
                   <Rating defaultValue={rating} readOnly />
                 </div>
               ))}
@@ -98,7 +138,11 @@ const Tours = () => {
               <div className="font-bold text-[20px]">Filter by Duration</div>
               {durations.map((duration) => (
                 <div key={duration} className="flex items-center">
-                  <Checkbox />
+                  <Checkbox
+                    checked={selectDuration === duration} // Check if this duration is selected
+                    onChange={handleDurationChange}
+                    value={duration}
+                  />
                   <div className="text-[17px]">{duration}</div>
                 </div>
               ))}
@@ -127,8 +171,7 @@ const Tours = () => {
           <div className="col-span-6">
             <div className="grid grid-cols-6 gap-10">
               <div className="col-start-5 col-span-2 flex gap-10">
-                <div>Sort By</div>
-                <div>Filter</div>
+                <div className="text-[18px]">Sort By</div>
               </div>
               {tours.map((el, i) => (
                 <div
