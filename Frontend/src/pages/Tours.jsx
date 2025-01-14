@@ -163,7 +163,7 @@ const Tours = () => {
                       <div className="text-[18px]">
                         {el.startLocation.description}
                       </div>
-                      <div className="text-[25px] font-bold hover:text-primary_2 cursor-pointer">
+                      <div className="text-[21px] font-bold hover:text-primary_2 cursor-pointer">
                         {el.name}
                       </div>
                       <div className="my-2">
