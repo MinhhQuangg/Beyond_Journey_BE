@@ -21,7 +21,10 @@ const AboutUs = () => {
           >
             <div className="text-[22px]">{el.reason}</div>
             <div className="my-[10px]">
-              <el.icon style={{ width: "80px", height: "80px" }} />
+              <el.icon
+                color="secondary"
+                style={{ width: "80px", height: "80px" }}
+              />
             </div>
             <div className="px-[30px] text-[18px]">{el.illustrate}</div>
           </div>

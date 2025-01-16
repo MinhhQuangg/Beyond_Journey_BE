@@ -1,11 +1,11 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import NavBar from "../components/NavBar";
-import { Footer } from "../components/Footer";
 import { blackBackground } from "../assets";
-import axios from "axios";
+import TripInfo from "../components/detailPage/TripInfo";
+import { Footer } from "../components/Footer";
+import NavBar from "../components/NavBar";
 import { styles } from "../styles";
-import { info } from "../utils";
 
 const Detail = () => {
   const params = useParams();
@@ -22,7 +22,7 @@ const Detail = () => {
     fetchTour();
   }, [params]);
   return (
-    <div>
+    <div className="flex flex-col">
       <NavBar />
       <div
         className="bg-cover bg-center"
@@ -38,27 +38,28 @@ const Detail = () => {
               {tour.name}
             </span>
           </div>
-          <div className="mt-[50px] bg-white-100">
-            <div className={`${styles.paddingTour} grid grid-cols-3 gap-10`}>
-              <div className="col-span-2 flex flex-col gap-10">
-                <div className="flex justify-between">
-                  <div className="text-[40px]">{tour.name}</div>
-                  <div className="flex flex-col shadow-lg rounded-b-lg">
-                    <span className="flex justify-center text-[32px] px-[28px] py-[5px] bg-primary_3 text-white rounded-t-lg">
-                      {tour.duration}
-                    </span>
-                    <span className="flex justify-center text-[16px] py-[5px]">
-                      Days
-                    </span>
-                  </div>
-                </div>
-                <div>
-                  <span className="text-[28px]">Trip Info</span>
-                </div>
+        </div>
+      </div>
+      <div className="mt-[50px] bg-white-100">
+        <div className={`${styles.paddingTour} grid grid-cols-3 gap-10`}>
+          <div className="col-span-2 flex flex-col gap-10">
+            <div className="flex justify-between">
+              <div className="text-[40px]">{tour.name}</div>
+              <div className="flex flex-col shadow-lg rounded-b-lg">
+                <span className="flex justify-center text-[32px] px-[28px] py-[5px] bg-primary_3 text-white rounded-t-lg">
+                  {tour.duration}
+                </span>
+                <span className="flex justify-center text-[16px] py-[5px]">
+                  Days
+                </span>
               </div>
-              <div className="col-span-1 flex flex-col gap-10"> Hello </div>
+            </div>
+            <div>
+              <span className="text-[28px] px-[32px]">Trip Info</span>
+              <TripInfo tour={tour} />
             </div>
           </div>
+          <div className="col-span-1 flex flex-col gap-10"> Hello </div>
         </div>
       </div>
       <Footer />
