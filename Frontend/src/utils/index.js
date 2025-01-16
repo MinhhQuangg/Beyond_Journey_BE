@@ -3,6 +3,37 @@ import Diversity2Icon from "@mui/icons-material/Diversity2";
 import ReviewsIcon from "@mui/icons-material/Reviews";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+import HolidayVillageIcon from "@mui/icons-material/HolidayVillage";
+import PlaceIcon from "@mui/icons-material/Place";
+import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
+import FlightLandIcon from "@mui/icons-material/FlightLand";
+import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
+import LanguageIcon from "@mui/icons-material/Language";
+import GroupsIcon from "@mui/icons-material/Groups";
+import ChildCareIcon from "@mui/icons-material/ChildCare";
+import ElderlyIcon from "@mui/icons-material/Elderly";
+import NavigationIcon from "@mui/icons-material/Navigation";
+import LocalDiningIcon from "@mui/icons-material/LocalDining";
+import EventAvailableIcon from "@mui/icons-material/EventAvailable";
+import MovingIcon from "@mui/icons-material/Moving";
+import DirectionsBusIcon from "@mui/icons-material/DirectionsBus";
+const info = [
+  { icon: HolidayVillageIcon, type: "Accomodation" },
+  { icon: PlaceIcon, type: "Destination" },
+  { icon: FlightTakeoffIcon, type: "Departure City" },
+  { icon: FlightLandIcon, type: "Arrival City" },
+  { icon: TipsAndUpdatesIcon, type: "Guide" },
+  { icon: LanguageIcon, type: "Language" },
+  { icon: GroupsIcon, type: "Group Size" },
+  { icon: ChildCareIcon, type: "Min Age" },
+  { icon: ElderlyIcon, type: "Max Age" },
+  { icon: NavigationIcon, type: "Address" },
+  { icon: LocalDiningIcon, type: "Meals" },
+  { icon: EventAvailableIcon, type: "Tour Availability" },
+  { icon: MovingIcon, type: "Difficulty" },
+  { icon: DirectionsBusIcon, type: "Transportation" },
+];
+
 const level = ["Easy", "Medium", "Difficult"];
 
 const sort = ["Price low to high", "Price high to low"];
@@ -132,6 +163,7 @@ const whyUs = [
 ];
 
 export {
+  info,
   level,
   sort,
   price,
