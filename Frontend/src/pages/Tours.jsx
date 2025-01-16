@@ -1,17 +1,25 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import { Footer } from "../components/Footer";
-import { blackBackground } from "../assets";
+import { alphaDescent, alphaInscent, blackBackground } from "../assets";
 import { styles } from "../styles";
 import Search from "../components/common/Search";
 import axios from "axios";
 import { Checkbox, Rating, Slider } from "@mui/material";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const ratings = [5, 4, 3, 2, 1];
 const durations = ["0-3 days", "3-5 days", "> 5 days"];
+const sortTours = (tours, isDescending) => {
+  return tours.sort((a, b) => {
+    if (a.name < b.name) return isDescending ? 1 : -1;
+    if (a.name > b.name) return isDescending ? -1 : 1;
+    return 0;
+  });
+};
 
 const Tours = () => {
+  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
 
   const [tours, setTours] = useState([]);
@@ -19,7 +27,8 @@ const Tours = () => {
   const [range, setRange] = useState([100, 3000]);
   const [selectRating, setSelectRating] = useState([]);
   const [selectDuration, setSelectDuration] = useState("");
-  const handleChange = (event, newValue) => {
+  const [descent, setDescent] = useState(false);
+  const handleChange = (newValue) => {
     setRange(newValue);
   };
   const handleRatingChange = (event, rating) => {
@@ -29,8 +38,8 @@ const Tours = () => {
       setSelectRating((prevRatings) => prevRatings.filter((r) => r !== rating));
     }
   };
+
   const handleDurationChange = (event) => {
-    console.log(event);
     const { value } = event.target;
     if (selectDuration === value) {
       setSelectDuration("");
@@ -73,10 +82,12 @@ const Tours = () => {
           durationFilter ? `&${durationFilter}` : ""
         }`
       );
-      setTours(response.data?.data?.tours);
+      const fetchedTours = response.data?.data?.tours;
+      const sortedTours = sortTours(fetchedTours, descent);
+      setTours(sortedTours);
     };
     fetchTour();
-  }, [searchParams, range, selectRating, selectDuration]);
+  }, [searchParams, range, selectRating, selectDuration, descent]);
   return (
     <div className="flex flex-col">
       <NavBar />
@@ -127,7 +138,7 @@ const Tours = () => {
               {ratings.map((rating) => (
                 <div key={rating} className="flex items-center">
                   <Checkbox
-                    checked={selectRating.includes(rating)}
+                    // checked={selectRating.includes(rating)}
                     onChange={(event) => handleRatingChange(event, rating)}
                   />
                   <Rating defaultValue={rating} readOnly />
@@ -139,7 +150,7 @@ const Tours = () => {
               {durations.map((duration) => (
                 <div key={duration} className="flex items-center">
                   <Checkbox
-                    checked={selectDuration === duration} // Check if this duration is selected
+                    checked={selectDuration === duration}
                     onChange={handleDurationChange}
                     value={duration}
                   />
@@ -170,13 +181,32 @@ const Tours = () => {
           </div>
           <div className="col-span-6">
             <div className="grid grid-cols-6 gap-10">
-              <div className="col-start-5 col-span-2 flex gap-10">
-                <div className="text-[18px]">Sort By</div>
+              <div
+                className="col-start-5 col-span-2 flex gap-2 items-center cursor-pointer"
+                onClick={() => {
+                  setDescent(!descent);
+                }}
+              >
+                <div className="text-[18px]">Sort By:</div>
+                {descent ? (
+                  <img
+                    alt={alphaInscent}
+                    src={alphaInscent}
+                    className="w-[25px] h-[25px]"
+                  />
+                ) : (
+                  <img
+                    alt={alphaDescent}
+                    src={alphaDescent}
+                    className="w-[25px] h-[25px]"
+                  />
+                )}
               </div>
               {tours.map((el, i) => (
                 <div
                   key={i}
                   className="col-span-2 h-[450px] shadow-xl rounded-2xl group"
+                  onClick={() => navigate(`/tour/${el.id}`)}
                 >
                   <div className="relative">
                     <img

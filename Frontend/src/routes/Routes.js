@@ -13,6 +13,8 @@ import HomePage from "../pages/Homepage";
 import AboutUs from "../pages/AboutUs";
 import FaqPage from "../pages/FaqPage";
 import Tours from "../pages/Tours";
+import Tour from "../pages/Tour";
+
 import { OurTeam } from "../pages/OurTeam";
 
 export const Routes = () => {
@@ -24,11 +26,12 @@ export const Routes = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/resetpassword/:token" element={<ResetPassword />} />
-        <Route path="*" element={<ErrorPage />} />
         <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/FAQ" element={<FaqPage />} />
         <Route path="/tours" element={<Tours />} />
+        <Route path="/tour/:id" element={<Tour />} />
         <Route path="/ourteam" element={<OurTeam />} />
+        <Route path="*" element={<ErrorPage />} />
       </RouteComponent>
     </BrowserRouter>
   );

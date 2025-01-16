@@ -7,6 +7,8 @@ import errorimage from "./404_page_cover.jpg";
 import blackBackground from "./black_background.jpg";
 import qprofile from "./qprofile.JPG";
 import kprofile from "./kprofile.JPG";
+import alphaDescent from "./AtoZ.png";
+import alphaInscent from "./ZtoA.png";
 export {
   blackBackground,
   homepagePic,
@@ -17,4 +19,6 @@ export {
   errorimage,
   qprofile,
   kprofile,
+  alphaDescent,
+  alphaInscent,
 };
