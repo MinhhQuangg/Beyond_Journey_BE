@@ -6,8 +6,10 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const BestTour = () => {
+  const navigate = useNavigate();
   const [tours, setTours] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   useEffect(() => {
@@ -98,7 +100,10 @@ const BestTour = () => {
                   </div>
                 </div>
                 <div className="flex justify-center items-center w-full mt-4 mb-5">
-                  <button className="bg-primary_4 hover:bg-primary_1 hover:text-white py-2 px-4 rounded-2xl">
+                  <button
+                    className="bg-primary_4 hover:bg-primary_1 hover:text-white py-2 px-4 rounded-2xl"
+                    onClick={() => navigate(`./tour/${el.id}`)}
+                  >
                     EXPLORE MORE
                   </button>
                 </div>

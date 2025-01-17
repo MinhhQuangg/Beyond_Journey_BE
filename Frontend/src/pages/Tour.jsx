@@ -54,12 +54,23 @@ const Detail = () => {
                 </span>
               </div>
             </div>
-            <div>
-              <span className="text-[28px] px-[32px]">Trip Info</span>
-              <TripInfo tour={tour} />
+            <div className="border-2 border-slate-500">
+              <div>
+                <img
+                  alt="black"
+                  src={blackBackground}
+                  className="h-[432px] w-full"
+                />
+              </div>
+              <div className="my-[20px]">
+                <span className="text-[28px] px-[32px] font-bold">
+                  Trip Info
+                </span>
+                <TripInfo tour={tour} />
+              </div>
             </div>
           </div>
-          <div className="col-span-1 flex flex-col gap-10"> Hello </div>
+          <div className="col-span-1 flex flex-col gap-10"></div>
         </div>
       </div>
       <Footer />
