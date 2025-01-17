@@ -6,6 +6,7 @@ import TripInfo from "../components/detailPage/TripInfo";
 import { Footer } from "../components/Footer";
 import NavBar from "../components/NavBar";
 import { styles } from "../styles";
+import BookTrip from "../components/detailPage/BookTrip";
 
 const Detail = () => {
   const params = useParams();
@@ -16,7 +17,6 @@ const Detail = () => {
       const response = await axios.get(
         `http://127.0.0.1:3000/api/v1/tours/${tourId}`
       );
-      console.log(response.data.data.tour);
       setTour(response.data?.data?.tour);
     };
     fetchTour();
@@ -42,9 +42,9 @@ const Detail = () => {
       </div>
       <div className="mt-[50px] bg-white-100">
         <div className={`${styles.paddingTour} grid grid-cols-3 gap-10`}>
-          <div className="col-span-2 flex flex-col gap-10">
+          <div className="col-span-2 flex flex-col">
             <div className="flex justify-between">
-              <div className="text-[40px]">{tour.name}</div>
+              <div className="text-[40px] font-bold">{tour.name}</div>
               <div className="flex flex-col shadow-lg rounded-b-lg">
                 <span className="flex justify-center text-[32px] px-[28px] py-[5px] bg-primary_3 text-white rounded-t-lg">
                   {tour.duration}
@@ -59,7 +59,7 @@ const Detail = () => {
                 <img
                   alt="black"
                   src={blackBackground}
-                  className="h-[432px] w-full"
+                  className="h-[500px] w-full"
                 />
               </div>
               <div className="my-[20px]">
@@ -70,7 +70,14 @@ const Detail = () => {
               </div>
             </div>
           </div>
-          <div className="col-span-1 flex flex-col gap-10"></div>
+          <div className="col-span-1 flex flex-col">
+            <div className="border-2 rounded-lg shadow-lg py-[20px] mt-[92px]">
+              <span className="text-[20px] px-[32px] font-bold">
+                Book This Tour
+              </span>
+              <BookTrip />
+            </div>
+          </div>
         </div>
       </div>
       <Footer />

@@ -78,7 +78,7 @@ const TripInfo = ({ tour }) => {
             <ChildCareIcon color="primary" />
             Min Age
           </div>
-          <div> 10 </div>
+          <div> 5 </div>
         </div>
       </div>
       <div className="col-span-1 p-[16px] text-[18px]">
@@ -87,7 +87,7 @@ const TripInfo = ({ tour }) => {
             <ElderlyIcon color="primary" />
             Max Age
           </div>
-          <div>50</div>
+          <div>65</div>
         </div>
       </div>
       <div className="col-span-1 p-[16px] text-[18px]">
