@@ -14,8 +14,8 @@ const group = [
 ];
 
 const fee = [
-  { type: "Service per booking", price: "$30" },
-  { type: "Trip Cancellation Insurance", price: "$50" },
+  { type: "Booking Service", price: "$30" },
+  { type: "Cancel Insurance", price: "$50" },
 ];
 
 const BookTrip = () => {

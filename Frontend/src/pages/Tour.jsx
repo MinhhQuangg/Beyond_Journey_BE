@@ -7,6 +7,7 @@ import { Footer } from "../components/Footer";
 import NavBar from "../components/NavBar";
 import { styles } from "../styles";
 import BookTrip from "../components/detailPage/BookTrip";
+import TripDetail from "../components/detailPage/TripDetail";
 
 const Detail = () => {
   const params = useParams();
@@ -21,6 +22,7 @@ const Detail = () => {
     };
     fetchTour();
   }, [params]);
+
   return (
     <div className="flex flex-col">
       <NavBar />
@@ -41,7 +43,7 @@ const Detail = () => {
         </div>
       </div>
       <div className="mt-[50px] bg-white-100">
-        <div className={`${styles.paddingTour} grid grid-cols-3 gap-10`}>
+        <div className={`${styles.paddingDetail} grid grid-cols-3 gap-10`}>
           <div className="col-span-2 flex flex-col">
             <div className="flex justify-between">
               <div className="text-[40px] font-bold">{tour.name}</div>
@@ -68,6 +70,9 @@ const Detail = () => {
                 </span>
                 <TripInfo tour={tour} />
               </div>
+            </div>
+            <div className="pt-[24px]">
+              <TripDetail tour={tour} />
             </div>
           </div>
           <div className="col-span-1 flex flex-col">

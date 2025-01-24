@@ -15,7 +15,6 @@ import MovingIcon from "@mui/icons-material/Moving";
 import DirectionsBusIcon from "@mui/icons-material/DirectionsBus";
 
 const TripInfo = ({ tour }) => {
-  console.log(tour);
   return (
     <div className="grid grid-cols-2 px-[16px]">
       <div className="col-span-1 p-[16px] text-[18px]">
