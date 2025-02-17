@@ -19,7 +19,7 @@ const NavBar = () => {
         <img
           src={tourname}
           alt="Logo"
-          className="w-[200px] h-[50px] cursor-pointer"
+          className=" md:w-[200px] md:h-[50px] w-[120px] h-[30px] cursor-pointer"
           onClick={() => {
             navigate("/");
           }}

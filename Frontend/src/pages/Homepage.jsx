@@ -16,9 +16,9 @@ const HomePage = () => {
       <div className="pt-[15px] ">
         <Intro />
         <div
-          className="absolute left-0 right-0 z-10 flex justify-center"
+          className="absolute left-0 right-0 z-10 flex justify-center mt-[120px]"
           style={{
-            top: "100%", // This positions it halfway from the top of the parent element
+            top: "95%", // This positions it halfway from the top of the parent element
             transform: "translateY(-100%)", // This ensures it overlaps by adjusting by 50% of its own height
           }}
         >

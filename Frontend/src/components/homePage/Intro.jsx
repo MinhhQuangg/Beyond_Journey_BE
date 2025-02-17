@@ -26,7 +26,9 @@ export const Intro = () => {
             >
               Get Your Best Tour
             </span>
-            <span className="font-sans text-[80px] font-extrabold text-white tracking-wide">
+            <span
+              className={`${styles.headerIntro}font-sans font-extrabold text-white tracking-wide`}
+            >
               With All&nbsp;
               <div className=" inline-block text-red-600 motion-preset-bounce">
                 Special

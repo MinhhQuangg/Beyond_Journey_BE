@@ -9,11 +9,12 @@ const styles = {
   paddingY: "sm:py-16 my-6",
   padding: "sm:px-16 px-6 sm:py-16 py-10",
 
-  headerNav: "text-[28px]",
-
+  headerNav: "sm:text-[22px] md:text-[28px] text-[18px]",
+  headerIntro:
+    "lg:text-[80px] md:text-[70px] sm:text-[60px] text-[50px] font-bold",
   headerText: "text-[40px] font-bold",
   headerSubText:
-    "text-primary font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px]",
+    "text-primary font-medium lg:text-[40px] sm:text-[35px] text-[25px] lg:leading-[40px]",
 
   sectionHeadText:
     "text-primary font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]",

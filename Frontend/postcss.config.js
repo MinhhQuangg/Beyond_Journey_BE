@@ -22,6 +22,13 @@ module.exports = {
         "black-200": "#C0C0C0",
         "white-100": "#fde7dd",
       },
+      screens: {
+        sm: "1050px",
+        md: "1260px",
+        lg: "1577px",
+        xl: "1971px",
+        "2xl": "2236px",
+      },
     },
   },
 };
