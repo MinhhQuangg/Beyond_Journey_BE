@@ -106,7 +106,7 @@ const Tours = () => {
             </span>
           </div>
 
-          <div className="flex justify-center items-center w-full h-[0vh] mt-auto">
+          <div className="flex justify-center items-center w-full h-[15vh] mt-auto">
             <div className="w-[80%]">
               <Search />
             </div>
