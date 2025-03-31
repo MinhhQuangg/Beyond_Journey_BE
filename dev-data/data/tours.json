@@ -1,12 +1,12 @@
 [
   {
     "startLocation": {
-      "description": "Miami, USA",
+      "description": "Florida, USA",
       "type": "Point",
-      "coordinates": [-80.185942, 25.774772],
-      "address": "301 Biscayne Blvd, Miami, FL 33132, USA"
+      "coordinates": [-81.379234, 28.538336],
+      "address": "Orlando Air Traffic Control Tower, 1 Jeff Fuqua Blvd, Orlando, FL 32827"
     },
-    "destination": "Florida",
+    "destination": "Miami, Florida",
     "ratingsAverage": 4.8,
     "ratingsQuantity": 6,
     "images": ["tour-2-1.jpg", "tour-2-2.jpg", "tour-2-3.jpg"],
@@ -17,34 +17,50 @@
     ],
     "_id": "5c88fa8cf4afda39709c2955",
     "name": "The Sea Explorer",
-    "duration": 7,
+    "duration": 6,
     "maxGroupSize": 15,
     "difficulty": "medium",
-    "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a1f4e2f8fb814b56fa185"],
+    "guides": ["5c8a1f292f8fb814b56fa184", "5c8a1f292f8fb814b56fa185"],
     "price": 497,
     "summary": "Exploring the jaw-dropping US east coast by foot and by boat",
-    "description": "Discover the best of Miami on this unique walking and boat tour. Start by exploring the vibrant streets of Little Havana and the iconic Art Deco District in South Beach, soaking in the city’s culture and architecture. Then, relax on a scenic boat ride through Biscayne Bay, cruising past luxurious mansions and enjoying panoramic views of Miami’s skyline and waterfront islands. This tour offers a perfect mix of urban charm and natural beauty, all in one unforgettable experience. ",
+    "description": "Embark on an unforgettable adventure through Florida, from the excitement of Universal Studios to the magic of Disney World. Explore the natural beauty of the Everglades National Park and the vibrant city of Tampa. Immerse yourself in the Cuban culture of Little Havana and relax on the sun-kissed beaches of South Beach. This journey combines thrilling theme park fun, breathtaking natural landscapes, rich cultural experiences, and relaxing coastal beauty, all in one incredible trip.",
     "imageCover": "/img/tours/Miami.jpg",
     "locations": [
       {
-        "_id": "5c88fa8cf4afda39709c2959",
-        "description": "Little Havana",
+        "_id": "a3b7c9d1f4e8a2332b5d0001",
+        "description": "Start your adventure with a trip to Universal Studios in Orlando. Immerse yourself in the world of movies and thrilling rides at this world-renowned theme park. From the Wizarding World of Harry Potter to the adrenaline-pumping roller coasters, there's something for everyone. Explore interactive attractions, live shows, and enjoy the excitement of Universal Studios Orlando.",
+        "title": "Airport to Universal Studios",
         "day": 1
       },
       {
-        "_id": "5c88fa8cf4afda39709c2958",
-        "description": "Art Deco District",
+        "_id": "a3b7c9d1f4e8a2332b5d0002",
+        "description": "After Universal Studios, head to the magical Disney World. Whether you're wandering through the iconic Cinderella Castle, meeting beloved Disney characters, or enjoying the themed rides and parades, this enchanting destination is perfect for both kids and adults. Make lasting memories as you explore the four theme parks, including Epcot, Magic Kingdom, and Animal Kingdom.",
+        "title": "Universal Studios to Disney World",
         "day": 2
       },
       {
-        "_id": "5c88fa8cf4afda39709c2957",
-        "description": "Fisher Island",
+        "_id": "a3b7c9d1f4e8a2332b5d0003",
+        "description": "After exploring Disney World, travel to Tampa, a vibrant city offering a mix of cultural and outdoor activities. Stroll along the scenic Tampa Riverwalk, explore the lush gardens at the Tampa Bay History Center, or visit Busch Gardens for a thrilling combination of rides and animal encounters. Don’t miss the lively downtown area, offering delicious food, art galleries, and a bustling nightlife.",
+        "title": "Disney World to Tampa",
         "day": 3
       },
       {
-        "_id": "5c88fa8cf4afda39709c2956",
-        "description": "Biscayne Bay",
+        "_id": "a3b7c9d1f4e8a2332b5d0004",
+        "description": "Next, travel to the breathtaking Everglades National Park. Explore the unique ecosystem of this UNESCO World Heritage Site, home to diverse wildlife like alligators, manatees, and a variety of bird species. Take a guided airboat tour across the wetlands, experiencing the beauty and serenity of the Everglades as you glide through the dense vegetation and swamps.",
+        "title": "Tampa to Everglades National Park",
+        "day": 4
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0005",
+        "description": "Arrive in Miami and start by experiencing the vibrant culture of Little Havana. This colorful neighborhood is known for its Cuban influence, with lively streets filled with salsa music, authentic Cuban eateries, and street art. Visit the famous Calle Ocho for some shopping, and try traditional Cuban delicacies like a Cuban sandwich or a cafecito while soaking in the lively atmosphere.",
+        "title": "Everglades National Park to Little Havana",
         "day": 5
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0006",
+        "description": "End your journey at the stunning South Beach in Miami. Known for its crystal-clear waters, golden sands, and lively atmosphere, South Beach is the perfect spot to relax and people-watch. Enjoy beach volleyball, sunbathe, or take a dip in the Atlantic Ocean. The beach is also home to numerous cafes, restaurants, and art deco buildings, offering a blend of natural beauty and urban style.",
+        "title": "Little Havana to South Beach",
+        "day": 6
       }
     ]
   },
@@ -52,10 +68,10 @@
     "startLocation": {
       "description": "Colorado, USA",
       "type": "Point",
-      "coordinates": [-115.570154, 51.178456],
-      "address": "1000 US Highway 36, Estes Park, CO 80517, USA"
+      "coordinates": [-104.6737, 39.8617],
+      "address": "8500 Peña Blvd, Denver, CO 80249, USA"
     },
-    "destination": "Colorado",
+    "destination": "Denver, Colorado",
     "ratingsAverage": 5,
     "ratingsQuantity": 9,
     "images": ["tour-1-1.jpg", "tour-1-2.jpg", "tour-1-3.jpg"],
@@ -65,8 +81,8 @@
       "2025-10-05T09:00:00.000Z"
     ],
     "_id": "5c88fa8cf4afda39709c2951",
-    "name": "The Forest Hiker",
-    "duration": 5,
+    "name": "Colorado Adventure Tour",
+    "duration": 7,
     "maxGroupSize": 25,
     "difficulty": "easy",
     "guides": [
@@ -75,83 +91,62 @@
       "5c8a1f292f8fb814b56fa184"
     ],
     "price": 397,
-    "summary": "Breathtaking hike through the Rocky Mountain National Park",
-    "description": "Explore the breathtaking beauty of the Rocky Mountains on a guided hiking tour, where you'll trek through lush forests, alpine meadows, and rugged peaks. Enjoy stunning vistas, spot wildlife, and connect with nature as you hike along scenic trails leading to high mountain overlooks and pristine lakes. This experience offers the perfect mix of adventure and awe-inspiring landscapes, ideal for nature lovers and outdoor enthusiasts alike.",
+    "summary": "Discover the best of Colorado from the cityscape to the mountains and beyond",
+    "description": "Experience the beauty and diversity of Colorado on this unforgettable 7-day tour. Start with the vibrant city of Denver, then explore the stunning Rocky Mountain National Park, venture into the charming town of Vail, and continue through the scenic beauty of Telluride. Finally, relax and enjoy the tranquil spring season in Colorado’s breathtaking landscapes. This adventure is designed for those who love nature, hiking, and exploring new places. Whether you're a seasoned traveler or a first-time visitor, this tour offers something for everyone, showcasing the best of Colorado's natural wonders and cultural experiences.",
     "imageCover": "/img/tours/Colorado.jpg",
     "locations": [
       {
-        "_id": "5c88fa8cf4afda39709c2954",
-        "description": "Rocky Mountain National Park",
+        "_id": "a3b7c9d1f4e8a2332b5d0007",
+        "description": "Start your Colorado adventure by landing at Denver International Airport. Begin your journey with a visit to the vibrant city of Denver, where you can explore local art galleries, stroll through the bustling downtown area, or visit the iconic Union Station. Denver offers a perfect mix of outdoor charm and modern urban experiences.",
+        "title": "Denver International Airport to Denver City Tour",
         "day": 1
       },
       {
-        "_id": "5c88fa8cf4afda39709c2953",
-        "description": "Bear Lake",
+        "_id": "a3b7c9d1f4e8a2332b5d0008",
+        "description": "Explore the heart of Denver with a city tour. Visit the famous Denver Botanic Gardens, explore the cultural district, or experience the local craft beer scene. The city's blend of history, culture, and natural beauty makes it a fantastic starting point for your Colorado adventure.",
+        "title": "Denver City Tour",
+        "day": 2
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0009",
+        "description": "Next, head to Rocky Mountain National Park, where you'll experience some of the most breathtaking landscapes in the U.S. Enjoy a scenic drive along Trail Ridge Road, visit alpine lakes, and embark on hiking trails to spot wildlife such as elk and bighorn sheep. The towering peaks and lush valleys are sure to leave you in awe.",
+        "title": "Denver to Rocky Mountain National Park",
         "day": 3
       },
       {
-        "_id": "5c88fa8cf4afda39709c2952",
-        "description": "Alberta Falls",
+        "_id": "a3b7c9d1f4e8a2332b5d0010",
+        "description": "Venture into the charming alpine town of Vail, known for its world-class skiing and vibrant après-ski scene. Whether you're visiting in the winter or summer, Vail offers a range of outdoor activities including hiking, shopping, and enjoying the scenic beauty of the nearby mountains and rivers.",
+        "title": "Rocky Mountain National Park to Vail",
         "day": 4
       },
       {
-        "_id": "5c88fa8cf4afda39709c2950",
-        "description": "Longs Peak",
+        "_id": "a3b7c9d1f4e8a2332b5d0011",
+        "description": "Head to Telluride, one of Colorado's most picturesque towns, nestled in a box canyon. The area offers stunning views of waterfalls, rugged peaks, and a historic downtown filled with boutique shops, art galleries, and cozy restaurants. Don't miss the Telluride Gondola, which offers breathtaking views of the surrounding mountains.",
+        "title": "Vail to Telluride",
         "day": 5
-      }
-    ]
-  },
-  {
-    "startLocation": {
-      "description": "Colorado, USA",
-      "type": "Point",
-      "coordinates": [-106.822318, 39.190872],
-      "address": "565 Mountain Village Blvd, Mountain Village, CO 81435, USA"
-    },
-    "destination": "Colorado",
-    "ratingsAverage": 4.5,
-    "ratingsQuantity": 6,
-    "images": ["tour-3-1.jpg", "tour-3-2.jpg", "tour-3-3.jpg"],
-    "startDates": [
-      "2025-01-05T10:00:00.000Z",
-      "2025-02-12T10:00:00.000Z",
-      "2025-01-06T10:00:00.000Z"
-    ],
-    "_id": "5c88fa8cf4afda39709c295a",
-    "name": "The Snow Adventurer",
-    "duration": 4,
-    "maxGroupSize": 10,
-    "difficulty": "difficult",
-    "guides": [
-      "5c8a21d02f8fb814b56fa189",
-      "5c8a23412f8fb814b56fa18c",
-      "5c8a1f4e2f8fb814b56fa185"
-    ],
-    "price": 997,
-    "summary": "Exciting adventure in the snow with snowboarding and skiing",
-    "description": "Embark on a thrilling snowboarding journey that takes you to two of Colorado’s premier ski destinations: Telluride and Vail. Known for their vast terrain, breathtaking views, and world-class facilities, these resorts offer a perfect combination of powder-filled slopes, challenging runs, and stunning alpine scenery. Whether you're an expert looking for steep descents or a beginner hoping to enjoy gentle slopes, this tour provides the ultimate snowboarding experience.",
-    "imageCover": "/img/tours/Colorado.jpg",
-    "locations": [
-      {
-        "_id": "5c88fa8cf4afda39709c295c",
-        "description": "Telluride Mountain Village",
-        "day": 1
       },
       {
-        "_id": "5c88fa8cf4afda39709c295b",
-        "description": "Vail Ski Resort",
-        "type": "Point",
-        "coordinates": [-106.516623, 39.60499],
-        "day": 3
+        "_id": "a3b7c9d1f4e8a2332b5d0012",
+        "description": "Wrap up your adventure with a visit to Colorado Springs. Explore the stunning Garden of the Gods, a natural park filled with towering red rock formations, or hike to the base of Pikes Peak, one of the highest points in Colorado. End your journey by experiencing the tranquility of the Colorado countryside.",
+        "title": "Telluride to Colorado Springs",
+        "day": 6
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0013",
+        "description": "Return to Denver International Airport to conclude your Colorado adventure. Reflect on the natural beauty, historic towns, and breathtaking landscapes you encountered throughout the tour. Whether you're departing or extending your stay, Colorado's majestic scenery will stay with you long after your journey ends.",
+        "title": "Colorado Springs to Denver International Airport",
+        "day": 7
       }
     ]
   },
   {
     "startLocation": {
-      "description": "Las Vegas, USA",
+      "description": "Nevada, USA",
+      "type": "Point",
+      "coordinates": [-115.570154, 36.1699],
       "address": "3663 S Las Vegas Blvd, Las Vegas, NV 89109, USA"
     },
-    "destination": "Nevada",
+    "destination": "Las Vegas,Nevada",
     "ratingsAverage": 4.7,
     "ratingsQuantity": 7,
     "images": ["tour-5-1.jpg", "tour-5-2.jpg", "tour-5-3.jpg"],
@@ -161,7 +156,7 @@
       "2025-08-12T09:00:00.000Z"
     ],
     "_id": "5c88fa8cf4afda39709c2961",
-    "name": "The Park Camper",
+    "name": "Las Vegas and Antelope Canyon Adventure",
     "duration": 5,
     "maxGroupSize": 15,
     "difficulty": "easy",
@@ -176,28 +171,45 @@
     "imageCover": "/img/tours/LasVegas.jpg",
     "locations": [
       {
-        "_id": "5c88fa8cf4afda39709c2965",
-        "description": "Las Vegas",
+        "_id": "a3b7c9d1f4e8a2332b5d0014",
+        "description": "Arrive at Las Vegas Airport and start your adventure by visiting the famous Seven Magic Mountains, a striking art installation in the desert. Later, immerse yourself in the excitement of Las Vegas by visiting iconic casinos, trying your luck at the slot machines, and enjoying world-class entertainment. Don't miss the opportunity to dine at Gordon Ramsay's Michelin-star restaurant for an unforgettable culinary experience. In the evening, witness the breathtaking spectacle of the Bellagio Fountains and enjoy the vibrant nightlife that makes Las Vegas famous.",
+        "title": "Las Vegas Airport to Seven Magic Mountains & Casinos",
         "day": 1
       },
       {
-        "_id": "5c88fa8cf4afda39709c2964",
-        "description": "Upper and Lower Antelope Canyon",
+        "_id": "a3b7c9d1f4e8a2332b5d0015",
+        "description": "On Day 2, venture out to the awe-inspiring Valley of Fire State Park, known for its fiery red sandstone formations and ancient petroglyphs. Hike through the park’s stunning landscapes, taking in the otherworldly beauty of the desert. Afterward, head to Horseshoe Bend Overlook, where you can marvel at the winding Colorado River from a dramatic viewpoint. This day will immerse you in the natural beauty of Nevada and Arizona, with plenty of opportunities for photos and exploration.",
+        "title": "Valley of Fire & Horseshoe Bend",
+        "day": 2
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0016",
+        "description": "On Day 3, head to the stunning Upper and Lower Antelope Canyons in Page, Arizona. Explore the winding passages of these slot canyons and witness the iconic light beams of Upper Antelope Canyon. The adventure continues through Lower Antelope Canyon, where the narrow corridors and winding walls offer a more challenging yet equally mesmerizing experience. Capture unforgettable photos of these surreal desert landscapes and make memories to last a lifetime.",
+        "title": "Upper & Lower Antelope Canyon Exploration",
+        "day": 3
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0017",
+        "description": "On Day 4, continue your adventure with a scenic return journey towards Las Vegas, with a possible stopover at one of the nearby natural wonders or scenic viewpoints. Depending on time and preferences, you can visit Lake Mead or Hoover Dam for additional exploration of the area's dramatic landscapes.",
+        "title": "Return to Las Vegas",
         "day": 4
       },
       {
-        "_id": "5c88fa8cf4afda39709c2963",
-        "description": "Michelin Dining",
+        "_id": "a3b7c9d1f4e8a2332b5d0018",
+        "description": "On the final day, enjoy some free time to experience the best of Las Vegas. You could shop at high-end malls, visit famous landmarks like the Fremont Street Experience, or take in a Cirque du Soleil show. Before you head to the airport, take one last stroll along the Strip and soak in the vibrant energy of the city before your departure.",
+        "title": "Final Day in Las Vegas",
         "day": 5
       }
     ]
   },
   {
     "startLocation": {
-      "description": "NYC, USA",
-      "address": "Manhattan, NY 10036, USA"
+      "description": "New York, USA",
+      "type": "Point",
+      "coordinates": [40.641766, -73.780968],
+      "address": "Queens, NY 11430, USA"
     },
-    "destination": "New York",
+    "destination": "New York City, New York",
     "ratingsAverage": 4.6,
     "ratingsQuantity": 5,
     "images": ["tour-4-1.jpg", "tour-4-2.jpg", "tour-4-3.jpg"],
@@ -208,7 +220,7 @@
     ],
     "_id": "5c88fa8cf4afda39709c295d",
     "name": "The City Wanderer",
-    "duration": 9,
+    "duration": 8,
     "maxGroupSize": 20,
     "difficulty": "easy",
     "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a201e2f8fb814b56fa186"],
@@ -218,33 +230,63 @@
     "imageCover": "/img/tours/NewYork.jpg",
     "locations": [
       {
-        "_id": "5c88fa8cf4afda39709c2932",
-        "description": "Central Park and Museums",
+        "_id": "a3b7c9d1f4e8a2332b5d0019",
+        "description": "Arrive at New York City’s airport. Start your adventure by exploring the city that never sleeps. After arriving, head straight to Times Square, the beating heart of the city. Then, you’ll have an opportunity to explore the nearby Broadway theaters, take in some famous sights, and enjoy the excitement of the iconic billboards.",
+        "title": "Airport to Times Square & Broadway",
         "day": 1
       },
       {
-        "_id": "5c88fa8cf4afda39709c2930",
-        "description": "Broadway, Times Square & City Views",
+        "_id": "a3b7c9d1f4e8a2332b5d0020",
+        "description": "Explore Central Park and the world-renowned museums surrounding it. Visit the Metropolitan Museum of Art and the American Museum of Natural History. You’ll be able to enjoy peaceful walks through Central Park, where you can stop at various monuments and enjoy the natural beauty right in the city center.",
+        "title": "Central Park & Museums",
+        "day": 2
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0021",
+        "description": "Head over to Brooklyn to explore its vibrant culture and breathtaking views of the Manhattan skyline from the Brooklyn Bridge. Spend some time in Brooklyn’s famous neighborhoods like DUMBO and Williamsburg. In the evening, visit the trendy Brooklyn Heights Promenade for views of Lower Manhattan.",
+        "title": "Brooklyn Bridge & Neighborhoods",
         "day": 3
       },
       {
-        "_id": "5c88fa8cf4afda39709c2933",
-        "description": "Shopping, Neighborhoods, and Food",
+        "_id": "a3b7c9d1f4e8a2332b5d0022",
+        "description": "Immerse yourself in the bustling atmosphere of Chinatown and Little Italy. Experience authentic street food, unique markets, and the lively energy of these cultural districts. Afterward, visit SoHo for some of the best shopping and art galleries in the city, or take a stroll down the famous streets of the Lower East Side.",
+        "title": "Chinatown & Little Italy",
         "day": 4
       },
       {
-        "_id": "5c88fa8cf4afda39709c2931",
-        "description": "Iconic Landmarks & Historic Attractions",
+        "_id": "a3b7c9d1f4e8a2332b5d0023",
+        "description": "This day is reserved for free time to explore New York at your leisure. You can choose from visiting the Empire State Building, Rockefeller Center, or checking out the views from One World Observatory. Alternatively, take a boat ride to Liberty Island and the Statue of Liberty or visit the 9/11 Memorial & Museum.",
+        "title": "Free Day to Explore",
         "day": 5
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0024",
+        "description": "Start your New Year's Eve celebration in style, with a visit to a rooftop bar or a bustling restaurant in the heart of the city. Celebrate with fellow travelers and locals as you enjoy the fireworks and festivities in Times Square. The night will culminate in the iconic ball drop event, ringing in the New Year with unforgettable excitement.",
+        "title": "New Year’s Eve Celebration",
+        "day": 6
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0025",
+        "description": "Visit some of New York's most iconic skyscrapers and historic buildings, like the Empire State Building or the Chrysler Building. You’ll have the chance to take in panoramic views of the city, then head to the Hudson River for a sunset cruise with spectacular views of the skyline and the Statue of Liberty in the distance.",
+        "title": "Skyscrapers & Statue of Liberty",
+        "day": 7
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0026",
+        "description": "Wrap up your New York experience with a final visit to the city’s landmark destinations, perhaps revisiting any spots you missed or indulging in last-minute shopping. In the evening, take a final stroll down Fifth Avenue or check out a Broadway show. Finally, head back to the airport for your departure.",
+        "title": "Last Day in New York",
+        "day": 8
       }
     ]
   },
   {
     "startLocation": {
       "description": "California, USA",
-      "address": "500-600 Gaslamp Quarter, San Diego, CA 92101, USA"
+      "type": "Point",
+      "coordinates": [32.732346, -117.196053],
+      "address": "Harbor Island Dr, San Diego, CA 92101"
     },
-    "destination": "California",
+    "destination": "San Diego, California",
     "ratingsAverage": 3.9,
     "ratingsQuantity": 7,
     "images": ["tour-6-1.jpg", "tour-6-2.jpg", "tour-6-3.jpg"],
@@ -255,8 +297,8 @@
     ],
     "_id": "5c88fa8cf4afda39709c2966",
     "name": "The Sports Lover",
-    "duration": 7,
-    "maxGroupSize": 8,
+    "duration": 6,
+    "maxGroupSize": 20,
     "difficulty": "difficult",
     "guides": [
       "5c8a21f22f8fb814b56fa18a",
@@ -264,38 +306,56 @@
       "5c8a1f4e2f8fb814b56fa185"
     ],
     "price": 2997,
-    "summary": "Take a scenic road trip from San Diego to Los Angeles, exploring beaches and landmarks.",
-    "description": "Embark on a scenic and unforgettable California road trip from the sunny beaches of San Diego to the vibrant, star-studded streets of Los Angeles, where you’ll explore diverse landscapes, coastal towns, and iconic landmarks along the way. This journey offers the perfect mix of stunning ocean views, cultural highlights, and relaxation in some of California's most famous spots.",
+    "summary": "Embark on a scenic road trip from San Diego to Los Angeles, experiencing the vibrant culture, stunning beaches, world-famous attractions, and iconic landmarks along the California coast.",
+    "description": "Start your unforgettable California adventure in San Diego, where you'll explore vibrant neighborhoods like Little Italy, enjoy breathtaking coastal views, and visit landmarks like UCSD and its renowned Geisel Library. Then, hit the road, traveling through the picturesque beach towns of Irvine and Orange County, offering shopping, parks, and relaxation. Continue along the coast to Huntington Beach, Long Beach, and Santa Monica, each offering a unique atmosphere with opportunities for sightseeing, shopping, and dining. In Los Angeles, experience the glamour of Hollywood, the artistic vibes of Venice Beach, and the magic of Disneyland. Wrap up the journey with a cultural immersion in Los Angeles' Chinatown before heading back to San Diego, reflecting on the stunning ocean views and rich diversity of experiences along the way.",
     "imageCover": "/img/tours/SanDiego.jpg",
     "locations": [
       {
-        "_id": "5c88fa8cf4afda39709c296b",
-        "description": "San Diego to La Jolla & Encinitas",
+        "_id": "a3b7c9d1f4e8a2332b5d0027",
+        "description": "Arrive at San Diego International Airport. Begin your trip by exploring Little Italy, a vibrant neighborhood full of history, delicious Italian cuisine, and quaint cafes. Then, head to the nearby San Diego beaches, such as Pacific Beach or Coronado Beach, and enjoy the coastal views. Don't miss a stop at the University of California, San Diego (UCSD), where you can stroll through the scenic campus and visit the Geisel Library.",
+        "title": "Airport to Little Italy, Beach, and UCSD",
         "day": 1
       },
       {
-        "_id": "5c88fa8cf4afda39709c296a",
-        "description": "Carlsbad, Oceanside & Laguna Beach",
+        "_id": "a3b7c9d1f4e8a2332b5d0028",
+        "description": "Start the road trip by driving up the Pacific Coast to Irvine. Enjoy the beautiful beach towns and scenic coastal views along the way. Irvine offers a mix of attractions, from top shopping centers to beautiful parks. Orange County is known for its beautiful beaches, shopping centers, and family-friendly attractions. You can visit the Irvine Spectrum Center for shopping and dining, or relax at one of the many beaches in the area. This day is all about enjoying the coastal lifestyle and soaking in the sun.",
+        "title": "San Diego to Irvine, Orange County",
+        "day": 2
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0029",
+        "description": "Continue your journey north towards Los Angeles, making stops at Huntington Beach, Long Beach, and Santa Monica. Enjoy the laid-back vibe of Huntington Beach, known for its surf culture. Long Beach offers a lively atmosphere with its waterfront attractions. Then, visit Santa Monica, a beautiful beach city famous for its pier, shopping, and dining options.",
+        "title": "Huntington Beach, Long Beach, Santa Monica",
+        "day": 3
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0030",
+        "description": "Arrive in Los Angeles and start your exploration with a visit to Hollywood. Check out iconic landmarks like the Hollywood Walk of Fame, TCL Chinese Theatre, and the Hollywood Sign. In the afternoon, head over to Venice Beach for a vibrant atmosphere full of street performers, shops, and murals. Don’t forget to walk along the Venice Beach Boardwalk for an unforgettable experience.",
+        "title": "Los Angeles - Hollywood & Venice Beach",
         "day": 4
       },
       {
-        "_id": "5c88fa8cf4afda39709c2969",
-        "description": "Huntington Beach, Long Beach & Santa Monica",
-        "day": 6
+        "_id": "a3b7c9d1f4e8a2332b5d0031",
+        "description": "Explore Disneyland in Anaheim, a must-see destination for both kids and adults. Spend the day immersed in the magical atmosphere of Disneyland Park and Disney California Adventure Park. From thrilling rides to meeting beloved characters, Disneyland offers a unique experience filled with fun and adventure.",
+        "title": "Disneyland Adventure",
+        "day": 5
       },
       {
-        "_id": "5c88fa8cf4afda39709c2968",
-        "description": "Los Angeles - Hollywood & Venice Beach",
-        "day": 7
+        "_id": "a3b7c9d1f4e8a2332b5d0032",
+        "description": "End your trip with a visit to Los Angeles' Chinatown. Explore the vibrant markets, try authentic Chinese food, and experience the rich culture. Afterward, take a relaxing drive back to San Diego, where your journey started, and reflect on the scenic coastal views and cultural landmarks you’ve seen along the way.",
+        "title": "Chinatown & Return to San Diego",
+        "day": 6
       }
     ]
   },
   {
     "startLocation": {
       "description": "California, USA",
-      "address": "200 Santa Monica Pier, Santa Monica, CA 90401"
+      "type": "Point",
+      "coordinates": [33.942791, -118.410042],
+      "address": "1 World Way, Los Angeles, CA 90045, USA"
     },
-    "destination": "California",
+    "destination": "Los Angeles, California",
     "ratingsAverage": 4.8,
     "ratingsQuantity": 6,
     "images": ["tour-8-1.jpg", "tour-8-2.jpg", "tour-8-3.jpg"],
@@ -311,38 +371,74 @@
     "difficulty": "medium",
     "guides": ["5c8a21d02f8fb814b56fa189", "5c8a1f292f8fb814b56fa184"],
     "price": 2997,
-    "summary": "The most remote and stunningly beautiful places for seeing the night sky",
-    "description": "Take an epic road trip along the iconic California coast from Los Angeles to San Francisco, a journey that will immerse you in stunning views, charming towns, historic landmarks, and some of the most breathtaking coastlines in the world. This unforgettable adventure showcases the diverse beauty of California, from the glamorous streets of Los Angeles to the dramatic cliffs of Big Sur and the cultural vibrancy of San Francisco. California is home to a wide range of national parks that showcase the state's diverse landscapes, from towering mountains to desert expanses, pristine beaches, and ancient forests",
+    "summary": "Embark on a scenic road trip from Los Angeles to San Francisco, exploring iconic landmarks, natural beauty, and historic sites.",
+    "description": "Take an epic road trip along the iconic California coast, starting from Los Angeles and ending in San Francisco. Immerse yourself in stunning views, charming towns, and historic landmarks as you drive through some of the most breathtaking coastlines in the world. Experience the glamour of Hollywood, the towering trees of Sequoia and Kings Canyon, and the natural beauty of Yosemite National Park. Explore the cultural vibrancy of San Francisco, the breathtaking views of Big Sur, the pristine beaches of Monterey, and the iconic landscapes of Joshua Tree National Park and Palm Springs. This unforgettable journey showcases the diverse beauty of California, from glamorous city streets to dramatic cliffs, expansive deserts, and majestic forests.",
     "imageCover": "/img/tours/LosAngeles.jpg",
     "locations": [
       {
-        "_id": "5c88fa8cf4afda39709c2973",
-        "description": "Los Angeles and Hollywood Boulevard",
+        "_id": "a3b7c9d1f4e8a2332b5d0033",
+        "description": "Arrive at Los Angeles International Airport (LAX). Begin your trip by exploring Hollywood Boulevard, where you can visit iconic attractions such as the TCL Chinese Theatre, the Hollywood Walk of Fame, and take in the breathtaking views of the Hollywood Sign.",
+        "title": "Los Angeles Airport to Hollywood Boulevard",
         "day": 1
       },
       {
-        "_id": "5c88fa8cf4afda39709c2972",
-        "description": "Joshua Tree National Park",
+        "_id": "a3b7c9d1f4e8a2332b5d0034",
+        "description": "Travel to Sequoia and Kings Canyon National Parks. Walk among some of the tallest trees in the world, including the famous General Sherman Tree, and explore the beautiful, rugged landscapes with breathtaking mountain views and peaceful groves.",
+        "title": "Los Angeles to Sequoia & Kings Canyon National Parks",
+        "day": 2
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0035",
+        "description": "Head to Yosemite National Park, one of California's most iconic national parks. Discover majestic waterfalls, granite cliffs, and giant sequoia trees. Spend the day hiking, photographing, and exploring Yosemite's breathtaking landscapes.",
+        "title": "Sequoia & Kings Canyon to Yosemite National Park",
         "day": 3
       },
       {
-        "_id": "5c88fa8cf4afda39709c2971",
-        "description": "Sequoia and Kings Canyon National Parks",
+        "_id": "a3b7c9d1f4e8a2332b5d0036",
+        "description": "Travel to San Francisco and explore its unique charm. Visit the iconic Golden Gate Bridge, Pier 39,Fisherman’s Wharf, and enjoy the scenic views of Alcatraz Island. Discover the city’s neighborhoods, culture, and famous landmarks.",
+        "title": "Yosemite National Park to San Francisco",
         "day": 4
       },
       {
-        "_id": "5c88fa8cf4afda39709c2971",
-        "description": "Yosemite National Park",
+        "_id": "a3b7c9d1f4e8a2332b5d0037",
+        "description": "Drive to Monterey and explore its famous aquarium, charming shops, and breathtaking views along the Monterey Peninsula. Take a scenic drive along the Pacific Grove coastline and enjoy a relaxing day by the ocean.",
+        "title": "San Francisco to Monterey",
+        "day": 5
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0038",
+        "description": "Visit the stunning Big Sur coast. Enjoy panoramic views of rugged cliffs, the Pacific Ocean, and the iconic Bixby Creek Bridge. Explore nature trails and take in the breathtaking beauty of one of the most scenic spots in California.",
+        "title": "Monterey to Big Sur",
         "day": 6
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0039",
+        "description": "Drive back to Los Angeles for a day of relaxation or additional sightseeing. You can explore Venice Beach, Santa Monica Pier, or just enjoy the vibrant atmosphere of LA before your trip comes to an end.",
+        "title": "Big Sur to Los Angeles",
+        "day": 7
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0040",
+        "description": "Take a detour to Palm Springs. Relax in this desert oasis known for its mid-century modern architecture, hiking trails, and the famous Palm Springs Aerial Tramway with stunning views of the surrounding mountains.",
+        "title": "Los Angeles to Palm Springs",
+        "day": 8
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0041",
+        "description": "End your trip with a visit to Joshua Tree National Park. Experience the surreal desert landscapes and striking Joshua Trees. Enjoy stargazing and take in the peaceful tranquility of this unique national park.",
+        "title": "Palm Springs to Joshua Tree National Park",
+        "day": 9
       }
     ]
   },
   {
     "startLocation": {
       "description": "Texas, USA",
+      "type": "Point",
+      "coordinates": [30.1944, -97.6683],
       "address": "1100 Congress Ave, Austin, TX 78701"
     },
-    "destination": "Texas",
+    "destination": "Austin, Texas",
     "ratingsAverage": 4.7,
     "ratingsQuantity": 7,
     "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"],
@@ -353,7 +449,7 @@
     ],
     "_id": "5c88fa8cf4afda39709c2974",
     "name": "West Expedition",
-    "duration": 5,
+    "duration": 6,
     "maxGroupSize": 12,
     "difficulty": "easy",
     "guides": [
@@ -362,38 +458,56 @@
       "5c8a23412f8fb814b56fa18c"
     ],
     "price": 1497,
-    "summary": "Enjoy the Southern road trip in one of the best places in the world",
-    "description": "Embark on a scenic road trip across Texas and into neighboring states, visiting some of the most unique and awe-inspiring natural landscapes in the southwestern United States. From the rugged Big Bend National Park in Texas to the stunning White Sands National Park in New Mexico, this trip offers vast deserts, towering mountains, and breathtaking desert landscapes.",
+    "summary": "Enjoy a scenic Southern road trip through Texas and New Mexico, exploring awe-inspiring desert landscapes.",
+    "description": "Embark on a scenic road trip from Austin, Texas, through some of the most iconic natural landscapes in the southwestern United States. From the rugged beauty of Big Bend National Park to the stunning White Sands National Park and the striking Carlsbad Caverns, this adventure offers dramatic desert vistas, towering mountains, and unique cultural landmarks along the way.",
     "imageCover": "/img/tours/Texas.jpg",
     "locations": [
       {
-        "_id": "5c88fa8cf4afda39709c2975",
-        "description": "Big Bend National Park",
+        "_id": "a3b7c9d1f4e8a2332b5d0042",
+        "description": "Arrive at Austin International Airport and begin your exploration of this vibrant Texas city. Explore downtown Austin, taking in the lively atmosphere, the famous Texas State Capito , and bustling 6th Stree  with its eclectic mix of bars, restaurants, and live music. Don’t miss a visit to Lady Bird Lak , with its scenic walking trail and iconic views of the Congress Avenue Bridg , famous for the bat colonies that take flight at sunset.",
+        "title": "Austin Downtown, Congress Bridge & Lady Bird Lake",
         "day": 1
       },
       {
-        "_id": "5c88fa8cf4afda39709c2976",
-        "description": "Carlsbad Caverns National Park",
+        "_id": "a3b7c9d1f4e8a2332b5d0043",
+        "description": "Head to White Sands National Park in New Mexico. This stunning park is known for its vast white gypsum dunes, which create a surreal landscape that feels like another world. Spend the day exploring the dunes, taking photos, and walking along the scenic trails. You may also visit the nearby village of Cloudcroft for beautiful mountain views.",
+        "title": "White Sands National Park & Cloudcroft",
         "day": 2
       },
       {
-        "_id": "5c88fa8cf4afda39709c2977",
-        "description": "Guadalupe Mountains National Park",
+        "_id": "a3b7c9d1f4e8a2332b5d0044",
+        "description": "Drive to Carlsbad Caverns National Park in southern New Mexico. Explore the park’s incredible underground caves, with their unique rock formations and spectacular stalactites and stalagmites. Take a guided tour or venture on your own to witness the awe-inspiring beauty of one of the largest cave systems in the world.",
+        "title": "Carlsbad Caverns National Park",
         "day": 3
       },
       {
-        "_id": "5c88fa8cf4afda39709c2978",
-        "description": "White Sands National Park",
+        "_id": "a3b7c9d1f4e8a2332b5d0045",
+        "description": "Explore Guadalupe Mountains National Park, home to the highest peak in Texas, Guadalupe Peak. Hike to the summit for panoramic views of the surrounding desert landscape. The park is also famous for its beautiful canyons, rich wildlife, and diverse plant life.",
+        "title": "Guadalupe Mountains National Park",
         "day": 4
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0046",
+        "description": "Journey to Big Bend National Park, one of Texas’ most stunning and remote natural wonders. Explore the park's diverse landscapes, from desert to mountain to river, and experience its natural beauty firsthand. Visit the Rio Grande, go on a scenic drive, and enjoy star-gazing in one of the darkest skies in the U.S.",
+        "title": "Big Bend National Park",
+        "day": 5
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0047",
+        "description": "Visit Prada Marfa, an art installation located in the desert of West Texas. This unique structure mimics a high-end retail store, offering a surreal and fascinating contrast against the desolate backdrop of the Chihuahuan Desert. Afterward, return to Austin, reflecting on the unforgettable landscapes and experiences of the journey.",
+        "title": "Prada Marfa Desert & Return to Austin",
+        "day": 6
       }
     ]
   },
   {
     "startLocation": {
       "description": "Illinois, USA",
-      "address": "201 E Randolph St, Chicago, IL 60602, USA"
+      "type": "Point",
+      "coordinates": [41.978611, -87.904724],
+      "address": "10000 W Balmoral Ave, Chicago, IL 60666"
     },
-    "destination": "Illinois",
+    "destination": "Chicago, Illinois",
     "ratingsAverage": 4.4,
     "ratingsQuantity": 7,
     "images": ["tour-7-1.jpg", "tour-7-2.jpg", "tour-7-3.jpg"],
@@ -407,31 +521,484 @@
     "duration": 5,
     "maxGroupSize": 8,
     "difficulty": "easy",
-    "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a23412f8fb814b56fa18c"],
+    "guides": ["5c8a1f292f8fb814b56fa184", "5c8a1f292f8fb814b56fa185"],
     "price": 1997,
     "summary": "Discover Chicago's landmarks, neighborhoods, museums, lakefront, and iconic deep-dish pizza.",
     "description": "Chicago is a bustling city filled with iconic landmarks, vibrant neighborhoods, and diverse cultural experiences. From the architectural marvels of Willis Tower and The Bean in Millennium Park to the world-class museums like the Art Institute of Chicago and Field Museum, there’s something for everyone. Explore the scenic Chicago Riverwalk, take in panoramic views from the Skydeck at Willis Tower, and visit the Shedd Aquarium or Adler Planetarium for fascinating exhibits. Don't miss the opportunity to enjoy deep-dish pizza and discover the city's rich history through its diverse neighborhoods and stunning lakefront.",
     "imageCover": "/img/tours/Chicago.jpg",
     "locations": [
       {
-        "_id": "5c88fa8cf4afda39709c296f",
-        "description": "Downtown Chicago & The Loop",
+        "_id": "a3b7c9d1f4e8a2332b5d0048",
+        "description": "Arrive in Chicago and start your day exploring the Downtow  area and The Loo . Walk around Millennium Park and take a photo with The Bean (Cloud Gate). Visit the Chicago Riverwal , one of the city’s most scenic areas, and enjoy the surrounding architecture. Make sure to check out Willis Towe  (formerly the Sears Tower) and its Skydec , where you can take in sweeping views of the city.",
+        "title": "Downtown Chicago & The Loop",
         "day": 1
       },
       {
-        "_id": "5c88fa8cf4afda39709c296e",
-        "description": "Cultural Landmarks & Museum Campus",
+        "_id": "a3b7c9d1f4e8a2332b5d0049",
+        "description": "On day two, explore Chicago’s Cultural Landmarks & Museum Campu . Visit the Art Institute of Chicag , home to iconic artworks, and the Field Museu , which houses fascinating natural history exhibits. You can also visit the Shedd Aquariu  and Adler Planetariu , both located near the scenic Museum Campu  along the lakefront. Don’t forget to stop by Navy Pie  for a leisurely stroll and panoramic views of Lake Michigan.",
+        "title": "Cultural Landmarks & Museum Campus",
         "day": 2
       },
       {
-        "_id": "5c88fa8cf4afda39709c296d",
-        "description": "Neighborhoods & Food Tour",
+        "_id": "a3b7c9d1f4e8a2332b5d0050",
+        "description": "Day three is all about Chicago’s Neighborhoods & Foo . Visit neighborhoods like Chinatow , Pilse , and Wicker Par  to experience the city’s diverse culture and cuisine. Explore local markets, street art, and iconic spots like the Frank Lloyd Wright Home and Studi  in Oak Park. Make sure to try the famous deep-dish pizz  and explore Chicago’s local food scene.",
+        "title": "Neighborhoods & Food Tour",
         "day": 3
       },
       {
-        "_id": "5c88fa8cf4afda39709c296c",
-        "description": "Architecture & Waterfront",
+        "_id": "a3b7c9d1f4e8a2332b5d0051",
+        "description": "On the final day, immerse yourself in the city’s stunning Architecture & Waterfron . Take a Chicago Architecture River Cruis  to explore the city's iconic skyline and learn about its rich architectural history. Walk along the Lakefront Trai , enjoy the lush parks, and relax at Oak Street Beac . Finish your adventure with a visit to Grant Par  or Lincoln Par , both offering scenic views and peaceful green spaces.",
+        "title": "Architecture & Waterfront",
+        "day": 4
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0052",
+        "description": "Spend your day in Chicag  diving deeper into Chinatow , one of the city's most vibrant neighborhoods. Visit the local markets, explore beautiful Chinese architecture, and taste authentic dishes at some of the best restaurants. Afterward, experience the iconic Chicago Subwa  (CTA trains) for a unique view of the city’s underground and elevated train system. Ride the Red Lin  or Blue Lin  for a true local experience, observing the hustle and bustle of daily city life. In the evening, you can explore more of the city's hidden gems or relax in one of Chicago’s cozy bars.",
+        "title": "Chinatown Exploration & Subway Experience",
+        "day": 5
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Texas, USA",
+      "type": "Point",
+      "coordinates": [29.993067, -95.341812],
+      "address": "2800 N Terminal Rd, Houston, TX 77032"
+    },
+    "destination": "Houston, Texas",
+    "ratingsAverage": 4.5,
+    "ratingsQuantity": 7,
+    "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"],
+    "startDates": [
+      "2025-06-01T10:00:00.000Z",
+      "2025-06-10T09:00:00.000Z",
+      "2025-06-15T10:00:00.000Z"
+    ],
+    "_id": "a3b7c9d1f4e8a2332b5a0000",
+    "name": "Southern Road Trip",
+    "duration": 6,
+    "maxGroupSize": 10,
+    "difficulty": "medium",
+    "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a23412f8fb814b56fa18c"],
+    "price": 2197,
+    "summary": "Enjoy a scenic road trip from Houston to New Orleans, Atlanta, and back, exploring delicious food, local culture, and iconic landmarks.",
+    "description": "Embark on a fantastic Southern road trip, starting in Houston, TX, and heading to New Orleans for a taste of the French Quarter and famous food experiences. Continue on to Atlanta, Georgia, where you’ll explore downtown and enjoy the cultural vibrancy of Koreatown. Afterward, head back to Houston to complete your journey filled with unforgettable experiences.",
+    "imageCover": "/img/tours/SouthernRoadTrip.jpg",
+    "locations": [
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0053",
+        "description": "Begin your adventure in Housto , a vibrant city full of culture, history, and modern attractions. Start by exploring the downtow  area, where you can visit Discovery Gree , a lush park perfect for relaxing or enjoying outdoor activities. Head to the Space Center Housto , where you can experience the history of space exploration, or visit the Williams Towe , which offers breathtaking views of the city. If you're a baseball fan, a stop at Minute Maid Par  is a must.",
+        "title": "Houston Exploration from Airport to Downtown",
+        "day": 1
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0054",
+        "description": "Travel to New Orlean , where you will immerse yourself in the unique charm of the French Quarte . Wander through Jackson Squar , a historic landmark surrounded by street performers and artists, and be sure to stop at Café du Mond  to try a traditional beigne  and sip a rich café au lai . Experience the vibrant atmosphere and historic architecture of Bourbon Stree , and enjoy the lively music that defines the city’s nightlife.",
+        "title": "New Orleans: French Quarter & Beignets",
+        "day": 2
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0055",
+        "description": "On day 3, continue your exploration of New Orlean  by indulging in grilled oyster  at the famous Acme Oyster Hous , one of the city's best-known eateries. Afterward, enjoy a leisurely stroll along the Mississippi Rive  at the Riverwal  and explore the historic Garden Distric . Admire the beautiful antebellum architecture and visit the Lafayette Cemeter . The neighborhood is also a perfect spot to snap photos of the stunning, centuries-old oak trees lining the streets.",
+        "title": "New Orleans: Grilled Oysters & Garden District",
         "day": 3
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0056",
+        "description": "Next, journey to Atlant , Georgia. Start your adventure with a visit to the Georgia Aquariu , one of the largest aquariums in the world, where you can see fascinating marine life up close. Afterward, take a tour of the World of Coca-Col , where you’ll learn the history of this iconic brand and even taste Coca-Cola products from around the world. In the evening, head to Koreatow  for a delicious Korean BBQ experience, featuring authentic dishes that capture the flavors of Korea.",
+        "title": "Atlanta: Downtown & World of Coca-Cola",
+        "day": 4
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0057",
+        "description": "Spend day 5 exploring the beauty of Atlanta’  parks and green spaces. Visit Piedmont Par , Atlanta’s most popular park, offering picturesque views of the skyline, walking trails, and tranquil spots perfect for a relaxing afternoon. Then, head to the Atlanta Botanical Garde , a stunning 30-acre garden featuring diverse plant collections, seasonal displays, and beautiful sculptures. Finish the day with a visit to Centennial Olympic Par , a large downtown park that was the site of the 1996 Olympics.",
+        "title": "Atlanta: Parks & Olympic Sites",
+        "day": 5
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0058",
+        "description": "On the final day of your road trip, make your way back to Housto . The drive offers scenic views of the Southern landscape. Upon your arrival in Houston, visit the Houston Museum of Natural Scienc  to experience a fascinating array of exhibits, from dinosaur skeletons to space exploration. If you’re looking for some outdoor relaxation, take a stroll through Hermann Par  or enjoy a boat ride on the McGovern Lak . Wrap up your trip by exploring the Museum Distric , home to several world-class museums and cultural attractions.",
+        "title": "Return to Houston",
+        "day": 6
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Texas, USA",
+      "type": "Point",
+      "coordinates": [29.993067, -95.341812],
+      "address": "2800 N Terminal Rd, Houston, TX 77032"
+    },
+    "destination": "Houston, Texas",
+    "ratingsAverage": 4.5,
+    "ratingsQuantity": 7,
+    "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"],
+    "startDates": [
+      "2025-06-01T10:00:00.000Z",
+      "2025-06-10T09:00:00.000Z",
+      "2025-06-15T10:00:00.000Z"
+    ],
+    "_id": "a3b7c9d1f4e8a2332b5a0001",
+    "name": "Southern Road Trip with Gulf Coast",
+    "duration": 6,
+    "maxGroupSize": 10,
+    "difficulty": "medium",
+    "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a23412f8fb814b56fa18c"],
+    "price": 2197,
+    "summary": "Enjoy a scenic road trip from Houston to New Orleans, explore Alabama’s beautiful beaches, taste fresh seafood, and experience the excitement of an NBA game and a Mississippi River cruise.",
+    "description": "Embark on a memorable Southern road trip starting in Houston, TX, where you’ll explore the city’s vibrant culture and attractions. Head to New Orleans to experience the iconic French Quarter, savor local delicacies, and enjoy the excitement of an NBA game. Afterward, take a scenic detour to Alabama’s beautiful beaches, where you can relax and indulge in fresh seafood by the coast. Conclude your adventure back in New Orleans with a relaxing Mississippi River cruise, taking in the city’s stunning skyline and historic charm while reflecting on the unforgettable experiences of this diverse and captivating journey.",
+    "imageCover": "/img/tours/SouthernRoadTrip.jpg",
+    "locations": [
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0053",
+        "description": "Begin your adventure in Housto , a vibrant city full of culture, history, and modern attractions. Start by exploring the downtow  area, where you can visit Discovery Gree , a lush park perfect for relaxing or enjoying outdoor activities. Head to the Space Center Housto , where you can experience the history of space exploration, or visit the Williams Towe , which offers breathtaking views of the city. If you're a baseball fan, a stop at Minute Maid Par  is a must. From there, you can visit the Museum Distric  for its rich cultural offerings.",
+        "title": "Houston Exploration from Airport to Downtown",
+        "day": 1
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0054",
+        "description": "Travel to New Orlean , where you will immerse yourself in the unique charm of the French Quarte . Wander through Jackson Squar , a historic landmark surrounded by street performers and artists, and be sure to stop at Café du Mond  to try a traditional beigne  and sip a rich café au lai . Experience the vibrant atmosphere and historic architecture of Bourbon Stree , and enjoy the lively music that defines the city’s nightlife. Don’t forget to explore the Royal Stree  for its antique shops and unique art galleries.",
+        "title": "New Orleans: French Quarter & Beignets",
+        "day": 2
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0055",
+        "description": "On day 3, take a short trip to Alabama Beac  along the Gulf Coast. This is your chance to enjoy fresh seafoo  at one of the many beachfront seafood shacks, offering specialties like grilled shrim , fried oyster , and gumb . Spend the day soaking in the sun and enjoying the beach or take part in water sports such as jet skiing or parasailing. Alabama's Gulf Coast is famous for its stunning white sand beaches and clear waters, making it the perfect place to unwind and relax.",
+        "title": "Alabama Beach & Seafood Delights",
+        "day": 3
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0056",
+        "description": "Return to New Orlean  for an exciting evening. Catch an NBA gam  at the Smoothie King Cente  to experience the energy of professional basketball. Whether you're a sports fan or just looking to be part of the lively atmosphere, the game will be an unforgettable experience. Afterward, immerse yourself in New Orleans’ nightlife or take a stroll through the city’s famed Frenchmen Stree , where local jazz bands play on every corner, creating an authentic New Orleans vibe.",
+        "title": "New Orleans: NBA Game & Nightlife",
+        "day": 4
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0057",
+        "description": "On day 5, enjoy a relaxing and scenic Mississippi River cruis . Hop aboard a steamboat for a classic New Orleans river experience. As you cruise along the river, you'll get a different perspective of the city’s historic waterfront, with views of landmarks like the French Quarte  and Algiers Poin . Afterward, explore more of the city, including the historic Garden Distric  or visit St. Louis Cemetery No.  , the final resting place of famous figures like Marie Lavea , the Voodoo Queen of New Orleans.",
+        "title": "New Orleans: Mississippi River Cruise & Historic Sites",
+        "day": 5
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0058",
+        "description": "On the final day of your road trip, make your way back to Housto . The drive offers scenic views of the Southern landscape. Upon your arrival in Houston, visit the Houston Museum of Natural Scienc  to experience a fascinating array of exhibits, from dinosaur skeletons to space exploration. If you’re looking for some outdoor relaxation, take a stroll through Hermann Par  or enjoy a boat ride on the McGovern Lak . Wrap up your trip by exploring the Museum Distric , home to several world-class museums and cultural attractions.",
+        "title": "Return to Houston & Museum Exploration",
+        "day": 6
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Texas, USA",
+      "type": "Point",
+      "coordinates": [29.993067, -95.341812],
+      "address": "2800 N Terminal Rd, Houston, TX 77032"
+    },
+    "destination": "Houston, Texas",
+    "ratingsAverage": 4.7,
+    "ratingsQuantity": 10,
+    "images": ["tour-10-1.jpg", "tour-10-2.jpg", "tour-10-3.jpg"],
+    "startDates": [
+      "2025-11-15T10:00:00.000Z",
+      "2025-11-20T09:00:00.000Z",
+      "2025-11-25T10:00:00.000Z"
+    ],
+    "_id": "a3b7c9d1f4e8a2332b5a0002",
+    "name": "Houston and Florida Adventure",
+    "duration": 7,
+    "maxGroupSize": 12,
+    "difficulty": "medium",
+    "guides": ["5c8a1f292f8fb814b56fa184", "5c8a1f292f8fb814b56fa185"],
+    "price": 2499,
+    "summary": "Enjoy a thrilling road trip from Houston to Florida, with stops in Orlando, Universal Studios, Tampa, and a relaxing Thanksgiving at a beautiful beach.",
+    "description": "Embark on an unforgettable road trip from Houston, Texas, to the sun-soaked city of Orlando, Florida, where the adventure begins at the iconic Disneyland. Immerse yourself in the enchantment of Magic Kingdom, explore the wonders of Epcot, and feel the thrills of Hollywood Studios. Afterward, dive into the excitement of Universal Studios, where adrenaline-pumping rides and the magical world of Harry Potter await. During your journey, enjoy a festive Thanksgiving celebration in Florida, savoring delicious feasts with your group and experiencing the warmth of Southern hospitality. After the holiday, gear up for the ultimate Black Friday shopping spree, hitting the renowned outlets in both Orlando and Tampa, where you’ll find unbeatable deals on all your favorite brands. Following your shopping adventure, take a well-deserved break at the serene New Water Beach, with its powdery white sands and crystal-clear waters—an ideal spot to unwind and recharge. Finally, after a week filled with unforgettable experiences, make your way back to Houston, cherishing the memories of a road trip packed with fun, adventure, and relaxation.",
+    "imageCover": "/img/tours/FloridaAdventure.jpg",
+    "locations": [
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0059",
+        "description": "Begin your adventure in Housto , a vibrant city full of culture and history. Start by exploring Downtow  with its modern attractions, such as Discovery Gree  park and Minute Maid Par . Visit Chinatow  for a unique cultural experience and authentic Asian cuisine. If you have time, explore the Museum Distric  or take a tour of the Space Center Housto .",
+        "title": "Houston: Downtown, Chinatown & Museum District",
+        "day": 1
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0060",
+        "description": "Drive towards Orland , Florida, and dive into the thrilling world of Disneylan . Visit the iconic Magic Kingdo , experience the adventure of Epco , and make sure to explore Hollywood Studio  for all the movie magic. Take time to enjoy the parades and fireworks that make Disneyland a truly magical experience. Don’t forget to take a photo with Cinderella’s Castle!",
+        "title": "Orlando: Disneyland & Magic Kingdom",
+        "day": 2
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0061",
+        "description": "On day 3, head to Universal Studios Orland  for another round of excitement. From action-packed rides to thrilling shows, Universal offers something for every member of the family. Be sure to visit The Wizarding World of Harry Potte , explore Universal’s Islands of Adventur , and enjoy the heart-pounding rides like The Incredible Hulk Coaste . Take a stroll down CityWal  for shopping, dining, and entertainment.",
+        "title": "Orlando: Universal Studios & CityWalk",
+        "day": 3
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0062",
+        "description": "Celebrate Thanksgivin  in Tamp , Florida. Enjoy a delicious holiday feast at a local restaurant, or if you’re in the mood for something special, try a seafood buffet with freshly caught oysters, shrimp, and crab. After your meal, explore Tampa’s top attractions, such as the Tampa Riverwal  or visit Busch Garden  for thrilling rides and wildlife encounters.",
+        "title": "Tampa: Thanksgiving Celebration & Attractions",
+        "day": 4
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0063",
+        "description": "On Black Frida , hit the shopping outlets around Tamp  and Orland  for unbeatable discounts. Head to the Orlando International Premium Outlet  or Tampa Premium Outlet  to shop for all your favorite brands at fantastic prices. Don’t forget to grab a bite at one of the area’s great eateries after a busy day of shopping.",
+        "title": "Black Friday Shopping Extravaganza",
+        "day": 5
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0064",
+        "description": "After a few days of fun and shopping, take a relaxing break at New Water Beac , a pristine and tranquil spot known for its crystal-clear waters and powdery white sand. Spend your day sunbathing, swimming, or indulging in water sports like jet skiing and paddleboarding. The beach is perfect for unwinding and recharging before you head back home.",
+        "title": "New Water Beach Relaxation",
+        "day": 6
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0065",
+        "description": "On the final day of your road trip, make your way back to Housto , Texas, where you can reflect on your amazing adventure. Spend your last evening exploring any sights you missed on your first day, perhaps enjoying a stroll through Hermann Par  or a visit to the Houston Museum of Natural Scienc .",
+        "title": "Return to Houston & Last-Minute Exploration",
+        "day": 7
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Texas, USA",
+      "type": "Point",
+      "coordinates": [29.993067, -95.341812],
+      "address": "2800 N Terminal Rd, Houston, TX 77032"
+    },
+    "destination": "Houston, Texas",
+    "ratingsAverage": 4.8,
+    "ratingsQuantity": 15,
+    "images": ["tour-11-1.jpg", "tour-11-2.jpg", "tour-11-3.jpg"],
+    "startDates": [
+      "2025-06-01T10:00:00.000Z",
+      "2025-06-10T09:00:00.000Z",
+      "2025-06-15T10:00:00.000Z"
+    ],
+    "_id": "a3b7c9d1f4e8a2332b5a0003",
+    "name": "Houston City Exploration",
+    "duration": 5,
+    "maxGroupSize": 10,
+    "difficulty": "easy",
+    "guides": ["5c8a1f292f8fb814b56fa184", "5c8a1f292f8fb814b56fa185"],
+    "price": 1299,
+    "summary": "Discover the heart of Houston with visits to the city's top attractions, including downtown, Chinatown, the Galleria, and Galveston’s beautiful coastline.",
+    "description": "Explore the vibrant city of Houston with a 5-day adventure that takes you through its bustling downtown, cultural uptown, and unique Chinatown. Visit the luxurious Houston Galleri , where you can shop at designer stores and enjoy fine dining. Stroll through Uptown Housto , known for its upscale shops, parks, and office towers, and explore University of Housto , home to stunning architecture and educational history. Enjoy a day trip to the Houston Premium Outlet  for incredible deals, and wrap up your journey with a relaxing visit to the coastal city of Galvesto , where you can experience sandy beaches and scenic views.",
+    "imageCover": "/img/tours/HoustonCityExploration.jpg",
+    "locations": [
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0066",
+        "description": "Start your journey in Downtown Housto , the city’s heart. Visit Discovery Gree  for a peaceful retreat in the middle of the city, explore Minute Maid Par  for a baseball experience, or enjoy the city skyline from Williams Towe . Don't forget to stop by the Museum Distric  to dive into Houston’s rich cultural heritage.",
+        "title": "Downtown Houston Exploration",
+        "day": 1
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0067",
+        "description": "On day two, head to Uptown Housto . Discover the upscale shops at the Galleri , the largest shopping center in Texas. You can also explore Waterwall Par , an iconic spot with stunning views of a 64-foot water feature. If you're a foodie, enjoy dining at one of the many fine restaurants in this trendy area.",
+        "title": "Uptown Houston: Shopping & Dining",
+        "day": 2
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0068",
+        "description": "Next, immerse yourself in the vibrant culture of Chinatow , Houston's cultural hub for Asian cuisine, shopping, and heritage. Visit authentic restaurants and markets, where you can savor delicious dishes like dim sum and Peking duck. Take time to explore the unique shops and cultural landmarks that make Chinatown so special.",
+        "title": "Houston Chinatown Experience",
+        "day": 3
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0069",
+        "description": "Visit the University of Housto , a sprawling campus filled with impressive architecture and green spaces. Take a walking tour of the university’s unique landmarks, such as the UH sculpture garde  and Gerald D. Hines College of Architectur . It's a perfect opportunity to explore both the academic and artistic sides of the campus.",
+        "title": "University of Houston Tour",
+        "day": 4
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0070",
+        "description": "On the final day, take a scenic drive to Galvesto . Enjoy a relaxing day by the beach, walking along the famous Galveston Seawal  and dipping your toes in the Gulf of Mexico. Explore the historic Strand Distric  and enjoy a meal at one of the seaside restaurants offering fresh seafood. Galveston is the perfect place to unwind and soak in the coastal beauty.",
+        "title": "Galveston Beach Day",
+        "day": 5
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Wyoming, USA",
+      "type": "Point",
+      "coordinates": [44.428, -110.5885],
+      "address": "1250 E Airport Rd #159, Jackson, WY 83001"
+    },
+    "destination": "Yellowstone National Park, Wyoming",
+    "ratingsAverage": 4.9,
+    "ratingsQuantity": 12,
+    "images": ["tour-12-1.jpg", "tour-12-2.jpg", "tour-12-3.jpg"],
+    "startDates": [
+      "2025-07-01T10:00:00.000Z",
+      "2025-07-15T09:00:00.000Z",
+      "2025-07-20T10:00:00.000Z"
+    ],
+    "_id": "a3b7c9d1f4e8a2332b5a0004",
+    "name": "Yellowstone & Grand Teton Adventure",
+    "duration": 7,
+    "maxGroupSize": 8,
+    "difficulty": "difficult",
+    "guides": ["5c8a1f292f8fb814b56fa184", "5c8a1f292f8fb814b56fa185"],
+    "price": 2999,
+    "summary": "Explore the natural wonders of Yellowstone and Grand Teton National Parks, including hiking mountain summits, conducting nature research, and immersing yourself in the stunning landscapes.",
+    "description": "Experience the beauty and grandeur of Yellowstone National Par  and Grand Teton National Par  with this adventurous 7-day trip. Begin your journey in Yellowstone, where you’ll hike through geothermal features, majestic valleys, and cascading waterfalls. Trek up to some of the park’s iconic mountain summits, such as Mount Washbur , and enjoy breathtaking views of the Yellowstone Caldera. Participate in nature research with park rangers, learning about the flora and fauna that make this area so unique. Then, venture to Grand Teton National Par , where you’ll embark on a thrilling hike through rugged terrain, exploring iconic peaks like Grand Teton Summi . This adventure is perfect for those passionate about nature, hiking, and wildlife conservation. With expert guides and a strong emphasis on outdoor exploration, you'll gain a deeper understanding of this remarkable region while pushing your physical limits in the wild.",
+    "imageCover": "/img/tours/YellowstoneGrandTetonAdventure.jpg",
+    "locations": [
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0071",
+        "description": "Start your adventure in Yellowstone National Par  from Jackson Hole Airport, one of the world’s most famous national parks. Explore the geothermal wonders of the Old Faithful Geyse , the Grand Prismatic Sprin , and the Yellowstone Lak . Take a nature hike to Mount Washbur  for panoramic views of the caldera and surrounding wilderness. Learn about the park's volcanic history and observe the diverse wildlife, including bison, elk, and wolves.",
+        "title": "Yellowstone: Geothermal Wonders & Mount Washburn Hike",
+        "day": 1
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0072",
+        "description": "On day two, continue your exploration of Yellowstone by visiting the Grand Canyon of the Yellowston , where you’ll see stunning waterfalls cascading into the Yellowstone River. Participate in nature research, working alongside park rangers to monitor the park's ecosystem and learn about conservation efforts. In the afternoon, hike the Lamar Valle  trail to observe the park’s wildlife in its natural habitat.",
+        "title": "Yellowstone: Grand Canyon & Nature Research",
+        "day": 2
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0073",
+        "description": "Head towards Grand Teton National Par  on day three, where you will embark on a challenging summit hike to the Grand Teton Summi . Prepare for a physically demanding trek, but be rewarded with breathtaking views of the jagged peaks, alpine lakes, and wildflower-filled meadows. Along the way, learn about the unique geology and wildlife of the Teton Range.",
+        "title": "Grand Teton: Summit Hike & Stunning Views",
+        "day": 3
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0074",
+        "description": "On day four, participate in a guided nature research session at Jenny Lak , one of the park’s most beautiful spots. Work with local scientists and park rangers to study the flora and fauna of the area. Afterward, take a hike around Cascade Canyo , where you can witness the park’s impressive waterfalls, towering cliffs, and pristine lakes.",
+        "title": "Grand Teton: Nature Research & Cascade Canyon Hike",
+        "day": 4
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0075",
+        "description": "On day five, take a boat ride across Jenny Lak  and enjoy a relaxing afternoon exploring the String Lak  trail. This area is known for its tranquil waters, surrounded by towering peaks. Spend the evening with a guided wildlife tour, learning about the diverse animals that inhabit the park, from grizzly bears to bald eagles.",
+        "title": "Grand Teton: Jenny Lake Boat Ride & Wildlife Tour",
+        "day": 5
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0076",
+        "description": "On the sixth day, embark on a more advanced hike to Paintbrush Canyo  in Grand Teton, a high-altitude trail that rewards hikers with sweeping views of the valley below. This trail is perfect for those looking to challenge their limits while exploring one of the most beautiful landscapes in the world. Enjoy a picnic lunch surrounded by alpine meadows and crystal-clear streams.",
+        "title": "Grand Teton: Paintbrush Canyon Hike",
+        "day": 6
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0077",
+        "description": "On the final day of your trip, reflect on your adventure in Grand Teton National Par . Take a leisurely hike around Taggart Lak , a serene alpine lake framed by the towering Tetons. In the afternoon, enjoy a relaxing wildlife tour to spot the diverse animals that roam the park, including moose and black bears, before departing.",
+        "title": "Grand Teton: Taggart Lake Hike & Final Reflections",
+        "day": 7
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Texas, USA",
+      "type": "Point",
+      "coordinates": [29.993067, -95.341812],
+      "address": "2800 N Terminal Rd, Houston, TX 77032"
+    },
+    "destination": "Houston, Texas",
+    "ratingsAverage": 4.8,
+    "ratingsQuantity": 20,
+    "images": ["tour-13-1.jpg", "tour-13-2.jpg", "tour-13-3.jpg"],
+    "startDates": [
+      "2025-06-05T10:00:00.000Z",
+      "2025-06-10T09:00:00.000Z",
+      "2025-06-15T10:00:00.000Z"
+    ],
+    "_id": "a3b7c9d1f4e8a2332b5a0005",
+    "name": "Texas Cities Tour",
+    "duration": 5,
+    "maxGroupSize": 10,
+    "difficulty": "medium",
+    "guides": ["5c8a1f292f8fb814b56fa184", "5c8a1f292f8fb814b56fa185"],
+    "price": 1499,
+    "summary": "Explore the best of Texas, from Houston to San Antonio, with thrilling theme parks, beautiful landmarks, and a stop in Austin’s iconic sites.",
+    "description": "Embark on a 5-day adventure through Texas, beginning in Housto  and journeying to San Antoni  for a day at the exciting Six Flags Fiesta Texa  theme park. Along the way, stop to explore the Natural Bridge Cavern , a hidden natural gem between Austin and San Antonio. Once in Austi , experience the charm of Downtown Austi , including the stunning Congress Avenue Bridg  and the famous University of Texas at Austi  campus. Finally, visit the Texas State Capito  before heading back to Houston to reflect on your amazing adventure through the Lone Star State.",
+    "imageCover": "/img/tours/TexasAdventure.jpg",
+    "locations": [
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0078",
+        "description": "Begin your Texas adventure in Housto . Start with exploring the vibrant Downtown Housto , including Discovery Gree , Minute Maid Par , and the Museum Distric . Take a trip to Chinatow  for authentic dining and cultural experiences, before enjoying a relaxing evening in one of the city's many beautiful parks.",
+        "title": "Houston: Downtown, Chinatown & Museum District",
+        "day": 1
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0079",
+        "description": "On day two, travel to San Antoni  and spend the day at Six Flags Fiesta Texa , where you’ll enjoy thrilling rides, roller coasters, and live entertainment. Don’t forget to explore the park’s diverse themed areas and indulge in delicious amusement park treats. Afterward, visit the Alam  and stroll along the beautiful San Antonio River Wal  for a scenic and relaxing evening.",
+        "title": "San Antonio: Six Flags Fiesta Texas & River Walk",
+        "day": 2
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0080",
+        "description": "On day three, head towards the Natural Bridge Cavern , a breathtaking underground natural wonder between Austin and San Antonio. Explore the stunning limestone formations on a guided cave tour, and learn about the geological history of the area. Afterward, continue your journey to Austi , where you’ll spend the evening exploring the city’s vibrant nightlife and local restaurants.",
+        "title": "Natural Bridge Caverns & Journey to Austin",
+        "day": 3
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0081",
+        "description": "Day four begins with a tour of Downtown Austi , where you’ll visit the iconic Congress Avenue Bridg , famous for its bat colony. Next, explore the impressive University of Texas at Austi  campus, home to historic buildings, museums, and stunning architecture. In the afternoon, visit the Texas State Capito , an architectural marvel and the center of Texas government. Enjoy some free time to explore South Congress Avenu , filled with shops, food trucks, and lively music venues.",
+        "title": "Austin: Congress Avenue Bridge, UT Austin & Capitol",
+        "day": 4
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0082",
+        "description": "On the final day, make your way back to Housto . Reflect on your Texas adventure as you revisit any landmarks you may have missed on your first day or simply enjoy a relaxed afternoon at Hermann Par  or the Houston Museum of Natural Scienc .",
+        "title": "Return to Houston & Last-Minute Exploration",
+        "day": 5
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Texas, USA",
+      "type": "Point",
+      "coordinates": [30.194556, -97.670022],
+      "address": "Austin-Bergstrom International Airport, 3600 Presidential Blvd, Austin, TX 78719"
+    },
+    "destination": "Austin, Texas",
+    "ratingsAverage": 4.9,
+    "ratingsQuantity": 25,
+    "images": ["tour-14-1.jpg", "tour-14-2.jpg", "tour-14-3.jpg"],
+    "startDates": [
+      "2025-07-01T10:00:00.000Z",
+      "2025-07-15T09:00:00.000Z",
+      "2025-08-01T10:00:00.000Z"
+    ],
+    "_id": "a3b7c9d1f4e8a2332b5a0006",
+    "name": "Austin Attractions Adventure",
+    "duration": 4,
+    "maxGroupSize": 8,
+    "difficulty": "easy",
+    "guides": ["5c8a1f292f8fb814b56fa184", "5c8a1f292f8fb814b56fa185"],
+    "price": 999,
+    "summary": "Discover the best of Austin, from its vibrant downtown and stunning landmarks to festivals and scenic lakes.",
+    "description": "Explore Austin’s must-see attractions in this 4-day trip. Start with an arrival at Austin-Bergstrom International Airport , and dive into the city’s rich cultural and natural beauty. Spend the first day in Downtown Austi , soaking in the sights and sounds of the city, including a visit to the Texas State Capito . Day two is for exploring iconic landmarks like Pennybacker Bridg , the picturesque Travis Lak , and the vibrant Bluebonnet  during spring. Enjoy the city’s beauty further with a visit to the Austin Lantern Festiva . On the third day, immerse yourself in the cultural hub of University of Texas at Austi  and explore the trendy Domai  shopping district. End your journey with a visit to the bustling South Congress Mal , Austin’s favorite shopping and dining destination.",
+    "imageCover": "/img/tours/AustinExploration.jpg",
+    "locations": [
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0083",
+        "description": "Start your Austin journey at Austin-Bergstrom International Airport , the city’s gateway to adventure. Once you arrive, get ready for a thrilling exploration of Texas' capital city, beginning with its vibrant downtown district. Stroll through downtown and enjoy the mix of urban culture and unique local flair.",
+        "title": "Arrival at Austin-Bergstrom International Airport & Downtown Exploration",
+        "day": 1
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0084",
+        "description": "On day two, visit the stunning Texas State Capito , a historical site with incredible architecture and impressive grounds. Afterward, head to Pennybacker Bridg  for breathtaking views of the Colorado River. Next, take a trip to Travis Lak , a beautiful spot for outdoor activities and relaxation, and visit the scenic Bluebonnet field  if you’re in Austin during spring for a stunning burst of color.",
+        "title": "Texas State Capitol, Pennybacker Bridge, Travis Lake & Bluebonnets",
+        "day": 2
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0085",
+        "description": "Experience one of Austin's most enchanting events, the Austin Lantern Festiva , an annual celebration of light, art, and culture. Wander through this magical event and enjoy the beautiful lanterns and performances. You’ll witness the lively spirit of Austin as the city celebrates under the stars.",
+        "title": "Austin Lantern Festival Experience",
+        "day": 3
+      },
+      {
+        "_id": "a3b7c9d1f4e8a2332b5d0086",
+        "description": "On the final day, take a tour of the University of Texas at Austi , where you can marvel at the impressive campus and explore landmarks like the UT Towe  and the Blanton Museum of Ar . Afterward, head to The Domai , a high-end shopping area with designer stores and top-notch dining. Finally, spend the afternoon at South Congress Mal , a lively shopping, dining, and entertainment hub that offers a true taste of Austin's eclectic charm.",
+        "title": "University of Texas, The Domain & South Congress Mall",
+        "day": 4
       }
     ]
   }

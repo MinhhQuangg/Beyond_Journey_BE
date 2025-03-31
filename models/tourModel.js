@@ -8,8 +8,8 @@ const tourSchema = new mongoose.Schema(
       required: [true, 'A tour must have a name'],
       unique: true,
       trim: true,
-      minLength: [10, 'A tour name is too long'],
-      maxLength: [40, 'A tour name is too short'],
+      minLength: [10, 'A tour name is too short'],
+      maxLength: [40, 'A tour name is too long'],
     },
     destination: {
       type: String,
@@ -98,6 +98,7 @@ const tourSchema = new mongoose.Schema(
         coordinates: [Number],
         address: String,
         description: String,
+        title: String,
         day: Number,
       },
     ],
