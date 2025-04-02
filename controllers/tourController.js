@@ -32,33 +32,40 @@ exports.uploadTourImages = upload.fields([
 
 exports.resizeTourImages = async (req, res, next) => {
   try {
-    // console.log(req.files);
-    if (!req.files.imageCover || !req.files.images) return next();
+    console.log(req.files.imageCover);
+    if (!req.files.imageCover && !req.files.images) return next();
 
     // TODO: 1) CoverImage
-    req.body.imageCover = `tour-${req.params.id}-${Date.now()}-cover.jpeg`;
-    await sharp(req.files.imageCover[0].buffer)
-      .resize(2000, 1333)
-      .toFormat('jpeg')
-      .jpeg({ quality: 90 })
-      .toFile(`public/img/tours/${req.body.imageCover}`);
-    req.body.imageCover = `/img/tours/${req.body.imageCover}`;
+    if (req.files.imageCover) {
+      req.body.imageCover = `tour-${req.params.id}-${Date.now()}-cover.jpeg`;
+      console.log(req.body.imageCover);
+      await sharp(req.files.imageCover[0].buffer)
+        .resize(2000, 1333)
+        .toFormat('jpeg')
+        .jpeg({ quality: 90 })
+        .toFile(`public/img/tours/${req.body.imageCover}`);
+      req.body.imageCover = `/img/tours/${req.body.imageCover}`;
+      console.log(req.body.imageCover);
+    }
+
     // TODO: 2) Images
-    req.body.images = [];
+    if (req.files.images) {
+      req.body.images = [];
 
-    await Promise.all(
-      req.files.images.map(async (file, i) => {
-        const filename = `tour-${req.params.id} - ${Date.now()}-${i + 1}.jpeg`;
+      await Promise.all(
+        req.files.images.map(async (file, i) => {
+          const filename = `tour-${req.params.id}-${Date.now()}-${i + 1}.jpeg`;
 
-        await sharp(file.buffer)
-          .resize(2000, 1333)
-          .toFormat('jpeg')
-          .jpeg({ quality: 90 })
-          .toFile(`public/img/tours/${filename}`);
+          await sharp(file.buffer)
+            .resize(2000, 1333)
+            .toFormat('jpeg')
+            .jpeg({ quality: 90 })
+            .toFile(`public/img/tours/${filename}`);
 
-        req.body.images.push(filename);
-      }),
-    );
+          req.body.images.push(filename);
+        }),
+      );
+    }
 
     next();
   } catch (err) {
