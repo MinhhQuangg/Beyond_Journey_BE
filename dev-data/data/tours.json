@@ -3,7 +3,7 @@
     "startLocation": {
       "description": "Florida, USA",
       "type": "Point",
-      "coordinates": [-81.379234, 28.538336],
+      "coordinates": [28.424618, -81.310753],
       "address": "Orlando Air Traffic Control Tower, 1 Jeff Fuqua Blvd, Orlando, FL 32827"
     },
     "destination": "Miami, Florida",
@@ -69,7 +69,7 @@
     "startLocation": {
       "description": "Colorado, USA",
       "type": "Point",
-      "coordinates": [-104.6737, 39.8617],
+      "coordinates": [39.8667, 104.6667],
       "address": "8500 Peña Blvd, Denver, CO 80249, USA"
     },
     "destination": "Denver, Colorado",
@@ -145,7 +145,7 @@
     "startLocation": {
       "description": "Nevada, USA",
       "type": "Point",
-      "coordinates": [-115.570154, 36.1699],
+      "coordinates": [36.083134, -115.148315],
       "address": "3663 S Las Vegas Blvd, Las Vegas, NV 89109, USA"
     },
     "destination": "Las Vegas,Nevada",
