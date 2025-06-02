@@ -6,17 +6,17 @@ const router = express.Router({ mergeParams: true });
 router.get('/getFiveStarReview', reviewController.getFiveStarReview);
 router.get('/getReviewStat', reviewController.getReviewStat);
 
-router.use(authController.protect);
-
 router
   .route('/')
-  .get(reviewController.getAllReview)
+  .get(reviewController.getAllReview) // public
   .post(
+    authController.protect,
     authController.restrictTo('user'),
     reviewController.setTourUserIds,
     reviewController.createReview,
   );
 
+router.use(authController.protect);
 router
   .route('/:id')
   .get(reviewController.getReview)
